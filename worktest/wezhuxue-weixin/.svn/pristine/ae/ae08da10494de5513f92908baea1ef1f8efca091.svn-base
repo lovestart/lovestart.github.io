@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>为他站台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/common.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="js/mobile.js"></script>
+</head>
+
+<body>
+    <!--header starts-->
+    <!-- <div class="header">
+        <div class="hedLft">
+            <a href="#"><img src="images/headarrow.png">
+            </a>
+        </div>
+        <div class="headerMiddle">
+            <h1>为他站台</h1>
+        </div>
+    </div> -->
+    <!--header ends-->
+    <!--container starts-->
+    <div class="container">
+        <div class="containertwoFour greenBgTwo">
+            <!--<div class="wrapper">-->
+            <div class="ImgTxt">
+                <div class="clearfloat">
+                    <div class="dotImg fl">
+                        <div class="ppl ">
+                            <img id="suppAvatar" src="images/pplcolorfulImg.png">
+                        </div>
+                    </div>
+                    <div class="greenBgRytTxt fr">
+                        <h1 id="heName">为他站台</h1>
+                        <h2 id="heMobile">提高校友信用，</h2>
+                        <h2>校友齐心，为我站台提信用！</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="whiteBg">
+                    <h3><span class="leftBodr"><span class="borderone"></span>已有<span id="sNum">1</span>位校友为他站台</span></h3>
+                    <div id="suppBoy">
+                    <a href="#" class="space clearfloat">
+                        <div class="guyImgSet fl">
+                            <img src="images/boyone.png">
+                        </div>
+                        <div class="textSet fl">
+                            <h1>大华为他站台</h1>
+                            <h2>2016-12-7<span>12:20</span></h2>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                <h5 id="msgText">已达到校友认证上限</h5>
+                <button id="moreBtn" class="whiteBtnGT">领取更多优惠券</button>
+            </div>
+      
+         <!--footer starts-->
+          <div class="footer">
+              <div class="wrapper">
+                  <div class="clearfloat">
+                      <div class="ffotcross fl">
+                          <img src="images/cross.png">
+                      </div>
+                      <div class="lytGreenBg fl">
+                          <img src="images/logo.png">
+                      </div>
+                      <div class="footerTxt fl">
+                          <h3>人人助学</h3>
+                          <h4>在app里站台，收获更多哦～</h4>
+                      </div>
+                      <button id="downloadNow" class="orngBtn fr">立即下载</button>
+                  </div>
+              </div>
+          </div>
+         </div>
+    <!--footer ends-->
+    </div>
+   <div id="oDiv" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none"></div>
+</body>
+</html>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/public.js" ></script>
+<script>
+$(function(){
+    var UrlData=window.location.search;
+    var locationData={};//接收链接地址传输的数据
+    var mainData={};//助学团详情json
+    
+    (UrlData==='')&&(true,locationData='nullObject') || (UrlData!='') && (true,locationData=pub.StrToJOON(UrlData));
+    //判断有没有获取数据 ps:获取到了去读数据，没有获取到提示没有获取到
+    (locationData === 'nullObject')&&(true,(function(){
+        $('#oDiv').show();
+        pub.cs('没有获取到数据！');
+    })()) || (locationData!='nullObject')&&(true,function(){
+        getGroupDetail();//获取帮助所有帮助提升身价的小伙伴
+    }());//判断有没有获取数据 end
+    
+    //获取帮助提升身价小伙伴列表的方法
+    function getGroupDetail(){
+        var datas ={'version':'1.0','system':'weixin','token':'','objId':'UserAuthVO','method':'/rrzx/stuCert/supportInfo','@userId':''+locationData.userId+'','@suppUserId':''+locationData.suppId+''};
+        $.ajax({
+            dataType:'jsonp',
+            url:pub.jsonPApiT,
+            data:datas,
+            jsonp:'callback',
+            success:function(jsonData){
+                mainData=eval(jsonData);
+				if(mainData.code=='6666'){
+					if(mainData.data.isSupped=='true'){
+						$('#msgText').html('您已站过台');
+					}
+					$('#suppAvatar').attr('src',mainData.data.suppAvatar);
+                    $('#heName').html(mainData.data.suppNickName);
+                    $('#heMobile').html(mainData.data.suppMobile);
+                    $('#suppBoy').empty();
+                    var sr = mainData.data.supportStudents;
+                    if(sr==undefined){
+                    	$('#sNum').html('0');
+                    	$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+                            '<div class="textSet fl">'+
+                                '<h1>暂无校友为他站台</h1>'+
+                            '</div>'+
+                        '</a>');
+                    }else{
+                    	$('#sNum').html(sr.stuNum);
+                    	if(sr.users==undefined){
+                        	$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+                                '<div class="textSet fl">'+
+                                    '<h1>暂无校友为他站台</h1>'+
+                                '</div>'+
+                            '</a>');
+                        }else{
+	                    	for(var i=0;i<sr.users.length;i++){
+	                    		$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+	                    				'<div class="guyImgSet fl">'+
+	                            			'<img src="'+sr.users[i].avatar+'">'+
+	                        			'</div>'+
+	                    				'<div class="textSet fl">'+
+	                                        '<h1>'+sr.users[i].userNickname+'</h1>'+
+	                                        '<h2>'+pub.parseDateTime(sr.users[i].createDate)+'</h2>'+
+	                                    '</div>'+
+	                                '</a>');
+	                        }
+                        }
+                    }
+				}else{
+					$('#oDiv').show();
+                    pub.cs(mainData.msg);
+				}
+            },
+        });
+    };//获取帮助提升身价小伙伴列表的方法 end
+    $('#moreBtn').click(function(){
+    	//window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/stu_downLoad.html";
+    	window.location.href=pub.wxDomain+'views/zxt_stu/jz/stuDownload.html';
+    });
+    $('#downloadNow').click(function(){
+		window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/downLoadAIApp.html";
+	});
+});
+</script>

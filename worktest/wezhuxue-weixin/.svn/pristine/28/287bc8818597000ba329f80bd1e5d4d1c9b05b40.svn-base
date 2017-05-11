@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*header starts*/ 
+.header img{
+	width:100%;	
+	display:block;
+}
+.header{
+	width:92%;
+	background-color:#000;
+	position:fixed;
+	height:1.1rem;
+	padding:.6rem 4%;
+	top:0;
+	z-index:1000;
+}
+.header .headerLeft a{
+	width:.5rem;
+}
+.header .headerMiddle{
+	position:absolute;
+	top:50%;
+	margin:-0.67rem auto 0rem auto;
+	left:0;
+	right:0;
+	width:9rem;
+}
+.header .headerMiddle h1{
+	text-align:center;
+}
+.header .headerMiddle h1 a{
+	color:#fff;	
+	font-size:.9rem;
+}
+.header .headerMiddle h1 a:hover{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;	
+}
+.headertwo {
+	background:#f6f8f8;
+	-webkit-box-shadow: 0 1px 1px rgba(221,221,221,.7);
+	-moz-box-shadow: 0 1px 1px rgba(221,221,221,.7);
+	box-shadow: 0 1px 1px rgba(221,221,221,.7);
+}
+.headertwo .headerLeft a {
+    width: 3rem;
+}
+.headertwo .headerLeft a .headerArrow{
+	width:.625rem;
+	display:inline-block;
+}
+.headertwo .headerLeft a .textt {
+	display:inline-block;
+	color:#555;
+	font-size:.75rem;
+	vertical-align: top;
+    margin: .1rem 0 .1rem .2rem;
+}
+.headertwo .headerMiddle h1 a{
+	color:#333;	
+}
+.headerNew {
+	background: #fff;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+/*header ends*/

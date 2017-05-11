@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>下载app</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" media="all" /> </head>
+<body>
+	<!--container starts-->
+	<div class="container">
+    	<div class="containerThree">
+        	<h1 class="mainText">下载人人助学APP<span>开启助学之旅</span></h1>
+            <h2 class="secondText">人人<span>助学</span></h2>
+            <button>打开App</button>
+        </div>
+    </div>
+<script src="js/mobile.js"></script>
+</body>
+</html>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/public.js" ></script>
+<script type="text/javascript">
+$(function(){
+	$('button').click(function(e){ 
+		//window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/downLoadAIApp.html";
+		pub.openApp(e);
+	});
+});
+</script>

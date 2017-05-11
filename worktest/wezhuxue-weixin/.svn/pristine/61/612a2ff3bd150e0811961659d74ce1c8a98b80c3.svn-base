@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>报名</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body class="bodycolone">
+<!--container starts-->
+<div class="container">
+  <div class="containersven">
+    <div class="formbox">
+    	<div class="enrollText">填写信息，轻松报名</div>
+        <div class="row clearfloat">
+          <!-- <label for="inpone" class="inplab fl">姓<span class="txtspace">名</span></label> -->
+           <div class="inpbox fr">    
+          <input type="text" class="inpuone" id="inpone" placeholder="请输入姓名"/>
+          </div>
+        </div>
+          <div class="row clearfloat">
+          <!-- <label for="inptwo" class="inplab fl">手机号</label> -->
+            <div class="inpbox fr">    
+          <input type="text" class="inpuone" id="inptwo" placeholder="手机号"/>
+          </div>
+        </div>
+          <div class="row clearfloat">
+           <!-- <label for="inpthree" class="inplab fl">验证码</label> -->
+          <div class="inpbox fr">         
+          <input type="text" class="inpuone inpcode" id="inpthree"/>
+          <input type="button" class="spcBtn fr" id="btnSendCode" value="获取验证码">
+          </div>
+        </div>
+        <button class="submitbtn" id="btnSubmit">确定</button>
+    </div>
+  </div>
+</div>
+<div id="oDiv" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none"></div>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/mobile.js"></script>
+<script src="js/timer.js"></script>
+<script type="text/javascript" src="../js/public.js" ></script>
+<script>
+	$(document).ready(function(e) {
+		var UrlData=decodeURI(window.location.search);
+	    var locationData={};//接收链接地址传输的数据
+	    var mainData={};//api详情json
+	    
+	    (UrlData==='')&&(true,locationData='nullObject') || (UrlData!='') && (true,locationData=pub.StrToJOON(UrlData));
+	    //判断有没有获取数据 ps:获取到了去读数据，没有获取到提示没有获取到
+	    (locationData === 'nullObject')&&(true,(function(){
+	        $('#oDiv').show();
+	        pub.cs('没有获取到数据！');
+	    })()) || (locationData!='nullObject')&&(true,function(){
+	    }());//判断有没有获取数据 end
+	    
+		$('#btnSendCode').click(function(e) {
+			if($("#inptwo").val()==''){
+				$('#oDiv').show();
+                pub.cs("请输入手机号！");
+                return false;
+			}
+			if(!(/^1[34578]\d{9}$/.test($("#inptwo").val()))){
+				$('#oDiv').show();
+				pub.cs("手机号码有误，请重新填写！");
+				$("#inptwo").focus();
+				return false; 
+			}
+			var datas ={'version':'1.0','system':'weixin','token':'','objId':'UserAuthVO','method':'/sms/verifyCode','@mobile':''+$("#inptwo").val()+''};
+            $.ajax({
+                dataType:'jsonp',
+                url:pub.jsonPApiT,
+                data:datas,
+                jsonp:'callback',
+                success:function(jsonData){
+                    mainData=eval(jsonData);
+					if(mainData.code=='6666'){
+						
+					}else{
+						$('#oDiv').show();
+                        pub.cs("发送失败");
+					}
+                },
+            });
+            sendMessage();
+		});
+		$('#btnSubmit').click(function(e) {
+			if($("#inpone").val()==''){
+				$('#oDiv').show();
+                pub.cs("请输入姓名！");
+                return false;
+			}
+			if($("#inptwo").val()==''){
+				$('#oDiv').show();
+                pub.cs("请输入手机号！");
+                return false;
+			}
+			if($("#inpthree").val()==''){
+				$('#oDiv').show();
+                pub.cs("请输入验证码！");
+                return false;
+			}
+			var datas ={'version':'1.0','system':'weixin','token':'','objId':'PartTimeVo','method':'/rrzx/h5/job/enroll','@userId':''+locationData.userId+'','@jobRecordId':''+locationData.jobId+'','@userName':''+$("#inpone").val()+'','@userPhone':''+$("#inptwo").val()+'','@verifyCode':''+$("#inpthree").val()+''};
+            $.ajax({
+                dataType:'jsonp',
+                url:pub.jsonPApiT,
+                data:datas,
+                jsonp:'callback',
+                success:function(jsonData){
+                    mainData=eval(jsonData);
+					if(mainData.code=='6666'){
+						var url = encodeURI(pub.wxDomain+'views/zxt_stu/jz/jzDownLoad.html?jobName='+locationData.jobName);
+						window.location.href=url;
+					}else{
+						$('#oDiv').show();
+                        pub.cs(mainData.msg);
+                        return false;
+					}
+                },
+            });
+		});
+	});
+</script>
+</body>
+</html>

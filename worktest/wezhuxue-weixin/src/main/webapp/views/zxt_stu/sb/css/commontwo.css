@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container {
+    margin-top: 0.1rem;
+}
+/*containerOne starts*/
+.containerOne {
+    background: #fff;
+}
+.containerOne .sectone {
+    width: 100%;
+}
+.containerOne .secttwo h1 {
+    font-size: 1.2rem;
+    color: #ff5544;
+    text-align: center;
+    padding-top: 2.375rem;
+    font-weight: bold;
+}
+.containerOne .sectul {
+    padding-top: 2.45rem;
+    width: 15rem;
+    margin: 0 auto;
+}
+.containerOne .sectul ul li {
+    font-size: .65rem;
+    color: #ff5544;
+    padding-bottom: .375rem;
+    text-align: center;
+}
+.containerOne .btnone {
+    display: block;
+    margin: 1.375rem auto 2rem auto;
+    color: #fff;
+    font-size: .9rem;
+    padding: .57rem 4.35rem;
+    -webkit-border-radius: 44px;
+    -moz-border-radius: 44px;
+    border-radius: 44px;
+    background-color: #ff5144;
+    background-image: -webkit-linear-gradient(right, #f54, #ffa05b);
+    background-image: -moz-linear-gradient(right, #f54, #ffa05b);
+    background-image: -o-linear-gradient(right, #f54, #ffa05b);
+    background-image: -ms-linear-gradient(right, #f54, #ffa05b);
+    background-image: linear-gradient(to left, #f54, #ffa05b);
+    letter-spacing: 2px;
+    -webkit-tap-highlight-color: none
+}
+/*containerOne ends*/
+
+/*common starts here*/
+.myBg {
+    background: #f4f4f4;
+}
+.butSec {
+    width: 92%;
+    margin: 0 auto;
+}
+.bigBtn {
+    width: 100%;
+    background: #f54;
+    font-size: .9rem;
+    color: #fff;
+    padding: .6rem 0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+	letter-spacing:2px;
+}
+/*common ends here*/
+
+/*containerTwo starts*/
+.containerTwo {
+    padding-top: .5rem;
+}
+.containerTwo .setOne {
+    background: #fff;
+    margin-bottom: 1.875rem;
+}
+.containerTwo .setOne h2 {
+    font-size: .75rem;
+    color: #666;
+    padding: .71rem 0 0 .875rem;
+}
+.containerTwo .myinput {
+    font-size: .75rem;
+    color: #666;
+    padding: .1rem 0;
+    width: 100%;
+}
+.containerTwo .myinput::-webkit-input-placeholder {
+    font-size: .75rem;
+    color: #ccc;
+}
+.containerTwo .leftTxt {
+    width: 4.15rem;
+}
+.containerTwo .rightsec {
+    width: 13rem;
+    padding: .45rem 0;
+}
+.containerTwo .mainSet {
+    -webkit-box-shadow: 0 1px 1px rgba(221, 221, 221, .7);
+    -moz-box-shadow: 0 1px 1px rgba(221, 221, 221, .7);
+    box-shadow: 0 1px 1px rgba(221, 221, 221, .7);
+}
+.containerTwo .lastSec {
+    width: 92%;
+    margin: 0 auto;
+    padding-top: .75rem;
+}
+.containerTwo .lastSec p {
+    font-size: .6rem;
+    color: #999;
+    line-height: 1rem;
+}
+/*containerTwo ends*/
+
+/*containerThree starts*/
+.containerThree .top h2 {
+    font-size: .75rem;
+    color: #666;
+    padding: .65rem .72rem;
+}
+.containerThree .top {
+    border-bottom: 1px solid #ddd;
+}
+.containerThree .sectionColor {
+    background: #fff;
+}
+.containerThree .sectionTxt {
+    padding: 1.5rem 0;
+}
+.containerThree .sectionTxt h3 {
+    padding: .15rem 0 .15rem .55rem;
+    color: #333;
+    font-size: .9rem;
+}
+.containerThree .onlyTxtBox {
+    width: 16rem;
+}
+.containerThree .onlyTxtBox .myinput {
+    font-size: .9rem;
+    color: #333;
+    padding: .1rem 0;
+    width: 100%;
+}
+.containerThree .onlyTxtBox .myinput::-webkit-input-placeholder {
+    font-size: .9rem;
+    color: #ccc;
+}
+.containerThree .specialSec {
+    border-top: 1px solid #ddd;
+}
+.containerThree .specialSec h4 {
+    font-size: .65rem;
+    color: #999;
+    padding: .7rem 0 .7rem .73rem;
+}
+.containerThree .specialSec .spcred {
+    color: #ff5544;
+    padding-left: .4rem;
+}
+.containerThree .checkOne {
+    padding: .8rem 0 .5rem 0;
+}
+/*checkbox round section starts*/
+.checkOne input[type=checkbox] {
+    width: 1rem;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    display: inline-block;
+    margin-top: -.5rem;
+}
+.checkOne input[type=checkbox]+label {
+    content: "";
+    background: url(../images/red-dot-blnk.png) no-repeat;
+    display: inline-block;
+    margin: 0rem 0rem 0rem -1.3rem;
+    background-size: contain;
+    padding-left: .95rem;
+}
+.checkOne input[type=checkbox]:checked+label {
+    content: "";
+    background: url(../images/red-dot1.png) no-repeat;
+    display: inline-block;
+    margin: 0rem 0rem 0rem -1.3rem;
+    background-size: contain;
+}
+.checkOne .smallText {
+    color: #999;
+    font-size: .6rem;
+}
+/*checkbox round section ends*/
+/*containerThree ends*/

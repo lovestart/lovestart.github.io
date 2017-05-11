@@ -1,0 +1,505 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*containerOnethree start*/
+.containerOnethree .firstbg {
+    background: url(../images/twobg.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    padding: 4rem 0 9rem 0;
+}
+.containerOnethree .whitebtnone {
+    padding: 0 4rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #22cccc;
+    -moz-border-image: -moz-linear-gradient(top, #2cc 0%, #2bf1bc 100%);
+    -webkit-border-image: -moz-linear-gradient(#2cc 0%, #2bf1bc 100%);
+    -webkit-border-image: -webkit-linear-gradient(#2cc 0%, #2bf1bc 100%);
+    -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2cc), to(#2bf1bc));
+    -webkit-border-image: -o-linear-gradient(#2cc 0%, #2bf1bc 100%);
+    -webkit-border-image: linear-gradient(#2cc 0%, #2bf1bc 100%);
+    border-image: linear-gradient(to bottom, #2cc 0%, #2bf1bc 100%);
+    border-image-slice: 1;
+    background: #fff;
+    position: relative;
+    border-radius: 40px;
+}
+.containerOnethree .whitebtnone::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(#2cc, #2bf1bc);
+    content: '';
+    z-index: -1;
+    border-radius: 40px;
+}
+/*containerOnethree end*/
+/*containerOnethreeone start*/
+.containerOnethreeone .firstonebg {
+    background: url(../images/onethreebg.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    padding: 2rem 0 8rem 0;
+}
+.containerOnethreeone .tick {
+    width: 2rem;
+}
+.containerOnethreeone .btnuptext {
+    font-size: .75rem;
+    color: #999999;
+    padding-bottom: .3rem;
+}
+/*containerOnethreeone end*/
+/*containerOnetwo start*/
+.containerOnetwo .secondbg {
+    background: url(../images/onetwobg.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    margin-top: 0;
+    padding: 3rem 0;
+}
+.containerOnetwo .bgtext {
+    text-align: center;
+}
+.containerOnetwo .bgtext h1 {
+    font-size: 1.025rem;
+    color: #ffffff;
+    line-height: 2rem;
+}
+.containerOnetwo .mainbg {
+    background: #f1f1f1;
+    padding-bottom: 5rem;
+}
+.containerOnetwo .first {
+    width: 9.3rem;
+    text-align: center;
+    background: #fff;
+}
+.containerOnetwo .first h2 {
+    font-size: .9rem;
+    color: #333333;
+    line-height: 1.5rem;
+    margin-top: .4rem;
+    padding-bottom: .75rem;
+}
+.containerOnetwo .fourhead {
+    font-size: .5rem;
+    color: #999999;
+    line-height: 2rem;
+    margin-top: -.75rem;
+}
+.containerOnetwo .likeTab {
+    -webkit-box-shadow: 0 0 8px #e5e5e5;
+    -moz-box-shadow: 0 0 8px #e5e5e5;
+    box-shadow: 0 0 8px #e5e5e5;
+}
+.containerOnetwo .cntrSctn {
+    background: #fff;
+    margin-top: 1rem;
+    -webkit-box-shadow: 0 0 8px #e5e5e5;
+    -moz-box-shadow: 0 0 8px #e5e5e5;
+    box-shadow: 0 0 8px #e5e5e5;
+}
+.containerOnetwo .cntrSctn .cntrauto {
+    width: 94%;
+    margin: 0 auto;
+}
+.containerOnetwo .cntrSctn h3 {
+    font-size: .9rem;
+    color: #333333;
+    line-height: 2rem;
+}
+.containerOnetwo .chechSctn {
+    margin: 0.5rem 0 0rem 1.1rem;
+}
+.containerOnetwo .checklabel {
+    font-size: .6rem;
+    color: #333333;
+}
+.containerOnetwo input[type=checkbox] {
+    background: url(../images/checkcircle.png) no-repeat;
+    border-radius: 50%;
+    width: .8rem;
+    height: .8rem;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+.containerOnetwo input[type=checkbox]:checked {
+    background: url(../images/checktick.png) no-repeat;
+    width: .8rem;
+    height: .8rem;
+    background-size: 100% 100%;
+}
+.containerOnetwo .fixedSctn {
+    width: 92%;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    padding: 0 4%;
+    text-align: center;
+}
+.containerOnetwo .bordepart {
+    width: 93%;
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+}
+.containerOnetwo .brdrnone {
+    border: none;
+}
+/*containerOnetwo end*/
+/*containerOneone start*/
+.containerOneone .onebg {
+    background: url(../images/onebg.png) no-repeat;
+    background-size: 100%;
+    display: block;
+    margin-top: 0;
+    padding: 1.6rem 0 6rem 0;
+	}
+.containerOneone .firstheading {
+    font-size: .75rem;
+    color: #ffffff;
+    text-align: center;
+}
+.containerOneone .girlSec {
+    background: #ffffff;
+    border-radius: 8px;
+    margin: 4rem 0 0 0;
+    position: relative;
+}
+.containerOneone .girlSec .girlimage {
+    border: 1px solid #fff7dd;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 3.8rem;
+    position: absolute;
+    top: -2.1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.containerOneone .textSectn .oneText {
+    width: 5.9rem;
+}
+.containerOneone .textSectn .twoText {
+    width: 5.8rem;
+}
+.containerOneone .textSectn h2 {
+    font-size: .9rem;
+    color: #333333;
+    text-align: center;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+.containerOneone .textSectn h3 {
+    font-size: .5rem;
+    color: #999999;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.containerOneone .secondHead {
+    width: 95%;
+    margin: 0 auto;
+}
+.containerOneone .secondHead p {
+    font-size: .6rem;
+    color: #666666;
+    text-align: justify;
+    line-height: 1.2rem;
+    padding: .5rem 0;
+}
+.containerOneone .splmrgn {
+    margin-top: 1rem;
+}
+.containerOneone .gallery {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: .5rem;
+}
+.containerOneone .place {
+    width: 1.5rem;
+    margin: .7rem auto;
+}
+.containerOneone .add {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #f5f5f5;
+    overflow: hidden;
+    margin-right: 2.1rem;
+    margin-top: 1.5rem;
+}
+.containerOneone .oneImg h3 {
+    font-size: .6rem;
+    color: #333333;
+    line-height: 2rem;
+}
+.containerOneone .spaceone {
+    padding: 1rem 0 .6rem 0rem;
+    border-bottom: 1px solid #efefef;
+    display: block;
+}
+.containerOneone .guyImgSet {
+    margin-left: .5rem;
+}
+.containerOneone .textSet {
+    padding: 0rem 0rem 0 0.65rem;
+}
+.containerOneone .textSet h3 {
+    color: #333333;
+    font-size: .75rem;
+    padding-bottom: 0.7rem;
+}
+.containerOneone .textSet h4 {
+    color: #999999;
+    font-size: 0.75rem;
+}
+.containerOneone .foot {
+    background: #ffffff;
+    margin: 2rem 0 0 0;
+    position: relative;
+    border-top: #dddddd 1px solid
+}
+.containerOneone .foot h1 {
+    color: #ff5144;
+    font-size: 0.6rem;
+    padding: 0.5rem 0 0 0;
+}
+.containerOneone .creditCard {
+    position: absolute;
+    top: -.9rem;
+    right: 2.5rem;
+    width: 3.7rem;
+}
+.containerOneone .creditCard h4 {
+    font-size: .6rem;
+    position: absolute;
+    top: 1.2rem;
+    left: .7rem;
+    color: #fffefe;
+}
+.containerOneone .firstfoot{
+	position: fixed;
+    bottom: 0;
+	width: 100%;
+}
+.containerOneone .firstfoot a {
+    display: block;
+}
+.containerOneone .splpdng {
+    margin-left: 3rem;
+}
+.containerOneone .splmrgnone {
+    margin-right: 0;
+}
+.containerOneone .footCntr {
+    width: 77%;
+    margin: 0 auto;
+}
+/*containerOneone end*/
+/*containerttwoOne starts*/
+.containertwoOne .greenBg {
+    background: url(../images/bgcolor.jpg) no-repeat;
+    background-size: cover;
+    padding: 3.75rem 0 5.5rem 0;
+}
+.containertwoOne .space:nth-child(5) {
+    border-bottom: none;
+}
+/*containertwoOne ends*/
+/*containertwoFour starts*/
+.containertwoFour .whiteBtn {
+    color: #666666;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    background-color: transparent;
+}
+.containertwoFour .spaceNone {
+    margin-left: 0 !important;
+    padding-left: 0.75rem;
+}
+.containertwoFour h5 {
+    color: #fff;
+    font-size: 0.6rem;
+    text-align: center;
+    padding: 1.65rem 0 0.5rem 0;
+}
+/*containertwoFour ends*/
+/*containertwoTwo starts*/
+.containertwoTwo .spaceTop {
+    margin: 1rem 0 2rem 0;
+}
+/*chekbox starts*/
+.containertwoTwo .cheker {
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/greycheckbox.png) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    border-radius: 0;
+}
+.containertwoTwo .checkFieldOne {
+    color: #333;
+    font-size: .7rem;
+    padding-left: .5rem;
+}
+.containertwoTwo .checkFieldOne a {
+    color: #ff425e;
+    font-size: 0.8rem;
+}
+.containertwoTwo .cheker:checked {
+    background: url(../images/greencheckbox.png) no-repeat;
+    background-position: center center;
+    width: 1rem;
+    height: 1rem;
+    background-size: 100%;
+}
+.containertwoTwo .leftCheckBox {
+    padding: 1rem 0 1rem 0.75rem;
+}
+.containertwoTwo .leftCheckBoxOne {
+    padding-bottom: 1rem;
+}
+/*checkbox ends*/
+.containertwoTwo .whiteBtnGTNew {
+    color: #22cccc;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+    height: 2.05rem;
+    padding: 0 4.69rem;
+    margin: 1.2rem auto;
+}
+.containertwoTwo .greenBgSphere {
+    background-color: #22cc92;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 3.562rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+    box-shadow: 0 9px 15px rgba(34, 204, 146, .3);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -1.65rem;
+}
+/*display-block popup starts*/
+.containertwoTwo .BgSphere {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 3.562rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1.65rem;
+}
+.containertwoTwo .greenBg{
+	background-color: #22cc92;
+    box-shadow: 0 9px 15px rgba(34, 204, 146, .3);	
+}
+.containertwoTwo .tickMark {
+    width: 2rem;
+    margin: 0 auto;
+}
+.containertwoTwo .whitebgOne {
+    position: relative;
+}
+.containertwoTwo .whitebgOne h5 {
+    color: #666666;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.containertwoTwo .whitebgOne h6 {
+    color: #fff;
+    font-size: 0.6rem;
+    width: 6.5rem;
+    padding: 0.65rem 0;
+    text-align: center;
+    margin: 0.7rem auto 1.2rem auto;
+    border-radius: 2px;
+    background-image: linear-gradient(126deg, #ff955f, #ff6060);
+}
+.whitebgOne span {
+    color: #fff;
+    font-size: 1.75rem;
+    padding-left: .25rem;
+}
+.containertwoTwo .spaceTopTick {
+    padding: 2.7rem 0 0.3rem 0;
+}
+.containertwoTwo .whiteBtnpopup {
+    color: #333333;
+    font-size: 0.7rem;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+    width: 12.5rem;
+    margin: 0 auto;
+    padding: 1.15rem 0 1rem 0;
+    background: transparent;
+    display: block;
+}
+.containertwoTwo .popupSet {
+    background: rgba(25, 25, 25, .6);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+	z-index:9999;
+}
+.containertwoTwo .popup {
+    width: 15rem;
+    margin:-7.5rem auto 0 auto;
+    top: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.containertwoTwo .whiteBgPop {
+    background-color: #fff;
+    border-radius: 8px;
+}
+/*display-block popup ends*/
+
+/*display-none popup starts*/
+.containertwoTwo .popupSetOne{
+    background: rgba(25, 25, 25, .6);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+	z-index:99999;
+}
+.containertwoTwo .popupOne {
+    width: 15rem;
+    top: 50%;
+    margin: -5.025rem auto 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.containertwoTwo .redBg{
+	background-color: #f54;
+	box-shadow: 0 9px 15px rgba(255,85,68,.3);
+}
+.containertwoTwo .spaceTopTickOne{
+    padding:3rem 0 1.5rem 0;
+}
+/*second PopUp*/
+
+.containertwoTwo .space:nth-child(3) {
+    border-bottom: none;
+}
+/*containertwoTwo End*/

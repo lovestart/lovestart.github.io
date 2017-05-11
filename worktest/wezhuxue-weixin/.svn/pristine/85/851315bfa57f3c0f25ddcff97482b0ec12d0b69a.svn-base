@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>兼职详情</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link href="css/base.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" media="all" /> </head>
+<body class="body_Bg">
+	<!--container starts-->
+	<div class="containerOne container">
+		<div class="content">
+			<div class="first clearfloat">
+				<div class="leftImg fl">
+					<a href="javascript:void(0);"> <img id="classfyImg" src="images/round.png"> </a>
+				</div>
+				<div class="text fl"> <a href="javascript:void(0);" id="jobName">海翔汽车美容服务（新城店）招 保养工1名</a>
+					<h1 id="jobPubTime">刚刚</h1> </div>
+				<h2 class="fr" id="jobSalary">100元/天</h2> </div>
+			<div class="second">
+				<div class="secondSet clearfloat">
+					<div class="icon fl"> <img src="images/lokation.png"> </div>
+					<h1 class="fl" id="jobLocation">聚湖东路335号（四季新城南大门院子里）</h1> </div>
+				<div class="secondSet clearfloat">
+					<div class="icon fl"> <img src="images/calender.png"> </div>
+					<input readonly id="jobWorkDate" placeholder="09.30-12.29" class="fl"> </div>
+				<div class="secondSet clearfloat">
+					<div class="icon fl"> <img src="images/user.png"> </div>
+					<h1 class="fl" id="jobApply">还未有人参加</h1> </div>
+			</div>
+		</div>
+		<div class="content_two">
+			<div class="set clearfloat">
+				<h1 class="fl">工作类型</h1>
+				<h2 class="fl" id="jobType">技工技师</h2> </div>
+			<div class="set clearfloat">
+				<h1 class="fl">工作时间</h1>
+				<h2 class="fl" id="jobWorkTime">9:00~12:00,13:00~18:00</h2> </div>
+			<div class="set clearfloat">
+				<h1 class="fl">结算方式</h1>
+				<h2 class="fl" id="jobPayType">每月结算</h2> </div>
+			<div class="set clearfloat">
+				<h1 class="fl">招聘人数</h1>
+				<h2 class="fl" id="jobNum">1人</h2> </div>
+			<div class="set clearfloat">
+				<h1 class="fl">工作地点</h1>
+				<h2 class="fl" id="jobLocation1">聚湖东路335号（四季新城南大门院子里）</h2>
+				<!-- <div class="book fl"> <img src="images/book.png"> </div> -->
+			</div>
+		</div>
+		<div class="content_three">
+			<h1>岗位要求</h1>
+			<!-- <div class="textSet clearfloat">
+				<h2 class="fl">工作内容：</h2> </div> -->
+			<div class="textSet clearfloat" id="jobRequirement">
+				<h2 class="fl">特殊要求：</h2>
+				<h2 class="fl">身份不限，身高不限，年龄不限</h2> </div>
+		</div>
+		<div class="content_three contLast">
+			<div class="lastCont clearfloat">
+				<div class="buil_icon fl"> <img src="images/building.png"> </div>
+				<div class="textTwo fl">
+					<h2 id="companyName">济南兰慎网络科技有限公司</h2>
+					<h4 id="jobCity">（北京市）</h4> </div>
+				<h3 class="fl">已认证</h3> </div>
+		</div>
+		<div class="footer">
+			<div class="footerContent clearfloat">
+				<div class="footLeft fl">
+					<div class="footIcon"> <img src="images/footimage.png"> </div>
+					<h1>叫上朋友</h1>
+               </div>
+               <div class="footLeftone fl">
+               		<div class="footiconone">
+                    	<img src="images/footimageone.png">
+                    </div>
+               		<h1>客服电话</h1>
+               </div>
+				<div class="footRight fl"> 立即报名 </div>
+			</div>
+		</div>
+	</div>
+	<div id="oDiv" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none"></div>
+	<script src="js/mobile.js"></script>
+</body>
+</html>
+<script type="text/javascript" src="../js/public.js" ></script>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+var locationData={};//接收链接地址传输的数据
+var mainData={};//兼职详情json
+    $(function(){
+        var UrlData=window.location.search;
+        var jsonDataObj={};//获取微信传来的数据
+        
+        (UrlData==='')&&(true,locationData='nullObject') || (UrlData!='') && (true,locationData=pub.StrToJOON(UrlData));
+        //判断有没有获取数据 ps:获取到了去读数据，没有获取到提示没有获取到
+        (locationData === 'nullObject')&&(true,(function(){
+            $('#oDiv').show();
+            pub.cs('没有获取到数据！');
+        })()) || (locationData!='nullObject')&&(true,function(){
+            getProductDetail();//获取帮助所有帮助提升身价的小伙伴
+        }());//判断有没有获取数据 end
+        
+        //获取帮助提升身价小伙伴列表的方法
+        function getProductDetail(){
+            var datas ={'version':'1.0','system':'weixin','token':'','objId':'PartTimeVo','method':'/rrzx/partTime/detail/information','@jobRecordId':''+locationData.jobId+''};
+            $.ajax({
+                dataType:'jsonp',
+                url:pub.jsonPApiT,
+                data:datas,
+                jsonp:'callback',
+                success:function(jsonData){
+                    mainData=eval(jsonData);
+					if(mainData.code=='6666'){
+						$('#classfyImg').attr('src',mainData.data.icon);
+						$('#jobName').html(mainData.data.jobName);
+						$('#jobPubTime').html(mainData.data.h5PubDate);
+						$('#jobSalary').html(mainData.data.jobSalaryAmount);
+						$('#jobLocation').html(mainData.data.jobLocation);
+						$('#jobWorkDate').attr('placeholder',mainData.data.jobDate);
+						if('0'==mainData.data.headCount){
+							$('#jobApply').html('还未有人参加');
+						}else{
+							$('#jobApply').html('已有'+mainData.data.headCount+'人参加');
+						}
+						$('#jobType').html(mainData.data.jobType);
+						$('#jobWorkTime').html(mainData.data.jobTime);
+						$('#jobPayType').html(mainData.data.jobSalaryUnit);
+						$('#jobNum').html(mainData.data.jobPeopleNumber);
+						$('#jobLocation1').html(mainData.data.jobLocation);
+						$('#companyName').html(mainData.data.companyName);
+						$('#jobCity').html(mainData.data.jobArea);
+						$('#jobRequirement').html('<h2 class="fl">'+mainData.data.jobRequirementContent+'</h2>');
+					}else{
+						$('#oDiv').show();
+                        pub.cs(mainData.msg);
+                        $("button").attr('disabled',true);
+					}
+                },
+            });
+        };//获取帮助提升身价小伙伴列表的方法 end
+        
+        var sData={'url':window.location.href};
+        $.get(pub.wxSignApi,sData,function(data){
+        	jsonDataObj=JSON.parse(data);
+        	if(jsonDataObj.code==200){
+        		// 微信配置  
+        		wx.config({  
+        		    debug: false,
+        		    appId: jsonDataObj.appId,   
+        		    timestamp: jsonDataObj.timeStamp,   
+        		    nonceStr: jsonDataObj.nonceStr,   
+        		    signature: jsonDataObj.signature,  
+        		    jsApiList: ['checkJsApi','onMenuShareTimeline','onMenuShareAppMessage'] // 功能列表，我们要使用JS-SDK的什么功能  
+        		});
+        		wx.ready(function(){
+        			// 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+                    wx.checkJsApi({
+                        jsApiList : [ 'onMenuShareTimeline', 'onMenuShareAppMessage' ],
+                        success : function(res) {
+                            // 以键值对的形式返回，可用的api值true，不可用为false
+                            // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+                        }
+                    });
+                    wx.onMenuShareTimeline({
+                    	title: mainData.data.jobName, // 分享标题 
+                    	link: pub.wxDomain+'jzDetailAuthCode?jobId='+locationData.jobId, // 分享链接 
+                    	imgUrl: pub.wxDomain+'views/zxt_stu/images/logo.png', // 分享图标 
+                    	success: function () { 
+                    		// 用户确认分享后执行的回调函数 
+                    	}, 
+                    	cancel: function () { 
+                    		// 用户取消分享后执行的回调函数 
+                    	} 
+                    });
+                    wx.onMenuShareAppMessage({ 
+                    	title: mainData.data.jobName, // 分享标题 
+                    	desc: '刚刚发现一个很适合你的兼职，快来报名吧！', // 分享描述 
+                    	link: pub.wxDomain+'jzDetailAuthCode?jobId='+locationData.jobId, // 分享链接 
+                    	imgUrl: pub.wxDomain+'views/zxt_stu/images/logo.png', // 分享图标 
+                    	//type: '', // 分享类型,music、video或link，不填默认为link 
+                    	//dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空 
+                    	success: function () { 
+                    		// 用户确认分享后执行的回调函数 
+                    	}, 
+                    	cancel: function () { 
+                    		// 用户取消分享后执行的回调函数 
+                    	} 
+                    });
+        		});
+        		wx.error(function(res){
+        			console.log(JSON.stringify(res));
+        		});
+        	}else{
+        		$('#oDiv').show();
+                pub.cs(jsonDataObj.msg);
+        	}
+        });
+	});
+    /* function shareLink(){
+    	var url = encodeURI(pub.wxDomain+"views/zxt_stu/jz/shareJob.html?jobId="+locationData.jobId+"&jobName="+mainData.data.jobName);
+    	//window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/jz/shareJob.html?jobId="+locationData.jobId;
+    	window.location.href=url;
+    }
+    function signNow(){
+    	//window.location.href=pub.wxDomain+'views/zxt_stu/stu_downLoad.html';
+    	//window.location.href=pub.wxDomain+'views/zxt_stu/jz/stuDownload.html';
+    	//window.location.href=pub.wxDomain+'views/zxt_stu/jz/enroll.html?jobId='+locationData.jobId+'&userId='+locationData.userId;
+    	var url = encodeURI(pub.wxDomain+"views/zxt_stu/jz/enroll.html?jobId="+locationData.jobId+'&userId='+locationData.userId+"&jobName="+mainData.data.jobName);
+    	window.location.href=url;
+    }
+    function callPhone(){
+    	window.location.href='tel:18612627116';
+    } */
+</script>

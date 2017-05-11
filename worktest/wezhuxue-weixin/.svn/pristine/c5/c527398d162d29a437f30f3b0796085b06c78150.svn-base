@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>为他站台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link href="css/base.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/common.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="js/mobile.js"></script>
+</head>
+
+<body>
+    <!--header starts-->
+    <!-- <div class="header">
+        <div class="hedLft">
+            <a href="#"><img src="images/headarrow.png">
+            </a>
+        </div>
+        <div class="headerMiddle">
+            <h1>为他站台</h1>
+        </div>
+    </div> -->
+    <!--header ends-->
+    <!--container starts-->
+    <div class="container">
+        <div class="containertwoTwo greenBgTwo">
+            <div class="ImgTxt">
+                <div class="clearfloat">
+                    <div class="dotImg fl">
+                        <div class="ppl ">
+                            <img id="suppAvatar" src="images/pplcolorfulImg.png">
+                        </div>
+                    </div>
+                    <div class="greenBgRytTxt fr">
+                        <h1 id="heName">为他站台</h1>
+                        <h2 id="heMobile">提高校友信用，</h2>
+                        <h2>校友齐心，为我站台提信用！</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+            	<div class="whiteBg">
+                    <h3 id="question">说出我的专业，为我站台，让我更可信吧！</h3>
+                    <div id="answer_div" class="leftCheckBox">
+                        <div class="leftCheckBoxOne">
+                            <input type="checkbox" id="check" class="cheker">
+                            <label class="checkFieldOne" for="check">美术学 </label>
+                        </div>
+                        <div class="leftCheckBoxOne">
+                            <input type="checkbox" id="check1" class="cheker">
+                            <label class="checkFieldOne" for="check1">油画 </label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="check2" class="cheker">
+                            <label class="checkFieldOne" for="check2">艺术设计 </label>
+                        </div>
+                    </div>
+                </div>
+                <button id="suppHim" class="whiteBtnGTNew">为他站台</button>
+                <div class="whiteBg">
+                    <h3><span class="leftBodr"><span class="borderone"></span>已有<span id="sNum">3</span>位校友为他站台</span></h3>
+                    <div id="suppBoy">
+                    <a href="javascript:void(0);" class="space clearfloat">
+                        <div class="guyImgSet fl">
+                            <img src="images/boyone.png">
+                        </div>
+                        <div class="textSet fl">
+                            <h1>大华为他站台</h1>
+                            <h2>2016-12-7<span>12:20</span></h2>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0);" class="space clearfloat">
+                        <div class="guyImgSet fl">
+                            <img src="images/boytwo.png">
+                        </div>
+                        <div class="textSet fl">
+                            <h1>大华为他站台</h1>
+                            <h2>2016-12-7<span>12:20</span></h2>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0);" class="space spaceNone clearfloat">
+                        <div class="guyImgSet fl">
+                            <img src="images/boythree.png">
+                        </div>
+                        <div class="textSet fl">
+                            <h1>大华为他站台</h1>
+                            <h2>2016-12-7<span>12:20</span></h2>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="footer">
+                <div class="wrapper">
+                    <div class="clearfloat">
+                    	<div class="ffotcross fl">
+                            <img src="images/cross.png">
+                        </div>
+                        <div class="lytGreenBg fl">
+                            <img src="images/logo.png">
+                        </div>
+                        <div class="footerTxt fl">
+                            <h3>人人助学</h3>
+                            <h4>在app里站台，收获更多哦～</h4>
+                        </div>
+                        <button id="downloadNow" class="orngBtn fr">立即下载</button>
+                    </div>
+                </div>
+            </div>
+          <!-- display-block popup starts-->
+            <div class="popupSet">
+                <div class="popup">
+                    <div class="whiteBgPop whitebgOne">
+                        <div class="greenBg BgSphere">
+                            <div class="tickMark">
+                                <img src="images/whitetick.png">
+                            </div>
+                        </div>
+                        <h5 class="spaceTopTick">站台成功！谢谢你为我增加的信用额度，</h5>
+                        <h5 id="succText"> 送你2000元免息券已放到卡包</h5>
+                        <h6>¥<span id="tuPar">2000</span></h6>
+                        <button id="downApp" class="whiteBtnpopup">下载App领取</button>
+                    </div>
+                </div>
+            </div> <!--display-block popup ends-->
+             <!-- display-none popup starts-->
+            <div class="popupSetOne">
+                <div class="popupOne">
+                    <div class="whiteBgPop whitebgOne">
+                        <div class="redBg BgSphere">
+                            <div class="tickMark">
+                               <img src="images/exclamationmark.png">
+                           </div>
+                        </div>
+                   		<h5 class="spaceTopTickOne">站台失败，看来我俩不咋熟啊</h5>
+                        <button id="downApp1" class="whiteBtnpopup">下载App</button>
+                    </div>
+                </div>
+            </div>
+          <!-- display-none popup Ends-->
+        </div>
+        <!--footer starts-->
+    </div>
+    <div id="oDiv" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none"></div>
+    <input type="hidden" id="isSupported">
+    <!--container ends-->
+    <!--footer starts-->
+    <!--footer ends-->
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.3&plugin=AMap.Geocoder&key=4c200455fb3c35b3baddc362eab93dd3'></script>
+<script>
+$(document).ready(function() {
+	/* $(".whiteBtnGTNew").click(function() {
+    	$(".popupSet").css("display", "block");
+    }); */
+	$(".whiteBtnpopup").click(function() {
+    	$(".popupSet").css("display", "none");
+    });
+	$(".whiteBtnpopup").click(function() {
+    	$(".popupSetOne").css("display", "none");
+    });
+	$('#downloadNow').click(function(){
+		window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/downLoadAIApp.html";
+	});
+	$("#downApp").click(function(){
+		window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/downLoadAIApp.html";
+	});
+	$("#downApp1").click(function(){
+		window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/downLoadAIApp.html";
+	});
+});
+$(function(){
+    var UrlData=window.location.search;
+    var locationData={};//接收链接地址传输的数据
+    var mainData={};//助学团详情json
+    var jsonDataObj={};//获取微信传来的数据
+    
+    (UrlData==='')&&(true,locationData='nullObject') || (UrlData!='') && (true,locationData=pub.StrToJOON(UrlData));
+    //判断有没有获取数据 ps:获取到了去读数据，没有获取到提示没有获取到
+    (locationData === 'nullObject')&&(true,(function(){
+        $('#oDiv').show();
+        pub.cs('没有获取到数据！');
+    })()) || (locationData!='nullObject')&&(true,function(){
+        getGroupDetail();//获取帮助所有帮助提升身价的小伙伴
+    }());//判断有没有获取数据 end
+    
+    //获取帮助提升身价小伙伴列表的方法
+    function getGroupDetail(){
+        var datas ={'version':'1.0','system':'weixin','token':'','objId':'UserAuthVO','method':'/rrzx/stuCert/supportInfo','@userId':''+locationData.userId+'','@suppUserId':''+locationData.suppId+''};
+        $.ajax({
+            dataType:'jsonp',
+            url:pub.jsonPApiT,
+            data:datas,
+            jsonp:'callback',
+            success:function(jsonData){
+                mainData=eval(jsonData);
+				if(mainData.code=='6666'){
+					if(mainData.data.isSupped=='true'){
+						window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/hasSupported.html?userId="+locationData.userId+"&suppId="+locationData.suppId;
+					}else{
+	                    $('#suppAvatar').attr('src',mainData.data.suppAvatar);
+	                    $('#heName').html(mainData.data.suppNickName);
+	                    $('#heMobile').html(mainData.data.suppMobile);
+	                    var question = mainData.data.supportQuestions.questions[0];
+	                    $('#question').html(question.title);
+	                    $('#answer_div').empty();
+	                    for(var i=0;i<question.answers.length;i++){
+	                    	$('#answer_div').append('<div class="leftCheckBoxOne">'+
+	                        	'<input type="checkbox" id="_'+question.answers[i].id+'" class="cheker">'+
+	                        	'<label class="checkFieldOne" for="_'+question.answers[i].id+'">'+question.answers[i].name+'</label>'+
+	                    	'</div>');
+	                    }
+	                    $('#suppBoy').empty();
+	                    var sr = mainData.data.supportStudents;
+	                    if(sr==undefined){
+	                    	$('#sNum').html('0');
+	                    	$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+	                            '<div class="textSet fl">'+
+	                                '<h1>暂无校友为他站台</h1>'+
+	                            '</div>'+
+	                        '</a>');
+	                    }else{
+	                    	$('#sNum').html(sr.stuNum);
+	                    	if(sr.users==undefined){
+	                        	$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+	                                '<div class="textSet fl">'+
+	                                    '<h1>暂无校友为他站台</h1>'+
+	                                '</div>'+
+	                            '</a>');
+	                        }else{
+		                    	for(var i=0;i<sr.users.length;i++){
+		                    		$('#suppBoy').append('<a href="javascript:void(0);" class="space clearfloat">'+
+		                    				'<div class="guyImgSet fl">'+
+		                            			'<img src="'+sr.users[i].avatar+'">'+
+		                        			'</div>'+
+		                    				'<div class="textSet fl">'+
+		                                        '<h1>'+sr.users[i].userNickname+'</h1>'+
+		                                        '<h2>'+pub.parseDateTime(sr.users[i].createDate)+'</h2>'+
+		                                    '</div>'+
+		                                '</a>');
+		                        }
+	                        }
+	                    }
+					}
+				}else{
+					$('#oDiv').show();
+                    pub.cs(mainData.msg);
+                    $("#suppHim").attr('disabled',true);
+				}
+            },
+        });
+    };//获取帮助提升身价小伙伴列表的方法 end
+    $('#suppHim').click(function(){
+    	if($('#isSupported').val()=="1"){
+    		window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/hasSupported.html?userId="+locationData.userId+"&suppId="+locationData.suppId;
+    		return false;
+    	}
+    	var ci = 0;
+    	var ids = "";
+    	var answer = "";
+    	$("input:checkbox:checked").each(function(){
+			ci = ci + 1;
+			ids += $(this).attr('id') + ",";
+			answer += $(this).next().text() + ",";
+		});
+    	if(ci==0){
+    		$('#oDiv').show();
+            pub.cs('请选择答案！');
+            return false;
+    	}else if(ci > 1){
+    		$('#oDiv').show();
+            pub.cs('只能选择一个答案哦！');
+            return false;
+    	}
+    	var datas ={'version':'1.0','system':'weixin','token':'','objId':'StuCertVO','method':'/rrzx/h5/stuCert/support','@userId':''+locationData.userId+'','@suppUserId':''+locationData.suppId+'','@questionId':''+mainData.data.supportQuestions.questions[0].id+'','@answerId':''+ids.substring(1,ids.length-1)+'','@answer':''+answer.substring(0,answer.length-1)+'','@longitLati':''+longit_lati+'','@detailAddr':''+detail_addr+''};
+        $.ajax({
+            dataType:'jsonp',
+            url:pub.jsonPApiT,
+            data:datas,
+            jsonp:'callback',
+            success:function(jsonData){
+                mainData=eval(jsonData);
+				if(mainData.code=='6666'){
+                    if("true" == mainData.data.isSucc){
+                    	$(".popupSet").css("display", "block");
+                    	$('#succText').html(' 送你'+mainData.data.bonuses+'元'+mainData.data.couponName+'已放到卡包');
+                    	$('#tuPar').html(mainData.data.bonuses);
+                    }else{
+                    	$(".popupSetOne").css("display", "block");
+                    }
+                    $('#isSupported').val("1");
+                    //$('#suppHim').attr('disabled',true);
+                    //window.location.href="http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/hasSupported.html?userId="+locationData.userId+"&suppId="+locationData.suppId;
+				}else{
+					$('#oDiv').show();
+                    pub.cs(mainData.msg);
+				}
+            },
+        });
+    });
+    var longit_lati,detail_addr;
+    var sData={'url':'http://wx.wezhuxue.com/wezhuxue-weixin/views/zxt_stu/supportHe.html?suppId='+locationData.suppId+'&userId='+locationData.userId};
+	$.get(pub.wxSignApi,sData,function(data){
+		jsonDataObj=JSON.parse(data);
+		if(jsonDataObj.code==200){
+			// 微信配置  
+			wx.config({  
+			    debug: false,
+			    appId: jsonDataObj.appId,   
+			    timestamp: jsonDataObj.timeStamp,   
+			    nonceStr: jsonDataObj.nonceStr,   
+			    signature: jsonDataObj.signature,  
+			    jsApiList: ['checkJsApi','getLocation'] // 功能列表，我们要使用JS-SDK的什么功能  
+			});
+			wx.ready(function(){
+				// 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+	            wx.checkJsApi({
+	                jsApiList : [ 'getLocation' ],
+	                success : function(res) {
+	                    // 以键值对的形式返回，可用的api值true，不可用为false
+	                    // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+	                }
+	            });
+				wx.getLocation({
+				    type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+				    success: function (res) {
+				        var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+				        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+				        var speed = res.speed; // 速度，以米/每秒计
+				        var accuracy = res.accuracy; // 位置精度
+				        console.log("---地理位置信息---"+JSON.stringify(res));
+				        //高德获取详细地址
+				        var geocoder = new AMap.Geocoder({
+				            city: "全国", //城市，默认：“全国”
+				            radius: 0
+				        });
+				      	//逆地理编码
+				        var lnglatXY=[longitude, latitude];//地图上所标点的坐标
+				        longit_lati=longitude+','+latitude;
+				        geocoder.getAddress(lnglatXY, function(status, result) {
+				        	console.log("---高德信息---"+JSON.stringify(result));
+				            if (status === 'complete' && result.info === 'OK') {
+				               //获得了有效的地址信息:
+				               //即，result.regeocode.formattedAddress
+				            	detail_addr = result.regeocode.formattedAddress;
+				            }else{
+				               //获取地址失败
+				            	detail_addr = "";
+				            }
+				        });  
+				    },
+	                cancel : function(res) {
+	                    //alert('用户拒绝授权获取地理位置');
+	                    $('#oDiv').show();
+	                    pub.cs("您拒绝了授权获取地理位置，不能站台！");
+	                    $('#suppHim').attr('disabled',true);
+	                }
+				});
+			});
+			wx.error(function(res){
+				console.log(JSON.stringify(res));
+			});
+		}else{
+			$('#oDiv').show();
+            pub.cs(jsonDataObj.msg);
+		}
+	});
+	
+});
+	$(window).bind("click touchstart", function(e){
+    	e = e || event;
+    	var target = $(e.target) || (e.srcElement);
+    	if(target.is('.popupSet')){
+      		target.hide();
+     	}
+	  	if(target.is('.popupSetOne')){
+      		target.hide();
+     	}
+    });
+</script>
+</body>
+</html>
+<!-- <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.3&plugin=AMap.Geocoder&key=4c200455fb3c35b3baddc362eab93dd3'></script>
+<script>
+//添加定位组件，用于获取用户当前的精确位置
+var geolocation = new AMap.Geolocation({
+	GeoLocationFirst: true,
+	enableHighAccuracy: true,
+    showCircle: false, //不显示定位结果的圆
+    showMarker: false, //不显示定位结果的标记
+    showButton: false, //不显示组件的定位按钮
+    timeout: 5000 //浏览器定位超时时间5s
+});
+geolocation.getCurrentPosition(function(status, result) {
+	console.log(JSON.stringify(result));
+    if (status == 'complete') {
+        onLocateSuccess(result) //定位成功
+    } else if (status == 'error') {
+        //定位失败
+        if (result.message.indexOf('Geolocation permission denied.') !== -1) {
+        //Geolocation permission denied.表示用户禁用了浏览器或者APP的定位权限或者关闭了手机的定位服务
+        //或者当前页面为非安全页面,Chrome或者IOS10等系统会禁用非安全页面的定位请求
+        //如果您的页面还没有支持HTTPS请尽快升级
+        //安全页面指的是支持HTTPS的Web站点，而且是通过https协议打开的页面。安全页面也包括本地页面
+            alert('您好，请在系统的隐私设置中打开当前应用的定位权限。');
+        } else {
+        	alert('无法获取精确位置,将定位您所在的城市。');
+        }
+    	onLocateFailed();
+    }
+})
+//定位失败之后进行城市定位
+var onLocateFailed = function() {
+    geolocation.getCityInfo(function(status, result) {
+    	console.log(JSON.stringify(result));
+        /* map.setZoom(14);
+        showLocation(result.center); //在城市中心点显示起始marker
+        placeSearch.setCity(result.citycode);
+        autoComplete.setCity(result.citycode); */
+    })
+};
+//定位成功
+var onLocateSuccess = function(result) {
+	console.log(JSON.stringify(result));
+    /* showTip('定位成功,拖动地图可微调.');
+    showLocation(result.position); //在定位结果显示起始marker
+    var city = result.addressComponent.city;
+    var province = result.addressComponent.province;
+    var district = result.addressComponent.district;
+    var township = result.addressComponent.township;
+    showOriginAddress(result.formattedAddress.replace(province, '').replace(city, '').replace(district, '').replace(township, ''))
+    origin.position = result.position;
+    placeSearch.setCity(result.addressComponent.citycode);
+    autoComplete.setCity(result.addressComponent.citycode); */
+};
+</script> -->

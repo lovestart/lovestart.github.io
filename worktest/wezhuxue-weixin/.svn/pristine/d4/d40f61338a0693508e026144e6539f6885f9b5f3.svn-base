@@ -1,0 +1,103 @@
+{
+	"groups":[
+		{
+			"keys":"s1_head,description,loading,loadingHead,biaoqing",
+			"name":"loading"
+		},
+		{
+			"keys":"s2_open,s2_close,cBack,s1_bg,s1_top,s1_center,s1_bottom,s1_start,s1_photo,s1_tishi,s1_jiantou,s1_redpact,s1_redBg,s1_body,s1_red,s1_ani1,s1_ani1_json",
+			"name":"scene1"
+		},
+		{
+			"keys":"cBack,game_hbbg,game_chai,s2_body3,s2_laugh,s2_nhead3,bg,boss,pd,pao,s2_bg,s2_start,s2_qi,s2_jiu,s2_input,s2_money,game_frame,game_girl,game_bullet,show_area,show_tit,show0,show1,show2,show3,show4,show5,show6,show7,show8,show_gift,show_set,show_fb,show_fs,s2_rmonster,s2_nhead1,s2_nhead2,s2_body1,s2_body2,s2_open,s2_close,s2_fire1,s2_fire2,s2_click,s2_fashe,s2_cry,s2_boom,bg_music,boom_music,getscore_music,laugh_music,news_music,s2_0,s2_1,s2_2,s2_3,s2_4,s2_5,s2_6,s2_7,s2_8,s2_9,s2_jia",
+			"name":"scene2"
+		}],
+	"resources":[
+
+		{"name":"description","type":"json","url":"config/description.json"},
+		{"name":"loading","type":"image","url":"assets/s1/loading.png"},
+		{"name":"loadingHead","type":"image","url":"assets/loadinghead.png"},
+		{"name":"biaoqing","type":"image","url":"assets/bq.png"},
+		{"name":"s1_bg","type":"image","url":"assets/s1/bg.png"},
+		{"name":"s1_top","type":"image","url":"assets/s1/top.png"},
+		{"name":"s1_center","type":"image","url":"assets/s1/center.png"},
+		{"name":"s1_bottom","type":"image","url":"assets/s1/bottom.png"},
+		{"name":"s1_head","type":"image","url":"assets/s1/head.png"},
+		{"name":"s1_body","type":"image","url":"assets/s1/body.png"},
+		{"name":"s1_start","type":"image","url":"assets/s1/startbtn.png"},
+		{"name":"s1_photo","type":"image","url":"assets/s1/photo.png"},
+		{"name":"s1_tishi","type":"image","url":"assets/s1/tishi.png"},
+		{"name":"s1_jiantou","type":"image","url":"assets/s1/jiantou.png"},
+		{"name":"s1_red","type":"image","url":"assets/s1/red.png"},
+		{"name":"s1_redBg","type":"image","url":"assets/s1/redbg.png"},
+		{"name":"s1_redpact","type":"image","url":"assets/s1/redpact.png"},
+		{"name":"s1_ani1","type":"image","url":"assets/ani/s1_ani1.png"},
+		{"name":"s1_ani1_json","type":"json","url":"assets/ani/s1_ani1.json"},
+
+
+		{"name":"s2_bg","type":"image","url":"assets/scene2/bg.png"},
+		{"name":"s2_start","type":"image","url":"assets/scene2/gamestart.png"},
+		{"name":"s2_qi","type":"image","url":"assets/scene2/qipaojiantou.png"},
+		{"name":"s2_jiu","type":"image","url":"assets/scene2/jiugongge.png"},
+		{"name":"s2_input","type":"image","url":"assets/scene2/input.png"},
+		{"name":"s2_money","type":"image","url":"assets/scene2/money.png"},
+
+		{"name":"s2_rmonster","type":"image","url":"assets/playgame/rmonster.png"},
+		{"name":"s2_nhead1","type":"image","url":"assets/playgame/notou1.png"},
+		{"name":"s2_nhead2","type":"image","url":"assets/playgame/notou2.png"},
+		{"name":"s2_nhead3","type":"image","url":"assets/playgame/notou3.png"},
+		{"name":"s2_body1","type":"image","url":"assets/playgame/body1.png"},
+		{"name":"s2_body2","type":"image","url":"assets/playgame/body2.png"},
+		{"name":"s2_body3","type":"image","url":"assets/playgame/body3.png"},
+		{"name":"s2_open","type":"image","url":"assets/playgame/mopen.png"},
+		{"name":"s2_close","type":"image","url":"assets/playgame/mclose.png"},
+		{"name":"s2_fire1","type":"image","url":"assets/playgame/fire1.png"},
+		{"name":"s2_fire2","type":"image","url":"assets/playgame/fire2.png"},
+		{"name":"s2_click","type":"image","url":"assets/playgame/click.png"},
+		{"name":"s2_fashe","type":"image","url":"assets/playgame/fashe.png"},
+		{"name":"s2_cry","type":"image","url":"assets/playgame/cry.png"},
+		{"name":"s2_laugh","type":"image","url":"assets/playgame/laugh.png"},
+		{"name":"s2_boom","type":"image","url":"assets/playgame/boom.png"},
+		{"name":"game_frame","type":"image","url":"assets/playgame/frame.png"},
+		{"name":"game_girl","type":"image","url":"assets/playgame/girl.jpg"},
+		{"name":"game_frame","type":"image","url":"assets/playgame/frame.png"},
+		{"name":"game_chai","type":"image","url":"assets/chai.png"},
+		{"name":"game_hbbg","type":"image","url":"assets/hbBk.png"},
+		{"name":"game_bullet","type":"image","url":"assets/playgame/bullet.png"},
+
+		{"name":"s2_0","type":"image","url":"assets/shuzi/0.png"},
+		{"name":"s2_1","type":"image","url":"assets/shuzi/1.png"},
+		{"name":"s2_2","type":"image","url":"assets/shuzi/2.png"},
+		{"name":"s2_3","type":"image","url":"assets/shuzi/3.png"},
+		{"name":"s2_4","type":"image","url":"assets/shuzi/4.png"},
+		{"name":"s2_5","type":"image","url":"assets/shuzi/5.png"},
+		{"name":"s2_6","type":"image","url":"assets/shuzi/6.png"},
+		{"name":"s2_7","type":"image","url":"assets/shuzi/7.png"},
+		{"name":"s2_8","type":"image","url":"assets/shuzi/8.png"},
+		{"name":"s2_9","type":"image","url":"assets/shuzi/9.png"},
+		{"name":"s2_jia","type":"image","url":"assets/shuzi/jia.png"},
+
+		{"name":"show_area","type":"image","url":"assets/moneyshow/area.png"},
+		{"name":"show_tit","type":"image","url":"assets/moneyshow/tit.png"},
+		{"name":"show0","type":"image","url":"assets/moneyshow/0.png"},
+		{"name":"show1","type":"image","url":"assets/moneyshow/1.png"},
+		{"name":"show2","type":"image","url":"assets/moneyshow/2.png"},
+		{"name":"show3","type":"image","url":"assets/moneyshow/3.png"},
+		{"name":"show4","type":"image","url":"assets/moneyshow/4.png"},
+		{"name":"show5","type":"image","url":"assets/moneyshow/5.png"},
+		{"name":"show6","type":"image","url":"assets/moneyshow/6.png"},
+		{"name":"show7","type":"image","url":"assets/moneyshow/7.png"},
+		{"name":"show8","type":"image","url":"assets/moneyshow/8.png"},
+		{"name":"show_gift","type":"image","url":"assets/moneyshow/gift.png"},
+		{"name":"show_set","type":"image","url":"assets/moneyshow/set.png"},
+		{"name":"show_fb","type":"image","url":"assets/moneyshow/fbig.png"},
+		{"name":"show_fs","type":"image","url":"assets/moneyshow/fsmall.png"},
+
+		{"name":"bg_music","type":"sound","url":"assets/music/bg.mp3"},
+		{"name":"boom_music","type":"sound","url":"assets/music/boom.mp3"},
+		{"name":"getscore_music","type":"sound","url":"assets/music/getscore.mp3"},
+		{"name":"cBack","type":"sound","url":"assets/music/cBack.mp3"},
+		{"name":"laugh_music","type":"sound","url":"assets/music/laugh.mp3"},
+		{"name":"news_music","type":"sound","url":"assets/music/news.mp3"}
+	]
+}

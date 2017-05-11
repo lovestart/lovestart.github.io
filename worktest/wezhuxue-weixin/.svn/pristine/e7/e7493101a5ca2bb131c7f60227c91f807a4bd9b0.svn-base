@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>人人助学App下载</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div id="AIBg" style="display: none; position: fixed;  left: 0; right: 0; top:0; bottom: 0; background: url(images/a.png) #000 no-repeat 70% top;  background-size:80% ;"></div>
+	
+</body>
+</html>
+
+<script>
+	var AIBg=document.getElementById('AIBg');
+	var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+    	AIBg.style.display='block';
+    }
+	var u = navigator.userAgent;
+	if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+		window.location.href = "http://wx.wezhuxue.com/wezhuxue-weixin/wezhuxue.apk";
+		AIBg.style.backgroundImage='url(images/a.png)';
+		//window.event.returnValue=false;
+	} else if (u.indexOf('iPhone') > -1) {//苹果手机
+		window.location.href = "https://itunes.apple.com/gb/app/id1188943755";
+		AIBg.style.backgroundImage='url(images/ios.png)';
+		//window.event.returnValue=false;
+	} else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+		alert('对不起我们现在只提供了安卓和ios的App下载，谢谢您的关注！');
+	}
+	
+	
+</script>
+
+

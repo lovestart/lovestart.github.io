@@ -1,0 +1,634 @@
+2017-01-22 11:43:28  [main:0] - [INFO]  请求参数-----------act_name=打年兽抢红包活动&client_ip=192.168.0.110&mch_billno=1433585402201701225056608602&mch_id=1433585402&nonce_str=0deadbc1-afe7-4bae-9bfa-38c34a8b&re_openid=o5_6DwuwJUWbHE2FgBSTyWRofAAU&remark=多玩多抢，鸡年大吉！&send_name=人人助学&total_amount=101&total_num=1&wishing=感谢您参加年兽红包活动，祝您鸡年大吉！&wxappid=wxd1250162d2371946&key=h89DH4AD89SASH3w4JJDJjJHAdy5bhsd
+2017-01-22 11:43:29  [main:406] - [DEBUG]  CookieSpec selected: default
+2017-01-22 11:43:29  [main:417] - [DEBUG]  Auth cache not set in the context
+2017-01-22 11:43:29  [main:418] - [DEBUG]  Connection request: [route: {s}->https://api.mch.weixin.qq.com:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2017-01-22 11:43:29  [main:440] - [DEBUG]  Connection leased: [id: 0][route: {s}->https://api.mch.weixin.qq.com:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-01-22 11:43:29  [main:442] - [DEBUG]  Opening connection {s}->https://api.mch.weixin.qq.com:443
+2017-01-22 11:43:29  [main:450] - [DEBUG]  Connecting to api.mch.weixin.qq.com/123.126.122.46:443
+2017-01-22 11:43:29  [main:450] - [DEBUG]  Connecting socket to api.mch.weixin.qq.com/123.126.122.46:443 with timeout 0
+2017-01-22 11:43:29  [main:518] - [DEBUG]  Enabled protocols: [TLSv1]
+2017-01-22 11:43:29  [main:518] - [DEBUG]  Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_RC4_128_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA, SSL_RSA_WITH_RC4_128_SHA, TLS_ECDH_ECDSA_WITH_RC4_128_SHA, TLS_ECDH_RSA_WITH_RC4_128_SHA, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_RC4_128_MD5, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2017-01-22 11:43:29  [main:518] - [DEBUG]  Starting handshake
+2017-01-22 11:43:29  [main:649] - [DEBUG]  Secure session established
+2017-01-22 11:43:29  [main:649] - [DEBUG]   negotiated protocol: TLSv1
+2017-01-22 11:43:29  [main:649] - [DEBUG]   negotiated cipher suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
+2017-01-22 11:43:29  [main:649] - [DEBUG]   peer principal: CN=payapp.weixin.qq.com, OU=R&D, O=Tencent Technology (Shenzhen) Company Limited, L=shenzhen, ST=guangdong, C=CN
+2017-01-22 11:43:29  [main:649] - [DEBUG]   peer alternative names: [mch.weixin.qq.com, oz.weixin.qq.com, pay.weops.qq.com, action.weixin.qq.com, api.oz.weixin.qq.com, pay.weixin.qq.com, wx.gtimg.com, apius.mch.weixin.qq.com, api.pay.weixin.qq.com, apihk.mch.weixin.qq.com, api2.mch.weixin.qq.com, api.mch.weixin.qq.com, act.weixin.qq.com, payapp.weixin.qq.com]
+2017-01-22 11:43:29  [main:651] - [DEBUG]   issuer principal: CN=GeoTrust SSL CA - G3, O=GeoTrust Inc., C=US
+2017-01-22 11:43:29  [main:655] - [DEBUG]  Connection established 192.168.0.110:50530<->123.126.122.46:443
+2017-01-22 11:43:29  [main:655] - [DEBUG]  Executing request POST /mmpaymkttransfers/sendredpack HTTP/1.1
+2017-01-22 11:43:29  [main:656] - [DEBUG]  Target auth state: UNCHALLENGED
+2017-01-22 11:43:29  [main:657] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 11:43:29  [main:658] - [DEBUG]  http-outgoing-0 >> POST /mmpaymkttransfers/sendredpack HTTP/1.1
+2017-01-22 11:43:29  [main:658] - [DEBUG]  http-outgoing-0 >> Content-Length: 586
+2017-01-22 11:43:29  [main:659] - [DEBUG]  http-outgoing-0 >> Content-Type: text/plain; charset=UTF-8
+2017-01-22 11:43:29  [main:660] - [DEBUG]  http-outgoing-0 >> Host: api.mch.weixin.qq.com
+2017-01-22 11:43:29  [main:661] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 11:43:29  [main:661] - [DEBUG]  http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_13)
+2017-01-22 11:43:29  [main:661] - [DEBUG]  http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2017-01-22 11:43:29  [main:661] - [DEBUG]  http-outgoing-0 >> "POST /mmpaymkttransfers/sendredpack HTTP/1.1[\r][\n]"
+2017-01-22 11:43:29  [main:662] - [DEBUG]  http-outgoing-0 >> "Content-Length: 586[\r][\n]"
+2017-01-22 11:43:29  [main:662] - [DEBUG]  http-outgoing-0 >> "Content-Type: text/plain; charset=UTF-8[\r][\n]"
+2017-01-22 11:43:29  [main:662] - [DEBUG]  http-outgoing-0 >> "Host: api.mch.weixin.qq.com[\r][\n]"
+2017-01-22 11:43:29  [main:663] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 11:43:29  [main:663] - [DEBUG]  http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.7.0_13)[\r][\n]"
+2017-01-22 11:43:29  [main:663] - [DEBUG]  http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2017-01-22 11:43:29  [main:663] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 11:43:29  [main:664] - [DEBUG]  http-outgoing-0 >> "<xml><act_name>[0xe6][0x89][0x93][0xe5][0xb9][0xb4][0xe5][0x85][0xbd][0xe6][0x8a][0xa2][0xe7][0xba][0xa2][0xe5][0x8c][0x85][0xe6][0xb4][0xbb][0xe5][0x8a][0xa8]</act_name><client_ip>192.168.0.110</client_ip><mch_billno>1433585402201701225056608602</mch_billno><mch_id>1433585402</mch_id><nonce_str>0deadbc1-afe7-4bae-9bfa-38c34a8b</nonce_str><re_openid>o5_6DwuwJUWbHE2FgBSTyWRofAAU</re_openid><remark>[0xe5][0xa4][0x9a][0xe7][0x8e][0xa9][0xe5][0xa4][0x9a][0xe6][0x8a][0xa2][0xef][0xbc][0x8c][0xe9][0xb8][0xa1][0xe5][0xb9][0xb4][0xe5][0xa4][0xa7][0xe5][0x90][0x89][0xef][0xbc][0x81]</remark><send_name>[0xe4][0xba][0xba][0xe4][0xba][0xba][0xe5][0x8a][0xa9][0xe5][0xad][0xa6]</send_name><sign><![CDATA[90F80AE068A0245E0CE233672140EC35]]></sign><total_amount>101</total_amount><total_num>1</total_num><wishing>[0xe6][0x84][0x9f][0xe8][0xb0][0xa2][0xe6][0x82][0xa8][0xe5][0x8f][0x82][0xe5][0x8a][0xa0][0xe5][0xb9][0xb4][0xe5][0x85][0xbd][0xe7][0xba][0xa2][0xe5][0x8c][0x85][0xe6][0xb4][0xbb][0xe5][0x8a][0xa8][0xef][0xbc][0x8c][0xe7][0xa5][0x9d][0xe6][0x82][0xa8][0xe9][0xb8][0xa1][0xe5][0xb9][0xb4][0xe5][0xa4][0xa7][0xe5][0x90][0x89][0xef][0xbc][0x81]</wishing><wxappid>wxd1250162d2371946</wxappid></xml>"
+2017-01-22 11:43:30  [main:1796] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 11:43:30  [main:1797] - [DEBUG]  http-outgoing-0 << "Server: nginx[\r][\n]"
+2017-01-22 11:43:30  [main:1797] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 03:43:22 GMT[\r][\n]"
+2017-01-22 11:43:30  [main:1797] - [DEBUG]  http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2017-01-22 11:43:30  [main:1798] - [DEBUG]  http-outgoing-0 << "Content-Length: 575[\r][\n]"
+2017-01-22 11:43:30  [main:1798] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 11:43:30  [main:1798] - [DEBUG]  http-outgoing-0 << "Keep-Alive: timeout=8[\r][\n]"
+2017-01-22 11:43:30  [main:1799] - [DEBUG]  http-outgoing-0 << "Cache-Control: no-cache, must-revalidate[\r][\n]"
+2017-01-22 11:43:30  [main:1799] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 11:43:30  [main:1799] - [DEBUG]  http-outgoing-0 << "<xml>[\n]"
+2017-01-22 11:43:30  [main:1799] - [DEBUG]  http-outgoing-0 << "<return_code><![CDATA[SUCCESS]]></return_code>[\n]"
+2017-01-22 11:43:30  [main:1800] - [DEBUG]  http-outgoing-0 << "<return_msg><![CDATA[[0xe5][0x8f][0x91][0xe6][0x94][0xbe][0xe6][0x88][0x90][0xe5][0x8a][0x9f]]]></return_msg>[\n]"
+2017-01-22 11:43:30  [main:1800] - [DEBUG]  http-outgoing-0 << "<result_code><![CDATA[SUCCESS]]></result_code>[\n]"
+2017-01-22 11:43:30  [main:1800] - [DEBUG]  http-outgoing-0 << "<err_code><![CDATA[SUCCESS]]></err_code>[\n]"
+2017-01-22 11:43:30  [main:1800] - [DEBUG]  http-outgoing-0 << "<err_code_des><![CDATA[[0xe5][0x8f][0x91][0xe6][0x94][0xbe][0xe6][0x88][0x90][0xe5][0x8a][0x9f]]]></err_code_des>[\n]"
+2017-01-22 11:43:30  [main:1801] - [DEBUG]  http-outgoing-0 << "<mch_billno><![CDATA[1433585402201701225056608602]]></mch_billno>[\n]"
+2017-01-22 11:43:30  [main:1801] - [DEBUG]  http-outgoing-0 << "<mch_id><![CDATA[1433585402]]></mch_id>[\n]"
+2017-01-22 11:43:30  [main:1801] - [DEBUG]  http-outgoing-0 << "<wxappid><![CDATA[wxd1250162d2371946]]></wxappid>[\n]"
+2017-01-22 11:43:30  [main:1802] - [DEBUG]  http-outgoing-0 << "<re_openid><![CDATA[o5_6DwuwJUWbHE2FgBSTyWRofAAU]]></re_openid>[\n]"
+2017-01-22 11:43:30  [main:1802] - [DEBUG]  http-outgoing-0 << "<total_amount>101</total_amount>[\n]"
+2017-01-22 11:43:30  [main:1802] - [DEBUG]  http-outgoing-0 << "<send_listid><![CDATA[1000041701201701223000040795058]]></send_listid>[\n]"
+2017-01-22 11:43:30  [main:1802] - [DEBUG]  http-outgoing-0 << "</xml>"
+2017-01-22 11:43:30  [main:1808] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 11:43:30  [main:1809] - [DEBUG]  http-outgoing-0 << Server: nginx
+2017-01-22 11:43:30  [main:1809] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 03:43:22 GMT
+2017-01-22 11:43:30  [main:1809] - [DEBUG]  http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2017-01-22 11:43:30  [main:1810] - [DEBUG]  http-outgoing-0 << Content-Length: 575
+2017-01-22 11:43:30  [main:1810] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 11:43:30  [main:1810] - [DEBUG]  http-outgoing-0 << Keep-Alive: timeout=8
+2017-01-22 11:43:30  [main:1811] - [DEBUG]  http-outgoing-0 << Cache-Control: no-cache, must-revalidate
+2017-01-22 11:43:30  [main:1821] - [DEBUG]  Connection can be kept alive for 8000 MILLISECONDS
+2017-01-22 11:43:30  [main:1826] - [DEBUG]  Connection [id: 0][route: {s}->https://api.mch.weixin.qq.com:443][state: SURNAME=18583743, CN=äººäººå©å­¦(åäº¬)ç§ææéå¬å¸, OU=MMPay, O=Tencent, L=Shenzhen, ST=Guangdong, C=CN] can be kept alive for 8.0 seconds
+2017-01-22 11:43:30  [main:1826] - [DEBUG]  Connection released: [id: 0][route: {s}->https://api.mch.weixin.qq.com:443][state: SURNAME=18583743, CN=äººäººå©å­¦(åäº¬)ç§ææéå¬å¸, OU=MMPay, O=Tencent, L=Shenzhen, ST=Guangdong, C=CN][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-01-22 11:43:30  [main:1827] - [DEBUG]  Connection manager is shutting down
+2017-01-22 11:43:30  [main:1827] - [DEBUG]  http-outgoing-0: Close connection
+2017-01-22 11:43:30  [main:1828] - [DEBUG]  Connection manager shut down
+2017-01-22 12:28:36  [main:0] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:28:37  [main:18] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:28:37  [main:19] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 0 of 1024; total allocated: 0 of 1024]
+2017-01-22 12:28:37  [main:40] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:28:37  [main:42] - [DEBUG]  Opening connection {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80
+2017-01-22 12:28:37  [main:72] - [DEBUG]  Connecting to wezhuxue-wx.oss-cn-beijing.aliyuncs.com/101.201.182.228:80
+2017-01-22 12:28:37  [main:80] - [DEBUG]  Connection established 192.168.0.110:56360<->101.201.182.228:80
+2017-01-22 12:28:37  [main:80] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:28:37  [main:80] - [DEBUG]  Executing request GET /?acl HTTP/1.1
+2017-01-22 12:28:37  [main:80] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:28:37  [main:82] - [DEBUG]  http-outgoing-0 >> GET /?acl HTTP/1.1
+2017-01-22 12:28:37  [main:82] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:y4Q7jsLjTxPDw+WstIOhMi+DyX4=
+2017-01-22 12:28:37  [main:82] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:28:36 GMT
+2017-01-22 12:28:37  [main:83] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:28:37  [main:83] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:28:37  [main:83] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:28:37  [main:84] - [DEBUG]  http-outgoing-0 >> "GET /?acl HTTP/1.1[\r][\n]"
+2017-01-22 12:28:37  [main:85] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:y4Q7jsLjTxPDw+WstIOhMi+DyX4=[\r][\n]"
+2017-01-22 12:28:37  [main:85] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:28:36 GMT[\r][\n]"
+2017-01-22 12:28:37  [main:85] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:28:37  [main:85] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:28:37  [main:85] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:28:37  [main:86] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:28:37  [main:91] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:28:31 GMT[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "Content-Length: 255[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:28:37  [main:92] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 588434EF4F29D0BB5211F62C[\r][\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 0[\r][\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "<AccessControlPolicy>[\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "  <Owner>[\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "    <ID>1878157721829026</ID>[\n]"
+2017-01-22 12:28:37  [main:93] - [DEBUG]  http-outgoing-0 << "    <DisplayName>1878157721829026</DisplayName>[\n]"
+2017-01-22 12:28:37  [main:94] - [DEBUG]  http-outgoing-0 << "  </Owner>[\n]"
+2017-01-22 12:28:37  [main:94] - [DEBUG]  http-outgoing-0 << "  <AccessControlList>[\n]"
+2017-01-22 12:28:37  [main:94] - [DEBUG]  http-outgoing-0 << "    <Grant>private</Grant>[\n]"
+2017-01-22 12:28:37  [main:94] - [DEBUG]  http-outgoing-0 << "  </AccessControlList>[\n]"
+2017-01-22 12:28:37  [main:94] - [DEBUG]  http-outgoing-0 << "</AccessControlPolicy>[\n]"
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:28:31 GMT
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << Content-Length: 255
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 588434EF4F29D0BB5211F62C
+2017-01-22 12:28:37  [main:97] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 0
+2017-01-22 12:28:37  [main:101] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:28:37  [main:172] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:28:37  [main:173] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:28:37  [main:179] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:28:37  [main:179] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:28:37  [main:179] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:28:37  [main:179] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:28:37  [main:179] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:28:37  [main:181] - [DEBUG]  Executing request GET /packet/u1485057874527BVEODT HTTP/1.1
+2017-01-22 12:28:37  [main:181] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:28:37  [main:182] - [DEBUG]  http-outgoing-0 >> GET /packet/u1485057874527BVEODT HTTP/1.1
+2017-01-22 12:28:37  [main:182] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:f8Doh0/Qx1WM6rOtecF4A+h15JE=
+2017-01-22 12:28:37  [main:182] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:28:37 GMT
+2017-01-22 12:28:37  [main:182] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:28:37  [main:182] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:28:37  [main:183] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:28:37  [main:183] - [DEBUG]  http-outgoing-0 >> "GET /packet/u1485057874527BVEODT HTTP/1.1[\r][\n]"
+2017-01-22 12:28:37  [main:183] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:f8Doh0/Qx1WM6rOtecF4A+h15JE=[\r][\n]"
+2017-01-22 12:28:37  [main:183] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:28:37 GMT[\r][\n]"
+2017-01-22 12:28:37  [main:183] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:28:37  [main:184] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:28:37  [main:184] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:28:37  [main:184] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:28:37  [main:192] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:28:37  [main:192] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:28:31 GMT[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "Content-Type: application/octet-stream[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "Content-Length: 12564[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 588434EF4F29D0BB5211F6C5[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "Accept-Ranges: bytes[\r][\n]"
+2017-01-22 12:28:37  [main:193] - [DEBUG]  http-outgoing-0 << "ETag: "5244881E7A21F8BA818CD245AB984362"[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "Last-Modified: Sun, 22 Jan 2017 04:04:35 GMT[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "x-oss-object-type: Normal[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "x-oss-hash-crc64ecma: 15127994001529905347[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "Content-MD5: UkSIHnoh+LqBjNJFq5hDYg==[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 0[\r][\n]"
+2017-01-22 12:28:37  [main:194] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:28:37  [main:196] - [DEBUG]  http-outgoing-0 << "u[0xab]Z[0xfe])[0x9a][0x81][0xef][0xe3][0xa5][0xe8]?m[0xab][0x1e][0xeb][0x8f][0xff][0xf6]?[0xf8][0x0][0x4][0x12][0x91][0x92]Q[0x80][0x0]@@[0x0][0x0]@[0x0]@[0x0]?[0xf6][0xc0][0x10][0xc0][0x1][0x81][0x1]A[0x81]A[0x1][0x81][0x81]A[0x81][0xc1][0xc1][0x82][0x2][0x84][0x2][0x82][0x82]BB[0x85][0x3][0x83][0xc3][0x4][0x5][0xc5][0x6][0x6][0x5][0xc5][0x5][0x85][0x86][0x87]IG[0xc6][0x86][0xc8][0xc7][0x5][0x85][0x88][0xb][0x8][0x8][0xc9][0x89][0xca]J[0x8a]FG[0xcb]L[0xb]J[0xc][0x9]J[\n]"
+2017-01-22 12:28:37  [main:197] - [DEBUG]  http-outgoing-0 << "J?[0xf6][0xc0][0x10][0xc0]A[0xc1][0xc1][0xc2][0x82][0x2][0x84][0xc2][0x82][0x84][0xca][0x6][0x85][0x86][0x8a][\n]"
+2017-01-22 12:28:37  [main:198] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:198] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:198] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:199] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:199] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:199] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:200] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:201] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:202] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:203] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:204] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:204] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:205] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:205] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:205] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:205] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:205] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:206] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:206] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:206] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:28:37  [main:206] - [DEBUG]  http-outgoing-0 << "?[0xf0][0x0][0x4]B[0x0]-[0x0]P[0x0][0xc0]H[0x80][0x0][0x84]@@[0xc4]@[0xf1][0x0][0x7][0xc0][0x0][0x0]A@@@@@@@[0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0]@[0x80][0xc1][0x1]A[0x81][0xc2][0x2]B[0x82][0xff][0xf1][0x0]-D[0x0][0x0][0x80]@[0xc0][0xc0][0x81][0x0][0xc1]AA[0x1][0x0][0x0][0x0]_@@[0x80][0xc0][0x1][0x4]AD[0x88]LPA[0x84][0xd4]XA[0xc8][0x9c]E[0xc][0xa0]dhB[0x8][0xd0][0xac]pET[0xb4]|[0x9][0xc][0xd8][0x9c][0xa0][0x82]B[0x85][0x85][0xc6][0x6]F[0x89]I[0x89][0xca][\n]"
+2017-01-22 12:28:37  [main:206] - [DEBUG]  http-outgoing-0 << "J[0x8d][\r]M[0x8d][0xce][0xe]N[0x90][0xd1][0x11]Q[0x91][0xd2][0x12]R[0x94][0xd5][0x15]U[0x95][0xd6][0x16]V[0x98][0xd9][0x19]Y[0x99][0xda][0x1a]Z[0x9c][0xdd][0x1d]][0x9d][0xde][0x1e]^[0xa0][0xe1]!a[0xa1][0xe2]"b[0xa4][0xa4][0xe5]%e[0xa5][0xe6]&f[0xa8][0xa8][0xe9])i[0xa9][0xea]*j[0xac][0xac][0xed]-m[0xad][0xee].n[0xb0][0xb0][0xf1]1q[0xb1][0xf2]2r[0xb4][0xb4][0xf5]5u[0xb5][0xf6]6v[0xb8]x[0xb8][0xf9]9y[0xb9][0xfa]:z[0xbc]|[0xbc][0xfd]=}[0xbd][0xfe]>~[0xbf][0xf1][0x0][0x7][0xc0]@[0x0][0xc0]@@@@@@@@@[0x0][0x0][0x0][0x0][0x0][0x0]@[0x80][0xc1][0x1]A[0x81][0xc2][0x2]B[0x82][0xff][0xf1][0x0]-D@[0x0][0x80]@[0x81][0x1][0x0][0xc1][0x1][0xc1]A[0x1][0x0][0x0]@[0x9d][0xc0][0x0]@[0x80][0xc4]A[0x1]HLA[0x84][0x90]TA[0xd8]\D[0xc8][0x8c][0xa0]B[0x5][0x10][0xa4]hlpBH[0xcc][0xd4][0xbc][0x5]X[0x9c][0xb4]B[0x85][0x89][\r]8I|E[0xc6][0x6]F[0x89][0x89][0xca][\n]"
+2017-01-22 12:28:37  [main:207] - [DEBUG]  http-outgoing-0 << "J[0x8d]M[0x8d][0xce][0xe]N[0x90][0xd1][0x11]Q[0x91][0xd2][0x12]R[0x94][0xd5][0x15]U[0x95][0xd6][0x16]V[0x98][0xd9][0x19]Y[0x99][0xda][0x1a]Z[0x9c][0xdd][0x1d]][0x9d][0xde][0x1e]^[0xa0][0xa0][0xe1]!a[0xa1][0xe2]"b[0xa4][0xa4][0xe5]%e[0xa5][0xe6]&f[0xa8][0xa8][0xe9])i[0xa9][0xea]*j[0xac][0xac][0xed]-m[0xad][0xee].n[0xb0][0xb0][0xf1]1q[0xb1][0xf2]2r[0xb4][0xb4][0xf5]5u[0xb5][0xf6]6v[0xb8][0xb8][0xf9]9y[0xb9][0xfa]:z[0xbc][0xbc][0xfd]=}[0xbd][0xfe]>~[0xbf][0xf6][0x80][0x3][0x0][0xc0]@[0x0][0x84]@[0xc4]@[0xf][0xc0]=[0xdd]XVI[0xf1]F[0x92][0xae][0xe8][0xd7]h[0xac][0xac]T[0x83][0xd8][0x8a][0xd0][\r][0xc5]x'[0x8d]'[0x9f]O[0xf1][\r][0xcc]1[0xc8]Q[0x1a]rO[0x1e][0xbc][0xff]Z[0xe6][0x9c][0xb9]u6[0xa7][0xe]wc[0xdb][0x87][0x88][0xf4][0x96][0xe9]}[0x8]>[0xe6][0xa6]]cOnE[0xe4]'[0xfe][0x5]_>[0x8b][0x89][0xd9][0xb8][0xb8]<v[0xc0][0xa5][0x17]3[0xe4][0x8f]4[0x1f][0xaa][0x8a][0xc3][0xeb]([0xdb][0xea][0xcc][0xfa][0x19]u[0xb]6?-[0xc4]G[0xe8][0xe2][0xa5][0x17]0[0xb0][0xe2]X[0xcf][0xd1][0xab][0xe7]F[0xb8][0xba][0x7][0x86]O[0xcb][0x14][0x89]}z[0x1c][0x0][0xe3][0xae]8b)[0xac]LA[0xe1][0x99]'[0xc7][\r]C[0xed][0xde],h#m[0xc9]o[0x18]L[0xf]S[0xc9][0xaf]0[0x9e][0xd2]U[0x8c]I[0xc1][0xf][0x92][0xa0][0x1e][0xb5][0xa7][0xae][0xdf][0xb4][0xda][0x95][0xc4][0xc5][0xb7][0x16]b9[0xee]:VU[0xce][0xa3]$[0x8a][0x80][0x85][0x1][0x1]U[0xc7]a][0xa9]hr=[0xca][0xb1]2[0xf9][0x8a][0x1f][0x80]O5[0xef]Zv[0xbf][0xc0] [0xf9][0xac]m`[0xbb]x[0xb7][0xac]aw8#[0xf2][0xaf][0x9f]K`[0xe6][0xa1]k[0xb2][0xce]w[0x93][0x8e][0x83][0x15]hG[0xd2]M[0xa6][0xf8]OP[0x19][0xb5][0xbb]T'[0xb2][0xca][\r]R[0xb9][0xf0]-[0x95][0xc6]M[0x9e][0xa1][0x8f]@@5[0xf3][0xf2]][0xb2][0xfd][0xc6]+[0xc7]c[0x8a][0xd0][0xb2][0xd7]u[0x8][0x18]y7[0x93]&=[0x1c][0xd1]d[0x7][0xaf]?[0x81][0xf5]K9[0x4][0x96][0x97][0x11]3[0xe]AV[0xda]kB[0xde][0x17]i[0xc3][0x99]'e[0x1e][0xfb][0x85]p>[0x15][0xf1][0x9e][0xaa][0xda][0xb4]P[0xdc][0xde][0xc8][0xf0][0xe]Xq[0x9c]W[0xd1][0xfe][0x8][0x8a][0xcb][0xc4][0xde][0x1f]{[0xd8]U[0xe2][0xd8][0xe5][0xb]3g[0xa0][0x1c][0xd4][0xbb]^[0xc3][0xb3][0xb5][0xce][0x10]x[0xeb]^K[0x88][0x1a][0xfa][0xdc]L[0x91][0x9f][0xb8][0xe8]@>[0xe7][0xd6][0x96][0xf3][0xc6][0xaf]s[0xe][0xa1][0xe6]Z[0x84][0x96][0xe8]p[0xca]~[0xe7][0x18][0xae][0xd0]i[0xf6][0xf7]7o[0xb5][0x80][0xb2]V[0xda]$q[0xf7][0x88][0xea]G[0xb5]S[0xd4]</[0x19][0xb3]k[0x93][0x1c]L[0x84]3[0x0]F[0x9][0x3][0xfc]j[0xd2]}[0x9]/[0xfc]"[0xd5]d}[0x0][0xdb][0xe0]y([0xdb]W[0xe5][0xe7][0xa7]5[0xdb]X[0xc6]/![0x9e])[0x0][0xf2][0xfe][0xe8][0xfa][0xd7][0x9e][0xf8]T[0xa6][0x9c]m"[0xb6][0x6]4.[0xe5][0x90]w[0xe3][0xa5]z^[0x92][0xbb],[0xc3][0x11][0x82][0xc7]&[0x85][0xae][0x84]6[0xd1][0xc4]$Mo[0xa8]|[0xfc][0xb4]O[0x8e][0x9c][0x80][\r]u[0x1c]c[0xd7][0xe9]X[0xb7][0xc3][0xfd]2n[0x8c][0xff]:[0xd0][0xb1][0x9f][0xcd][0x80]/[0xf1]/[0x4]z[0xd6]4[0xa4][0x93]q:k&[0xd2][0x91]d6[0xec][0xf3][0xcd]F[0xd8][0xcf][0xa7][0x1d][0xe8]f[0xc1][0xe3][0x1c]{R[0x96][0x7][0x86][0xe2][0xba][0xe]S&f[0xfd][0xee]y[0x4][0x1a]%[0x19][0x89][0x9b][0x1c][0xd4]z[0xc4][0xb0][0xda][0xc6][0xf3]M"[0xa4]h99[0xa8],d[0x92]{/[0xb4]F[0xa7]k[0xb6][0xd4][0xc];z[0xd0][0xda][[0x8d]E[0xb3]%[0xf5][0x88][0xad][0xb5]h,d,n.[0xe][0x15]TS[0xae][0xed]#[0xf1][0x4][0x86]$[0x94][0xad][0xb4]Rm[0x93]oVa[0xd4]We[0xfd][0x93]i![0x88]<[0x11][0xbb][0x8f][0x9b]y[0x1f]0>[0xc6][0xb8][0xcd]wB[0xff][0x84]{V[0xb7][0xb9][0xd2]d[0x96];y[0x9f]t[0xb1]3[0x12][0xa4][0xee][0x19][0xfe]u[0x9d]E[0xa0][0xe3][0xab]:M/M[0x8e][0xd2]$[0x8e][0x15][0x8][0x83][0xa6]+][0x17]h[0x4][0x1][0xd6][0x88]S[0x8]29[0xa9]1[0x81][0xd3][0x9a][0xe7][0xb1]`[0x9][0x2][0x94][0x8c][0x1a]O[0xce][0x9c]8[0xe2][0x98][0x8]@`A[0x0][0xe6][0xbc][0xd3][0xe2][0xf][0x83][0xf7][0xee][0xbf][0xc0][0x13][0x93]-[0xfc]H[0x5]zf+[0x1b][0xc5][0xb7][0x82][0xd3]F[0x99][0xb8][0xde][0xc3]j[0xfd]iI&[0xb5][0x1c][OC[0xe7][0x99][0xed]%BCF[0xfe][0xe3][0x15][0xc4]x[0xbf][0xc0][0x2][0xe2][0xe8]=[0xd5][0x9a]bq[0xcb][0xa0][0xe3][0xc0]?^[0xbe][0x81][0xd1]|2[0xda][0xc6][0x9d]{p[0xa0])_[0x92]?][0xdc][0x13][0xfc][0xc7][0xe7]^o[0xae]h[0xad][0x5][0xec][0xd1]^FVPy[0xc1][0xeb][0xee]+[0x9e].P[0xf7][0x91][0xd0][0xed]-[0xf][0x9d]nb1[0xc8][0xc0][0xa9][0x18]<[0x83][0xd8][0xd5]v[0x15][0xec][0x17][0xde][0x8][0xb0][0xb8]w[0x90][0xc9]:[0xbb][0x12][0xdf]x[0x11][0xfc][0xab][0xcf]|K[0xe1][0xfb][0x8d]"[0xf5][0x93]ix[[0x94]p:[0x8a][0xec][0x85]X[0xcf]Da(8[0x9c][0xf8][0xeb][0x8a]J[0x99][0xa2]q[0xf7][0x91][0x87][0xe1]L [0x8e][0xa0][0xd6][0x84][0x8c][0xed]IN[0xa4]"[0x80]?E[0x15][0x8e]3[0x8a][0xf1][0x1f][0x8b][0xf6][0xe6]-u[0xa4][0x1c]oUpJ[0xf6][0xa5]9[0xaf],[0xf8][0xd1]n[[0xec][0xd3][0x1][0xc1]F_[0xd7]5[0xc9]U^'E[0x7]i[0x1c]5[0xb4][0x81][0xe3][0xc]Oj[0x9b][0xdc]Vf[0x99]&[0xeb]u[0xef][0x8e]+D[0xca][0x11][0xb][0x1e]1^d[0xe2][0xef]c[0xd3]OB)[0xae][0xc]N[0xa0][0xe7][0xe6]8[0x14][0xf7][0x9b][0xca][0x86]YX[0x10][0x11][0xb]g[0xdf][0x15]P[0x5][0xba]m[0xee][0xc0]*[0xf4][0xa6]k[0xd7][0x1]4[0xa9][0x15]XfB[0x14][0xc][0xf5][0x1d]kZ4[0xaf]4[0x8c][0xaa][0xd4][0xb4][8{[0xa6]f$[0x9e][0xbd]j[0x9b][0xf3][0x8e][0xb5]vT,[0xf][0xc0][0x2][0xa0]hO[0xa6]3^[0xd5][0x8f]"[0xe5]GPA[0x1f][0x95]UhrMh[0x98]H=[\r]5[0xa2]89[0x6][0x9d][0x80][0xcd]1[0xe3][0xa5]=2[0x8][0xab]-[0x17][0x1d])[0x8b][0x11][0xcd][0x16][0x3]G@[0x99][0x97]VS[0xd3][0x8c]g[0x1e][0xd5][0xec][0x9e][0x4][0xf1][0xb6][0xa5]cd[0xba]-[0xb2]C[0x1c][0x12]Ldf`r[0xde][0xc7][0xd0]W[0x93]xb[0xdc]k#0[0xec]k[0xb2][0x91][0x12]5[0xdf][0x9][0xc1][0x1d][0xc5]qbj[0xfb]9+nz[0x18]*Q[0x9a][0xbc][0xf6][0xb9][0xf4][0xde][0x9a][0xb6]p[0xd9]Gwy*[0x16]x[0xcc][0x80][0xb9][0x0][0x3][0x8e]p+[0x17]V[0xb8]m^;cde[0xf2]c[\n]"
+2017-01-22 12:28:37  [main:207] - [DEBUG]  http-outgoing-0 << "X[0x83][0x8c])[0xef][0xef]^(5[0x1b][0x99][0xed]!Y[0xe7][0x91][0xd6]4[0xc2][0x86]bq^[0xa7][0xe1][0x9f][0x15]i[0xd6][0xda][0x14]p[0x80][0xf7]W[0xd2][[0x85][0x11][0xc0][0xbb][0x98][0x1c][0x11][0xc9][0xe8]?[0x1a][0xba]8[0x9f]j[0xf9]R2[0xc4][0xe1][0xd5]%t[0xce][0xc2][0xca][0xc6][0x8]n[0xa2]`2[0xd0][0xc6]X[0xb9][0xee]OS[7Z[0xfe][0x99][0xa6]Z[0xc6][0xd7]WH[0xac][0xe3]+[0x18]9v[0xfa][0x1][0xc9][0xaf]8[0xb6]_[0x10][0xea][0x92]3][0xdc][0x8b][0x8]\m[0xf2][0xe1][0xf9][0xa4][0xc7][0xa6][0xee][0xdf][0x85]mi[0x1e][0x1f][0xb6][0xb2]8[0x8e],I[0x81][0x99]$[0xf9][0x9c][0xfe]&[0xba][0xe2][0xac][0xee]pr[0xbb][0xdd][0x97][0xe6][0x99]n&i[0x90]:+[0xfc][0xe1]Xr3[0xeb]L[0x12][0xb4][\r][0xbd]O#[0xf5][0xa9].c[0xf2][0xc3][0x15][0xfe][0x1e]*[0x8d][0xdc][0xa0]*[0xfd]9[0xaf]>m[0xa9];[0x1e][0x9c][0x12]qW4[0xd7]U[0x85][0x94][0x19][0x1b]cw[0xcd]b[0xeb]^([0xb1][0xb1]d[0x8d][0xae]c[0x12][0xc8]v[0xa2][0x83][0xdf][0xdf][0xd2][0xb2]5[0x89][0xa4][vh[0x95][0x9c][0x8e][0x0][0xc7]|[0x12][0x5]y[0x6][0xaf]r[0xfa][0x8e][0xa2]#[0x1c][0x9][0xa4][0xc]2~[0xe9][0x1c]`~[0xbf][0xa5]u[0xd1][0x9c][0xa6][0xae][0xd1][0xcb]V[0x94] [0xf4]=f[0xfa][0xee]}W[0xc2][0xd6]&u[0xb]-[0xf5][0xe2][0xa8]U=[0x14]18[0xfc][0x96][0xbb][0x9b][0x88][0x96][0xcf]A1[0xa8][0xc1]H[0xf0]=[0x8f]J[0xe3]4[0xb8][0xa0]}O@[0xb1][0x86]S [0xb6][\r]$[0x8b][0xd9]J[0xa0][0x1f][0xcd][0xab][0xb6][0xd7][0xdb][0x1a]v[0xd0]O[0xcc][0xc0]_[0xe9]J[0xf7][0x9a]Dt2[0xb4][0xad]b[0xe6][0xd0][0xaf][0x99][0xfb][0xd5][0x3][0xa3]u[0xc7][0xb1][0xad]]~x[0xef][0x97]I[0xf9]9[0x96]E[0xc0]=@[0xdc][0xf][0xf2][0x6][0xb9][0xe5]N[0x7][0xb9][0xae][0x82][0xee] 5[0xed][0x1a][0xd7][0xaf][0x93][0x17][0x98][0x5][0xc7][0xfe][0xcc]+[0xa2][0xbd][0xb9]I[0xa7][0x1d]nnl[0xdb][0x8c]R[0x91][0xc7][0x2][0x9e][0xeb][0x91][0xdf][0xf3][0xa6].ps[0xda][0xb9][0x1e][0x83][0x1b][0xf8][0x8a]ns[0xed]J[0xd9][0xe7][0x8a]n3[0xc7]z[0x90][0x1e][0xe]W[0x6][0xb8]O[0x88]7[0x9b][0xee]![0xb4][\r][0x9d][0xa3]s[0xf][0xe5][0xfe]}[0xeb][0xb6]f[\n]"
+2017-01-22 12:28:37  [main:207] - [DEBUG]  http-outgoing-0 << "[0x85][0x8f]@3^m[0xa6][0x93][0xe2][0xf][0x19][0xee][0x3]t"C#w[0x1][0x14][0xf0][0xf][0xd7][0x81][0xf8][0xd4]TwV[0xee]]=[0xef][0xd8][0xef][0xfc]=ft[0xfd]"[0xd6][0x2][0xa5]d[0xb][0xba]O[0xf7][0x8f]$~[0x19][0xc7][0xe1]\[0xc0][0x4]=[0x11]5[\r][0xd3][0xc2][0x0][0x95]Fs][0xfc][0x9f]*[0x93][0xda][0xb0]'"I[0x1f]w98[0xaa]q[0xd3][0x94]I[0xbb][0xdc][0xf0];[0x98]^[0x19]Y\[0x15]e[0xe0][0x8c]Vf[0xa5]a[0x15][0xf4][\r][0x14][0xca][\n]"
+2017-01-22 12:28:37  [main:207] - [DEBUG]  http-outgoing-0 << "[0x91]"
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:28:31 GMT
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Content-Type: application/octet-stream
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Content-Length: 12564
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 588434EF4F29D0BB5211F6C5
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << Accept-Ranges: bytes
+2017-01-22 12:28:37  [main:208] - [DEBUG]  http-outgoing-0 << ETag: "5244881E7A21F8BA818CD245AB984362"
+2017-01-22 12:28:37  [main:209] - [DEBUG]  http-outgoing-0 << Last-Modified: Sun, 22 Jan 2017 04:04:35 GMT
+2017-01-22 12:28:37  [main:209] - [DEBUG]  http-outgoing-0 << x-oss-object-type: Normal
+2017-01-22 12:28:37  [main:209] - [DEBUG]  http-outgoing-0 << x-oss-hash-crc64ecma: 15127994001529905347
+2017-01-22 12:28:37  [main:209] - [DEBUG]  http-outgoing-0 << Content-MD5: UkSIHnoh+LqBjNJFq5hDYg==
+2017-01-22 12:28:37  [main:209] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 0
+2017-01-22 12:28:37  [main:209] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:28:37  [main:213] - [DEBUG]  Connection manager is shutting down
+2017-01-22 12:28:37  [main:214] - [DEBUG]  http-outgoing-0: Close connection
+2017-01-22 12:28:37  [idle_connection_reaper:214] - [DEBUG]  Shutting down reaper thread.
+2017-01-22 12:28:37  [main:214] - [DEBUG]  Connection manager shut down
+2017-01-22 12:29:47  [main:0] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:29:47  [main:16] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:29:47  [main:17] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 0 of 1024; total allocated: 0 of 1024]
+2017-01-22 12:29:47  [main:35] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:29:47  [main:37] - [DEBUG]  Opening connection {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80
+2017-01-22 12:29:47  [main:82] - [DEBUG]  Connecting to wezhuxue-wx.oss-cn-beijing.aliyuncs.com/101.201.182.228:80
+2017-01-22 12:29:47  [main:92] - [DEBUG]  Connection established 192.168.0.110:56512<->101.201.182.228:80
+2017-01-22 12:29:47  [main:92] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:29:47  [main:93] - [DEBUG]  Executing request GET /?acl HTTP/1.1
+2017-01-22 12:29:47  [main:93] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:29:47  [main:95] - [DEBUG]  http-outgoing-0 >> GET /?acl HTTP/1.1
+2017-01-22 12:29:47  [main:95] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:w/zDqtqwudsRllHBHCjRGlfy0XI=
+2017-01-22 12:29:47  [main:96] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:29:47 GMT
+2017-01-22 12:29:47  [main:96] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:29:47  [main:96] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:29:47  [main:96] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:29:47  [main:98] - [DEBUG]  http-outgoing-0 >> "GET /?acl HTTP/1.1[\r][\n]"
+2017-01-22 12:29:47  [main:98] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:w/zDqtqwudsRllHBHCjRGlfy0XI=[\r][\n]"
+2017-01-22 12:29:47  [main:98] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:29:47 GMT[\r][\n]"
+2017-01-22 12:29:47  [main:98] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:29:47  [main:99] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:29:47  [main:99] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:29:47  [main:99] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:29:47  [main:106] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:29:47  [main:106] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:29:47  [main:106] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:29:41 GMT[\r][\n]"
+2017-01-22 12:29:47  [main:106] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:29:47  [main:107] - [DEBUG]  http-outgoing-0 << "Content-Length: 255[\r][\n]"
+2017-01-22 12:29:47  [main:107] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:29:47  [main:107] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 588435354F29D0BB5213FD11[\r][\n]"
+2017-01-22 12:29:47  [main:107] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 0[\r][\n]"
+2017-01-22 12:29:47  [main:107] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:29:47  [main:108] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:29:47  [main:108] - [DEBUG]  http-outgoing-0 << "<AccessControlPolicy>[\n]"
+2017-01-22 12:29:47  [main:108] - [DEBUG]  http-outgoing-0 << "  <Owner>[\n]"
+2017-01-22 12:29:47  [main:108] - [DEBUG]  http-outgoing-0 << "    <ID>1878157721829026</ID>[\n]"
+2017-01-22 12:29:47  [main:109] - [DEBUG]  http-outgoing-0 << "    <DisplayName>1878157721829026</DisplayName>[\n]"
+2017-01-22 12:29:47  [main:109] - [DEBUG]  http-outgoing-0 << "  </Owner>[\n]"
+2017-01-22 12:29:47  [main:109] - [DEBUG]  http-outgoing-0 << "  <AccessControlList>[\n]"
+2017-01-22 12:29:47  [main:109] - [DEBUG]  http-outgoing-0 << "    <Grant>private</Grant>[\n]"
+2017-01-22 12:29:47  [main:109] - [DEBUG]  http-outgoing-0 << "  </AccessControlList>[\n]"
+2017-01-22 12:29:47  [main:110] - [DEBUG]  http-outgoing-0 << "</AccessControlPolicy>[\n]"
+2017-01-22 12:29:47  [main:113] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:29:47  [main:113] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:29:47  [main:113] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:29:41 GMT
+2017-01-22 12:29:47  [main:113] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:29:47  [main:113] - [DEBUG]  http-outgoing-0 << Content-Length: 255
+2017-01-22 12:29:47  [main:114] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:29:47  [main:114] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 588435354F29D0BB5213FD11
+2017-01-22 12:29:47  [main:114] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 0
+2017-01-22 12:29:47  [main:117] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:29:47  [main:173] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:29:47  [main:173] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:29:47  [main:179] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:29:47  [main:180] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:29:47  [main:180] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:29:47  [main:180] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:29:47  [main:180] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:29:47  [main:181] - [DEBUG]  Executing request GET /test/test HTTP/1.1
+2017-01-22 12:29:47  [main:181] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> GET /test/test HTTP/1.1
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:8QkYNdZsZBqj3oYBj2V09KCCBGM=
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:29:47 GMT
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:29:47  [main:181] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "GET /test/test HTTP/1.1[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:8QkYNdZsZBqj3oYBj2V09KCCBGM=[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:29:47 GMT[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:29:47  [main:182] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:29:47  [main:187] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+2017-01-22 12:29:47  [main:187] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:29:41 GMT[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "Content-Length: 268[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 588435354F29D0BB5213FDB6[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 1[\r][\n]"
+2017-01-22 12:29:47  [main:188] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "<Error>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "  <Code>NoSuchKey</Code>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "  <Message>The specified key does not exist.</Message>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "  <RequestId>588435354F29D0BB5213FDB6</RequestId>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "  <HostId>wezhuxue-wx.oss-cn-beijing.aliyuncs.com</HostId>[\n]"
+2017-01-22 12:29:47  [main:189] - [DEBUG]  http-outgoing-0 << "  <Key>test/test</Key>[\n]"
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << "</Error>[\n]"
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << HTTP/1.1 404 Not Found
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:29:41 GMT
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << Content-Length: 268
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 588435354F29D0BB5213FDB6
+2017-01-22 12:29:47  [main:190] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 1
+2017-01-22 12:29:47  [main:191] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:29:47  [main:192] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:29:47  [main:192] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:29:47  [main:381] - [INFO]  [Server]Unable to execute HTTP request: The specified key does not exist.
+[ErrorCode]: NoSuchKey
+[RequestId]: 588435354F29D0BB5213FDB6
+[HostId]: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>588435354F29D0BB5213FDB6</RequestId>
+  <HostId>wezhuxue-wx.oss-cn-beijing.aliyuncs.com</HostId>
+  <Key>test/test</Key>
+</Error>
+
+2017-01-22 12:29:47  [main:382] - [DEBUG]  Connection manager is shutting down
+2017-01-22 12:29:47  [idle_connection_reaper:382] - [DEBUG]  Shutting down reaper thread.
+2017-01-22 12:29:47  [main:382] - [DEBUG]  http-outgoing-0: Close connection
+2017-01-22 12:29:47  [main:383] - [DEBUG]  Connection manager shut down
+2017-01-22 12:30:09  [main:0] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:30:09  [main:18] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:30:09  [main:20] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 0 of 1024; total allocated: 0 of 1024]
+2017-01-22 12:30:09  [main:38] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:30:09  [main:41] - [DEBUG]  Opening connection {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80
+2017-01-22 12:30:09  [main:44] - [DEBUG]  Connecting to wezhuxue-wx.oss-cn-beijing.aliyuncs.com/101.201.182.228:80
+2017-01-22 12:30:09  [main:52] - [DEBUG]  Connection established 192.168.0.110:56560<->101.201.182.228:80
+2017-01-22 12:30:09  [main:52] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:30:09  [main:52] - [DEBUG]  Executing request GET /?acl HTTP/1.1
+2017-01-22 12:30:09  [main:52] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:30:09  [main:54] - [DEBUG]  http-outgoing-0 >> GET /?acl HTTP/1.1
+2017-01-22 12:30:09  [main:54] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:pujzJpYkIgi5G0hBZV74rs8EyX0=
+2017-01-22 12:30:09  [main:55] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:30:09 GMT
+2017-01-22 12:30:09  [main:55] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:30:09  [main:55] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:30:09  [main:55] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:30:09  [main:57] - [DEBUG]  http-outgoing-0 >> "GET /?acl HTTP/1.1[\r][\n]"
+2017-01-22 12:30:09  [main:57] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:pujzJpYkIgi5G0hBZV74rs8EyX0=[\r][\n]"
+2017-01-22 12:30:09  [main:57] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:30:09 GMT[\r][\n]"
+2017-01-22 12:30:09  [main:57] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:30:09  [main:58] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:30:09  [main:58] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:30:09  [main:58] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:30:09  [main:68] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:30:09  [main:68] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:30:09  [main:69] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:30:04 GMT[\r][\n]"
+2017-01-22 12:30:09  [main:69] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:30:09  [main:69] - [DEBUG]  http-outgoing-0 << "Content-Length: 255[\r][\n]"
+2017-01-22 12:30:09  [main:69] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:30:09  [main:69] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 5884354C1B658DCC26F5884C[\r][\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 0[\r][\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "<AccessControlPolicy>[\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "  <Owner>[\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "    <ID>1878157721829026</ID>[\n]"
+2017-01-22 12:30:09  [main:70] - [DEBUG]  http-outgoing-0 << "    <DisplayName>1878157721829026</DisplayName>[\n]"
+2017-01-22 12:30:09  [main:71] - [DEBUG]  http-outgoing-0 << "  </Owner>[\n]"
+2017-01-22 12:30:09  [main:71] - [DEBUG]  http-outgoing-0 << "  <AccessControlList>[\n]"
+2017-01-22 12:30:09  [main:71] - [DEBUG]  http-outgoing-0 << "    <Grant>private</Grant>[\n]"
+2017-01-22 12:30:09  [main:71] - [DEBUG]  http-outgoing-0 << "  </AccessControlList>[\n]"
+2017-01-22 12:30:09  [main:71] - [DEBUG]  http-outgoing-0 << "</AccessControlPolicy>[\n]"
+2017-01-22 12:30:09  [main:73] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:30:09  [main:73] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:30:09  [main:73] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:30:04 GMT
+2017-01-22 12:30:09  [main:74] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:30:09  [main:74] - [DEBUG]  http-outgoing-0 << Content-Length: 255
+2017-01-22 12:30:09  [main:74] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:30:09  [main:74] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 5884354C1B658DCC26F5884C
+2017-01-22 12:30:09  [main:74] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 0
+2017-01-22 12:30:09  [main:78] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:30:10  [main:139] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:30:10  [main:140] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:30:10  [main:151] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:30:10  [main:151] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:30:10  [main:152] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:30:10  [main:152] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:30:10  [main:152] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:30:10  [main:152] - [DEBUG]  Executing request GET /video/cfd96d3d134d1c9fb73257aa8b36fbe6/cut_adffa8a65c9af341151eec6b9596809c HTTP/1.1
+2017-01-22 12:30:10  [main:152] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:30:10  [main:153] - [DEBUG]  http-outgoing-0 >> GET /video/cfd96d3d134d1c9fb73257aa8b36fbe6/cut_adffa8a65c9af341151eec6b9596809c HTTP/1.1
+2017-01-22 12:30:10  [main:153] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:Rf1r6sIjoK5jiJzIBT+67gdUIjE=
+2017-01-22 12:30:10  [main:153] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:30:10 GMT
+2017-01-22 12:30:10  [main:153] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:30:10  [main:154] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:30:10  [main:154] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:30:10  [main:154] - [DEBUG]  http-outgoing-0 >> "GET /video/cfd96d3d134d1c9fb73257aa8b36fbe6/cut_adffa8a65c9af341151eec6b9596809c HTTP/1.1[\r][\n]"
+2017-01-22 12:30:10  [main:154] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:Rf1r6sIjoK5jiJzIBT+67gdUIjE=[\r][\n]"
+2017-01-22 12:30:10  [main:155] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:30:10 GMT[\r][\n]"
+2017-01-22 12:30:10  [main:155] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:30:10  [main:155] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:30:10  [main:155] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:30:10  [main:155] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:30:10  [main:162] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+2017-01-22 12:30:10  [main:162] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:30:04 GMT[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "Content-Length: 334[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 5884354C1B658DCC26F58913[\r][\n]"
+2017-01-22 12:30:10  [main:163] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 1[\r][\n]"
+2017-01-22 12:30:10  [main:164] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:30:10  [main:164] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:30:10  [main:164] - [DEBUG]  http-outgoing-0 << "<Error>[\n]"
+2017-01-22 12:30:10  [main:164] - [DEBUG]  http-outgoing-0 << "  <Code>NoSuchKey</Code>[\n]"
+2017-01-22 12:30:10  [main:164] - [DEBUG]  http-outgoing-0 << "  <Message>The specified key does not exist.</Message>[\n]"
+2017-01-22 12:30:10  [main:165] - [DEBUG]  http-outgoing-0 << "  <RequestId>5884354C1B658DCC26F58913</RequestId>[\n]"
+2017-01-22 12:30:10  [main:165] - [DEBUG]  http-outgoing-0 << "  <HostId>wezhuxue-wx.oss-cn-beijing.aliyuncs.com</HostId>[\n]"
+2017-01-22 12:30:10  [main:165] - [DEBUG]  http-outgoing-0 << "  <Key>video/cfd96d3d134d1c9fb73257aa8b36fbe6/cut_adffa8a65c9af341151eec6b9596809c</Key>[\n]"
+2017-01-22 12:30:10  [main:165] - [DEBUG]  http-outgoing-0 << "</Error>[\n]"
+2017-01-22 12:30:10  [main:165] - [DEBUG]  http-outgoing-0 << HTTP/1.1 404 Not Found
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:30:04 GMT
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << Content-Length: 334
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:30:10  [main:166] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 5884354C1B658DCC26F58913
+2017-01-22 12:30:10  [main:167] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 1
+2017-01-22 12:30:10  [main:167] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:30:10  [main:169] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:30:10  [main:169] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:30:10  [main:227] - [INFO]  [Server]Unable to execute HTTP request: The specified key does not exist.
+[ErrorCode]: NoSuchKey
+[RequestId]: 5884354C1B658DCC26F58913
+[HostId]: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <RequestId>5884354C1B658DCC26F58913</RequestId>
+  <HostId>wezhuxue-wx.oss-cn-beijing.aliyuncs.com</HostId>
+  <Key>video/cfd96d3d134d1c9fb73257aa8b36fbe6/cut_adffa8a65c9af341151eec6b9596809c</Key>
+</Error>
+
+2017-01-22 12:30:10  [main:228] - [DEBUG]  Connection manager is shutting down
+2017-01-22 12:30:10  [idle_connection_reaper:228] - [DEBUG]  Shutting down reaper thread.
+2017-01-22 12:30:10  [main:228] - [DEBUG]  http-outgoing-0: Close connection
+2017-01-22 12:30:10  [main:229] - [DEBUG]  Connection manager shut down
+2017-01-22 12:31:17  [main:0] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:31:17  [main:18] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:31:17  [main:19] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 0 of 1024; total allocated: 0 of 1024]
+2017-01-22 12:31:17  [main:40] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:31:17  [main:42] - [DEBUG]  Opening connection {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80
+2017-01-22 12:31:17  [main:87] - [DEBUG]  Connecting to wezhuxue-wx.oss-cn-beijing.aliyuncs.com/101.201.182.228:80
+2017-01-22 12:31:17  [main:94] - [DEBUG]  Connection established 192.168.0.110:56717<->101.201.182.228:80
+2017-01-22 12:31:17  [main:94] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:31:17  [main:95] - [DEBUG]  Executing request GET /?acl HTTP/1.1
+2017-01-22 12:31:17  [main:95] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:31:17  [main:97] - [DEBUG]  http-outgoing-0 >> GET /?acl HTTP/1.1
+2017-01-22 12:31:17  [main:97] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:B6g7d7BQY1puWKWqV/PHpFirlvE=
+2017-01-22 12:31:17  [main:97] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:31:17 GMT
+2017-01-22 12:31:17  [main:97] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:31:17  [main:97] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:31:17  [main:98] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:31:17  [main:99] - [DEBUG]  http-outgoing-0 >> "GET /?acl HTTP/1.1[\r][\n]"
+2017-01-22 12:31:17  [main:99] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:B6g7d7BQY1puWKWqV/PHpFirlvE=[\r][\n]"
+2017-01-22 12:31:17  [main:99] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:31:17 GMT[\r][\n]"
+2017-01-22 12:31:17  [main:99] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:31:17  [main:99] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:31:17  [main:100] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:31:17  [main:100] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:31:17  [main:259] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:31:17  [main:260] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:31:17  [main:260] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:31:12 GMT[\r][\n]"
+2017-01-22 12:31:17  [main:261] - [DEBUG]  http-outgoing-0 << "Content-Type: application/xml[\r][\n]"
+2017-01-22 12:31:17  [main:261] - [DEBUG]  http-outgoing-0 << "Content-Length: 255[\r][\n]"
+2017-01-22 12:31:17  [main:262] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:31:17  [main:263] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 5884358F483412906FF5B560[\r][\n]"
+2017-01-22 12:31:17  [main:263] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 153[\r][\n]"
+2017-01-22 12:31:17  [main:264] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:31:17  [main:264] - [DEBUG]  http-outgoing-0 << "<?xml version="1.0" encoding="UTF-8"?>[\n]"
+2017-01-22 12:31:17  [main:265] - [DEBUG]  http-outgoing-0 << "<AccessControlPolicy>[\n]"
+2017-01-22 12:31:17  [main:266] - [DEBUG]  http-outgoing-0 << "  <Owner>[\n]"
+2017-01-22 12:31:17  [main:267] - [DEBUG]  http-outgoing-0 << "    <ID>1878157721829026</ID>[\n]"
+2017-01-22 12:31:17  [main:267] - [DEBUG]  http-outgoing-0 << "    <DisplayName>1878157721829026</DisplayName>[\n]"
+2017-01-22 12:31:17  [main:268] - [DEBUG]  http-outgoing-0 << "  </Owner>[\n]"
+2017-01-22 12:31:17  [main:269] - [DEBUG]  http-outgoing-0 << "  <AccessControlList>[\n]"
+2017-01-22 12:31:17  [main:269] - [DEBUG]  http-outgoing-0 << "    <Grant>private</Grant>[\n]"
+2017-01-22 12:31:17  [main:270] - [DEBUG]  http-outgoing-0 << "  </AccessControlList>[\n]"
+2017-01-22 12:31:17  [main:270] - [DEBUG]  http-outgoing-0 << "</AccessControlPolicy>[\n]"
+2017-01-22 12:31:17  [main:276] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:31:17  [main:277] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:31:17  [main:277] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:31:12 GMT
+2017-01-22 12:31:17  [main:278] - [DEBUG]  http-outgoing-0 << Content-Type: application/xml
+2017-01-22 12:31:17  [main:278] - [DEBUG]  http-outgoing-0 << Content-Length: 255
+2017-01-22 12:31:17  [main:279] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:31:17  [main:280] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 5884358F483412906FF5B560
+2017-01-22 12:31:17  [main:280] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 153
+2017-01-22 12:31:17  [main:287] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:31:17  [main:350] - [DEBUG]  Connection [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80] can be kept alive indefinitely
+2017-01-22 12:31:17  [main:351] - [DEBUG]  Connection released: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:31:17  [main:358] - [DEBUG]  CookieSpec selected: default
+2017-01-22 12:31:17  [main:358] - [DEBUG]  Auth cache not set in the context
+2017-01-22 12:31:17  [main:359] - [DEBUG]  Connection request: [route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 1; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:31:17  [main:359] - [DEBUG]  Connection leased: [id: 0][route: {}->http://wezhuxue-wx.oss-cn-beijing.aliyuncs.com:80][total kept alive: 0; route allocated: 1 of 1024; total allocated: 1 of 1024]
+2017-01-22 12:31:17  [main:359] - [DEBUG]  http-outgoing-0: set socket timeout to 50000
+2017-01-22 12:31:17  [main:359] - [DEBUG]  Executing request GET /packet/u1485057874527BVEODT HTTP/1.1
+2017-01-22 12:31:17  [main:359] - [DEBUG]  Proxy auth state: UNCHALLENGED
+2017-01-22 12:31:17  [main:359] - [DEBUG]  http-outgoing-0 >> GET /packet/u1485057874527BVEODT HTTP/1.1
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> Authorization: OSS WHGLpYWuBgkLDCiC:9UN6SYWqr17d1Wfc7uKHBbfm92k=
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> Date: Sun, 22 Jan 2017 04:31:17 GMT
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> Connection: Keep-Alive
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> "GET /packet/u1485057874527BVEODT HTTP/1.1[\r][\n]"
+2017-01-22 12:31:17  [main:360] - [DEBUG]  http-outgoing-0 >> "Authorization: OSS WHGLpYWuBgkLDCiC:9UN6SYWqr17d1Wfc7uKHBbfm92k=[\r][\n]"
+2017-01-22 12:31:17  [main:361] - [DEBUG]  http-outgoing-0 >> "Date: Sun, 22 Jan 2017 04:31:17 GMT[\r][\n]"
+2017-01-22 12:31:17  [main:361] - [DEBUG]  http-outgoing-0 >> "Host: wezhuxue-wx.oss-cn-beijing.aliyuncs.com[\r][\n]"
+2017-01-22 12:31:17  [main:361] - [DEBUG]  http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-01-22 12:31:17  [main:361] - [DEBUG]  http-outgoing-0 >> "User-Agent: aliyun-sdk-java/2.4.0(Windows 8/6.2/amd64;1.7.0_13)[\r][\n]"
+2017-01-22 12:31:17  [main:361] - [DEBUG]  http-outgoing-0 >> "[\r][\n]"
+2017-01-22 12:31:17  [main:368] - [DEBUG]  http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "Server: AliyunOSS[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "Date: Sun, 22 Jan 2017 04:31:12 GMT[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "Content-Type: application/octet-stream[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "Content-Length: 12564[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-01-22 12:31:17  [main:369] - [DEBUG]  http-outgoing-0 << "x-oss-request-id: 58843590483412906FF5B7F0[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "Accept-Ranges: bytes[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "ETag: "5244881E7A21F8BA818CD245AB984362"[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "Last-Modified: Sun, 22 Jan 2017 04:04:35 GMT[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "x-oss-object-type: Normal[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "x-oss-hash-crc64ecma: 15127994001529905347[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "Content-MD5: UkSIHnoh+LqBjNJFq5hDYg==[\r][\n]"
+2017-01-22 12:31:17  [main:370] - [DEBUG]  http-outgoing-0 << "x-oss-server-time: 1[\r][\n]"
+2017-01-22 12:31:17  [main:371] - [DEBUG]  http-outgoing-0 << "[\r][\n]"
+2017-01-22 12:31:17  [main:371] - [DEBUG]  http-outgoing-0 << "u[0xab]Z[0xfe])[0x9a][0x81][0xef][0xe3][0xa5][0xe8]?m[0xab][0x1e][0xeb][0x8f][0xff][0xf6]?[0xf8][0x0][0x4][0x12][0x91][0x92]Q[0x80][0x0]@@[0x0][0x0]@[0x0]@[0x0]?[0xf6][0xc0][0x10][0xc0][0x1][0x81][0x1]A[0x81]A[0x1][0x81][0x81]A[0x81][0xc1][0xc1][0x82][0x2][0x84][0x2][0x82][0x82]BB[0x85][0x3][0x83][0xc3][0x4][0x5][0xc5][0x6][0x6][0x5][0xc5][0x5][0x85][0x86][0x87]IG[0xc6][0x86][0xc8][0xc7][0x5][0x85][0x88][0xb][0x8][0x8][0xc9][0x89][0xca]J[0x8a]FG[0xcb]L[0xb]J[0xc][0x9]J[\n]"
+2017-01-22 12:31:17  [main:371] - [DEBUG]  http-outgoing-0 << "J?[0xf6][0xc0][0x10][0xc0]A[0xc1][0xc1][0xc2][0x82][0x2][0x84][0xc2][0x82][0x84][0xca][0x6][0x85][0x86][0x8a][\n]"
+2017-01-22 12:31:17  [main:371] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:371] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:372] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:373] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:374] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:375] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:375] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:375] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:375] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:375] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:376] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:377] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "[\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "?[0xf0][0x0][0x4]B[0x0]-[0x0]P[0x0][0xc0]H[0x80][0x0][0x84]@@[0xc4]@[0xf1][0x0][0x7][0xc0][0x0][0x0]A@@@@@@@[0x0][0x0][0x0][0x0][0x0][0x0][0x0][0x0]@[0x80][0xc1][0x1]A[0x81][0xc2][0x2]B[0x82][0xff][0xf1][0x0]-D[0x0][0x0][0x80]@[0xc0][0xc0][0x81][0x0][0xc1]AA[0x1][0x0][0x0][0x0]_@@[0x80][0xc0][0x1][0x4]AD[0x88]LPA[0x84][0xd4]XA[0xc8][0x9c]E[0xc][0xa0]dhB[0x8][0xd0][0xac]pET[0xb4]|[0x9][0xc][0xd8][0x9c][0xa0][0x82]B[0x85][0x85][0xc6][0x6]F[0x89]I[0x89][0xca][\n]"
+2017-01-22 12:31:17  [main:378] - [DEBUG]  http-outgoing-0 << "J[0x8d][\r]M[0x8d][0xce][0xe]N[0x90][0xd1][0x11]Q[0x91][0xd2][0x12]R[0x94][0xd5][0x15]U[0x95][0xd6][0x16]V[0x98][0xd9][0x19]Y[0x99][0xda][0x1a]Z[0x9c][0xdd][0x1d]][0x9d][0xde][0x1e]^[0xa0][0xe1]!a[0xa1][0xe2]"b[0xa4][0xa4][0xe5]%e[0xa5][0xe6]&f[0xa8][0xa8][0xe9])i[0xa9][0xea]*j[0xac][0xac][0xed]-m[0xad][0xee].n[0xb0][0xb0][0xf1]1q[0xb1][0xf2]2r[0xb4][0xb4][0xf5]5u[0xb5][0xf6]6v[0xb8]x[0xb8][0xf9]9y[0xb9][0xfa]:z[0xbc]|[0xbc][0xfd]=}[0xbd][0xfe]>~[0xbf][0xf1][0x0][0x7][0xc0]@[0x0][0xc0]@@@@@@@@@[0x0][0x0][0x0][0x0][0x0][0x0]@[0x80][0xc1][0x1]A[0x81][0xc2][0x2]B[0x82][0xff][0xf1][0x0]-D@[0x0][0x80]@[0x81][0x1][0x0][0xc1][0x1][0xc1]A[0x1][0x0][0x0]@[0x9d][0xc0][0x0]@[0x80][0xc4]A[0x1]HLA[0x84][0x90]TA[0xd8]\D[0xc8][0x8c][0xa0]B[0x5][0x10][0xa4]hlpBH[0xcc][0xd4][0xbc][0x5]X[0x9c][0xb4]B[0x85][0x89][\r]8I|E[0xc6][0x6]F[0x89][0x89][0xca][\n]"
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << "J[0x8d]M[0x8d][0xce][0xe]N[0x90][0xd1][0x11]Q[0x91][0xd2][0x12]R[0x94][0xd5][0x15]U[0x95][0xd6][0x16]V[0x98][0xd9][0x19]Y[0x99][0xda][0x1a]Z[0x9c][0xdd][0x1d]][0x9d][0xde][0x1e]^[0xa0][0xa0][0xe1]!a[0xa1][0xe2]"b[0xa4][0xa4][0xe5]%e[0xa5][0xe6]&f[0xa8][0xa8][0xe9])i[0xa9][0xea]*j[0xac][0xac][0xed]-m[0xad][0xee].n[0xb0][0xb0][0xf1]1q[0xb1][0xf2]2r[0xb4][0xb4][0xf5]5u[0xb5][0xf6]6v[0xb8][0xb8][0xf9]9y[0xb9][0xfa]:z[0xbc][0xbc][0xfd]=}[0xbd][0xfe]>~[0xbf][0xf6][0x80][0x3][0x0][0xc0]@[0x0][0x84]@[0xc4]@[0xf][0xc0]=[0xdd]XVI[0xf1]F[0x92][0xae][0xe8][0xd7]h[0xac][0xac]T[0x83][0xd8][0x8a][0xd0][\r][0xc5]x'[0x8d]'[0x9f]O[0xf1][\r][0xcc]1[0xc8]Q[0x1a]rO[0x1e][0xbc][0xff]Z[0xe6][0x9c][0xb9]u6[0xa7][0xe]wc[0xdb][0x87][0x88][0xf4][0x96][0xe9]}[0x8]>[0xe6][0xa6]]cOnE[0xe4]'[0xfe][0x5]_>[0x8b][0x89][0xd9][0xb8][0xb8]<v[0xc0][0xa5][0x17]3[0xe4][0x8f]4[0x1f][0xaa][0x8a][0xc3][0xeb]([0xdb][0xea][0xcc][0xfa][0x19]u[0xb]6?-[0xc4]G[0xe8][0xe2][0xa5][0x17]0[0xb0][0xe2]X[0xcf][0xd1][0xab][0xe7]F[0xb8][0xba][0x7][0x86]O[0xcb][0x14][0x89]}z[0x1c][0x0][0xe3][0xae]8b)[0xac]LA[0xe1][0x99]'[0xc7][\r]C[0xed][0xde],h#m[0xc9]o[0x18]L[0xf]S[0xc9][0xaf]0[0x9e][0xd2]U[0x8c]I[0xc1][0xf][0x92][0xa0][0x1e][0xb5][0xa7][0xae][0xdf][0xb4][0xda][0x95][0xc4][0xc5][0xb7][0x16]b9[0xee]:VU[0xce][0xa3]$[0x8a][0x80][0x85][0x1][0x1]U[0xc7]a][0xa9]hr=[0xca][0xb1]2[0xf9][0x8a][0x1f][0x80]O5[0xef]Zv[0xbf][0xc0] [0xf9][0xac]m`[0xbb]x[0xb7][0xac]aw8#[0xf2][0xaf][0x9f]K`[0xe6][0xa1]k[0xb2][0xce]w[0x93][0x8e][0x83][0x15]hG[0xd2]M[0xa6][0xf8]OP[0x19][0xb5][0xbb]T'[0xb2][0xca][\r]R[0xb9][0xf0]-[0x95][0xc6]M[0x9e][0xa1][0x8f]@@5[0xf3][0xf2]][0xb2][0xfd][0xc6]+[0xc7]c[0x8a][0xd0][0xb2][0xd7]u[0x8][0x18]y7[0x93]&=[0x1c][0xd1]d[0x7][0xaf]?[0x81][0xf5]K9[0x4][0x96][0x97][0x11]3[0xe]AV[0xda]kB[0xde][0x17]i[0xc3][0x99]'e[0x1e][0xfb][0x85]p>[0x15][0xf1][0x9e][0xaa][0xda][0xb4]P[0xdc][0xde][0xc8][0xf0][0xe]Xq[0x9c]W[0xd1][0xfe][0x8][0x8a][0xcb][0xc4][0xde][0x1f]{[0xd8]U[0xe2][0xd8][0xe5][0xb]3g[0xa0][0x1c][0xd4][0xbb]^"
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << HTTP/1.1 200 OK
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << Server: AliyunOSS
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << Date: Sun, 22 Jan 2017 04:31:12 GMT
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << Content-Type: application/octet-stream
+2017-01-22 12:31:17  [main:379] - [DEBUG]  http-outgoing-0 << Content-Length: 12564
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << Connection: keep-alive
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << x-oss-request-id: 58843590483412906FF5B7F0
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << Accept-Ranges: bytes
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << ETag: "5244881E7A21F8BA818CD245AB984362"
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << Last-Modified: Sun, 22 Jan 2017 04:04:35 GMT
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << x-oss-object-type: Normal
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << x-oss-hash-crc64ecma: 15127994001529905347
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << Content-MD5: UkSIHnoh+LqBjNJFq5hDYg==
+2017-01-22 12:31:17  [main:380] - [DEBUG]  http-outgoing-0 << x-oss-server-time: 1
+2017-01-22 12:31:17  [main:381] - [DEBUG]  Connection can be kept alive indefinitely
+2017-01-22 12:31:17  [main:385] - [DEBUG]  Connection manager is shutting down
+2017-01-22 12:31:17  [main:385] - [DEBUG]  http-outgoing-0: Close connection
+2017-01-22 12:31:17  [idle_connection_reaper:385] - [DEBUG]  Shutting down reaper thread.
+2017-01-22 12:31:17  [main:385] - [DEBUG]  Connection manager shut down

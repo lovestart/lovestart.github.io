@@ -1,0 +1,22 @@
+driverClassName=com.mysql.jdbc.Driver
+url=jdbc:mysql://rm-2ze34m6ks63531u2e.mysql.rds.aliyuncs.com:3306/wzx_test?useUnicode=true&autoReconnect=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+username=chenshen
+password=Chenshen2oi6
+
+#url=jdbc:mysql://localhost:3306/wx_h5?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+#username=root
+#password=
+
+
+filters=stat
+initialSize=20
+maxActive=300
+maxWait=60000
+timeBetweenEvictionRunsMillis=60000
+minEvictableIdleTimeMillis=300000
+validationQuery=SELECT 1
+testWhileIdle=true
+testOnBorrow=false
+testOnReturn=false
+poolPreparedStatements=false
+maxPoolPreparedStatementPerConnectionSize=200

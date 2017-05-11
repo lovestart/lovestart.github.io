@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>散标购买</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/base1.css" rel="stylesheet" type="text/css" media="all"/>
+  <link href="css/header.css" rel="stylesheet" type="text/css" media="all"/>
+  <link href="css/commontwo.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body class="myBg">
+  <!--headertwo starts-->
+  <!-- <div class="header clearfloat headertwo headerNew">
+     <div class="headerLeft fl">
+        <a href="#" class="clearfloat">
+        <span class="headerArrow"><img src="images/blackarrow.png"/></span>
+        <span class="textt">返回</span>
+        </a>
+     </div>
+     headerLeft
+     <div class="headerMiddle">
+        <h1><a href="#">散标购买</a></h1>
+     </div>
+     headerMiddle
+  </div> -->
+  <!--headertwo ends-->
+  <!--container starts-->
+  <div class="container">
+     <div class="containerThree">
+        <div class="top">
+           <h2>助学金额</h2>
+        </div>
+           <div class="sectionColor">
+              <div class="clearfloat sectionTxt">
+                 <h3 class="fl">￥</h3>
+                 <div class="fl onlyTxtBox">
+                    <input id="buyAmount" type="text" class="myinput" placeholder="起投金额1元">
+                 </div>
+              </div>
+              <div class="specialSec">
+                 <h4>剩余可投金额<span id="leftAmount">9500.00</span>元 <a id="allBuy" class="spcred" href="javascript:void(0);">全部买入</a></h4>
+              </div>
+           </div>
+           <div class="butSec">
+              <div class="checkOne">
+                 <input type="checkbox" id="check1" value="check1" name="check1" checked>						
+                 <label for="check1" class="smallText">同意《人人助学理财协议》 </label>                           
+              </div>
+              <button class="bigBtn">微信支付</button>
+           </div>
+     </div>
+  </div>
+  <div id="oDiv" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; display: none"></div>
+  <!--container ends-->
+<script src="js/mobile.js"></script>
+<script type="text/javascript" src="../js/zepto.min.js" ></script>
+<script type="text/javascript" src="../js/public.js" ></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        var UrlData=window.location.search;
+        var locationData={};//接收链接地址传输的数据
+        var mainData={};//助学团详情json
+        
+        (UrlData==='')&&(true,locationData='nullObject') || (UrlData!='') && (true,locationData=pub.StrToJOON(UrlData));
+        //判断有没有获取数据 ps:获取到了去读数据，没有获取到提示没有获取到
+        (locationData === 'nullObject')&&(true,(function(){
+            $('#oDiv').show();
+            pub.cs('没有获取到数据！');
+        })()) || (locationData!='nullObject')&&(true,function(){
+            getGroupDetail();//获取帮助所有帮助提升身价的小伙伴
+        }());//判断有没有获取数据 end
+        
+        //获取帮助提升身价小伙伴列表的方法
+        function getGroupDetail(){
+        	var datas ={'version':'1.0','system':'weixin','token':'','objId':'ProductAndAccountInfoVO','method':'/finance/accountAndProduct/balance','@userId':''+locationData.userId+'','@productId':''+locationData.loanId+'','@type':'1'};
+            $.ajax({
+                dataType:'jsonp',
+                url:pub.jsonPApiT,
+                data:datas,
+                jsonp:'callback',
+                success:function(jsonData){
+                    mainData=eval(jsonData);
+					if(mainData.code=='6666'){
+						$("#leftAmount").html(mainData.data.productBalance);
+						if(Number(mainData.data.productBalance)<=0){
+							$("button").attr('disabled',true);
+						}
+					}else{
+						$('#oDiv').show();
+                        pub.cs(mainData.msg);
+					}
+                }
+            });
+            
+        };//获取帮助提升身价小伙伴列表的方法 end
+        $("#allBuy").click(function(){
+        	$("#buyAmount").val($("#leftAmount").html());
+        	var money = Number($('#buyAmount').val());
+			wxSign(money);
+        });
+        var appId,timeStamp,nonceStr,signType,prepayId,paySign;
+		function onBridgeReady(){   
+			WeixinJSBridge.invoke( 
+				'getBrandWCPayRequest', { 
+					"appId" : appId, //公众号名称，由商户传入 
+					"timeStamp" : timeStamp, //时间戳，自1970年以来的秒数 
+					"nonceStr" : nonceStr, //随机串 
+					"package" : "prepay_id=" + prepayId, 
+					"signType" : signType, //微信签名方式: 
+					"paySign" : paySign //微信签名 
+				}, 
+				function(res){ 
+					if(res.err_msg == "get_brand_wcpay_request:ok" ) { 
+						//回到用户订单列表  
+						var datas ={'version':'1.0','system':'weixin','token':'','objId':'String','method':'/finance/thirdPay/success/getBondList','data':''+mainData.data.orderNum+''};
+		    	        $.ajax({
+		    	            dataType:'jsonp',
+		    	            url:pub.jsonPApiT,
+		    	            data:datas,
+		    	            jsonp:'callback',
+		    	            async:false,
+		    	            success:function(jsonData){
+		    	            	rdd=eval(jsonData);
+								if(rdd.code=='6666'){
+							    	if(rdd.data.status=='1'){
+							    		window.location.href=pub.wxDomain+"views/zxt_stu/sb/buyDown.html"; 
+							    	}else{
+							    		$('#oDiv').show();
+					                	pub.cs("来晚了，散标已经被抢光了，付款将会原路返回到您的付款账号！");
+					                	window.location.href=pub.wxDomain+"views/zxt_stu/sb/downloadApp.html"; 
+							    	}
+								}else{
+									window.location.href=pub.wxDomain+"views/zxt_stu/sb/downloadApp.html";
+								}
+		    	            },
+		    	        });
+					} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回 ok，但并不保证它绝对可靠。 
+					else if (res.err_msg == "get_brand_wcpay_request:cancel")  {  
+		                alert("支付过程中用户取消");  
+		                var datas ={'version':'1.0','system':'weixin','token':'','objId':'PayServiceVO','method':'/thirdPay/after/service','@orderNum':''+mainData.data.orderNum+'','@type':'3','@status':'2'};
+		    	        $.ajax({
+		    	            dataType:'jsonp',
+		    	            url:pub.jsonPApiT,
+		    	            data:datas,
+		    	            jsonp:'callback',
+		    	            async:false,
+		    	            success:function(jsonData){
+		    	                
+		    	            },
+		    	        });
+		            }else{  
+		               //支付失败  
+		               alert(res.err_msg)  
+		            }  			
+				} 
+			); 
+		}
+		function wxSign(money){
+			//微信jssdk签名 
+	        var datas ={'version':'1.0','system':'weixin','token':'','objId':'PayVO','method':'/weixin/signature','@userId':''+locationData.userId+'','@amount':''+money+'','@subject':'散标购买','@type':'2','@remoteAddr':''+returnCitySN["cip"]+'','@openId':''+locationData.openId+'','@productId':''+locationData.loanId+'','@orderType':'1'};
+	        $.ajax({
+	            dataType:'jsonp',
+	            url:pub.jsonPApiT,
+	            data:datas,
+	            jsonp:'callback',
+	            async:false,
+	            success:function(jsonData){
+	                mainData=eval(jsonData);
+					if(mainData.code=='6666'){
+						appId = mainData.data.appId;
+						timeStamp = mainData.data.timeStamp;
+						nonceStr = mainData.data.nonceStr;
+						signType = mainData.data.signType;
+						prepayId = mainData.data.prepayId;
+						paySign = mainData.data.sign;
+						//生成购买订单
+						var bd ={'version':'1.0','system':'weixin','token':'','objId':'ProductAndAccountInfoVO','method':'/finance/h5/create/order','@userId':''+locationData.userId+'','@money':''+money+'','@productId':''+locationData.loanId+'','@type':'1','@orderNum':''+mainData.data.orderNum+''};
+				        $.ajax({
+				            dataType:'jsonp',
+				            url:pub.jsonPApiT,
+				            data:bd,
+				            jsonp:'callback',
+				            async:false,
+				            success:function(rd){
+				                rdd=eval(rd);
+								if(rdd.code=='6666'){
+							    	
+								}else{
+									$('#oDiv').show();
+				                	pub.cs(rdd.msg);
+								}
+				            },
+				        });
+				        if(appId){
+							if (typeof WeixinJSBridge == "undefined"){ 
+								if( document.addEventListener ){ 
+									document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false); 
+						 		}else if (document.attachEvent){ 
+						  			document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+						  			document.attachEvent('onWeixinJSBridgeReady', onBridgeReady); 
+						 		}
+							}else{ 
+						 		onBridgeReady(); 
+						 	} 
+				        }
+					}else{
+						$('#oDiv').show();
+	                    pub.cs(mainData.msg);
+					}
+	            },
+	        });
+		}
+		$('button').click(function(){ 
+			var money = Number($('#buyAmount').val());
+			if(money < 1){
+				$('#oDiv').show();
+				pub.cs("购买金额至少为一元");
+				return false;
+			}
+			wxSign(money);
+		});
+	});
+</script>
