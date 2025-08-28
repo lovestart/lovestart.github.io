@@ -6,18 +6,15 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人资源站点</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4361ee;
-            --secondary-color: #3f37c9;
+            --primary-color: #4263eb;
+            --secondary-color: #2b3a8c;
             --light-color: #f8f9fa;
-            --dark-color: #212529;
-            --accent-color: #4895ef;
-            --success-color: #4cc9f0;
-            --danger-color: #f72585;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+            --dark-color: #2d3436;
+            --accent-color: #fa5252;
+            --success-color: #40c057;
         }
         
         * {
@@ -28,7 +25,7 @@
         }
         
         body {
-            background-color: #f0f2f5;
+            background-color: #f1f3f5;
             color: var(--dark-color);
             line-height: 1.6;
             padding: 20px;
@@ -40,7 +37,7 @@
             padding: 30px;
             background: white;
             border-radius: 12px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         
         header {
@@ -51,32 +48,66 @@
         }
         
         h1 {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 10px;
             font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background-color: var(--accent-color);
-            border-radius: 3px;
         }
         
         .intro {
             color: var(--dark-color);
             font-size: 1.1rem;
             max-width: 700px;
-            margin: 20px auto 0;
-            opacity: 0.8;
+            margin: 0 auto;
         }
         
+        /* 标签页样式 */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #495057;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* 资源组样式 */
         .resource-groups {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -86,16 +117,15 @@
         
         .resource-group {
             background: white;
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 25px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .resource-group:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .group-header {
@@ -110,7 +140,6 @@
         .group-title {
             color: var(--primary-color);
             font-size: 1.4rem;
-            font-weight: 600;
             display: flex;
             align-items: center;
         }
@@ -120,29 +149,12 @@
             font-size: 1.2em;
         }
         
-        .group-actions {
-            display: flex;
-            gap: 5px;
-        }
-        
-        .group-action-btn {
-            background: none;
-            border: none;
-            color: #999;
-            cursor: pointer;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            padding: 0;
-        }
-        
-        .group-action-btn:hover {
+        .group-count {
             background-color: var(--light-color);
-            color: var(--primary-color);
+            color: var(--dark-color);
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 0.8rem;
         }
         
         .resource-list {
@@ -152,22 +164,22 @@
         .resource-item {
             margin-bottom: 12px;
             padding: 8px 10px;
-            border-radius: 6px;
-            transition: var(--transition);
+            border-radius: 5px;
+            transition: background-color 0.2s;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .resource-item:hover {
-            background-color: var(--light-color);
+            background-color: #f8f9fa;
         }
         
         .resource-link {
             color: var(--dark-color);
             text-decoration: none;
             font-size: 1.05rem;
-            transition: var(--transition);
+            transition: color 0.2s ease;
             display: flex;
             align-items: center;
             flex: 1;
@@ -177,17 +189,17 @@
             color: var(--primary-color);
         }
         
-        .resource-link i {
-            margin-right: 8px;
-            font-size: 0.9em;
-            opacity: 0.7;
+        .resource-link i.external-icon {
+            margin-left: 5px;
+            font-size: 0.8em;
+            color: #6c757d;
         }
         
-        .resource-link.external i:last-child {
-            margin-left: 5px;
-            margin-right: 0;
-            font-size: 0.7em;
-            opacity: 0.5;
+        .resource-description {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 3px;
+            margin-left: 20px;
         }
         
         .resource-actions {
@@ -195,96 +207,36 @@
             gap: 5px;
         }
         
-        .resource-action-btn {
+        .action-btn {
             background: none;
             border: none;
-            color: #999;
             cursor: pointer;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            padding: 0;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            padding: 3px;
         }
         
-        .resource-action-btn:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-            color: var(--danger-color);
+        .edit-btn {
+            color: #1971c2;
         }
         
-        .add-section {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: var(--light-color);
-            border-radius: 12px;
+        .delete-btn {
+            color: var(--accent-color);
         }
         
-        .section-tabs {
-            display: flex;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 25px;
+        /* 表单样式 */
+        .form-section {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
         }
         
-        .section-tab {
-            padding: 10px 20px;
-            background: none;
-            border: none;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #666;
-            cursor: pointer;
-            position: relative;
-            transition: var(--transition);
-        }
-        
-        .section-tab.active {
-            color: var(--primary-color);
-        }
-        
-        .section-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            border-radius: 3px 3px 0 0;
-        }
-        
-        .section-content {
-            display: none;
-        }
-        
-        .section-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .add-section h3 {
+        .form-section h3 {
             color: var(--secondary-color);
             margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
         }
         
         .form-group {
@@ -296,81 +248,119 @@
             margin-bottom: 8px;
             color: var(--dark-color);
             font-weight: 500;
-            font-size: 0.95rem;
         }
         
         input, select, textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 5px;
             font-size: 1rem;
-            transition: var(--transition);
+            transition: border-color 0.2s ease;
         }
         
         input:focus, select:focus, textarea:focus {
             border-color: var(--primary-color);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+            box-shadow: 0 0 0 3px rgba(66, 99, 235, 0.1);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
         }
         
         .btn {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
+            transition: background-color 0.2s ease;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-        }
-        
-        .btn i {
-            margin-right: 8px;
+            gap: 8px;
         }
         
         .btn:hover {
             background-color: var(--secondary-color);
-            transform: translateY(-2px);
         }
         
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
+        .btn-secondary {
+            background-color: #6c757d;
         }
         
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
+        .btn-secondary:hover {
+            background-color: #5a6268;
         }
         
-        .actions-bar {
+        .btn-success {
+            background-color: var(--success-color);
+        }
+        
+        .btn-success:hover {
+            background-color: #34a853;
+        }
+        
+        .btn-danger {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #e03131;
+        }
+        
+        .button-group {
             display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        /* 分组列表样式 */
+        .group-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 20px;
-            flex-wrap: wrap;
         }
         
+        .group-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .group-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .group-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* 通知样式 */
         .notification {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 15px 25px;
+            padding: 15px 20px;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--success-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
             transform: translateY(100px);
             opacity: 0;
-            transition: var(--transition);
+            transition: transform 0.3s, opacity 0.3s;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            border-left: 4px solid var(--success-color);
         }
         
         .notification.show {
@@ -378,18 +368,8 @@
             opacity: 1;
         }
         
-        .notification i {
-            margin-right: 10px;
-            color: var(--success-color);
-            font-size: 1.2em;
-        }
-        
         .notification.error {
-            border-left-color: var(--danger-color);
-        }
-        
-        .notification.error i {
-            color: var(--danger-color);
+            border-left-color: var(--accent-color);
         }
         
         footer {
@@ -402,7 +382,7 @@
         }
         
         @media (max-width: 768px) {
-            .resource-groups {
+            .resource-groups, .group-list {
                 grid-template-columns: 1fr;
             }
             
@@ -414,8 +394,13 @@
                 padding: 20px;
             }
             
-            .add-section {
-                padding: 20px;
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                padding: 8px 12px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -427,94 +412,109 @@
             <p class="intro">收集和整理各类开发资源与工具，方便日常学习和工作使用</p>
         </header>
         
-        <div class="resource-groups" id="resourceContainer">
-            <!-- 资源组将通过JavaScript动态生成 -->
+        <!-- 标签页导航 -->
+        <div class="tabs">
+            <button class="tab active" data-tab="resources">资源列表</button>
+            <button class="tab" data-tab="add-resource">添加资源</button>
+            <button class="tab" data-tab="manage-groups">管理分组</button>
+            <button class="tab" data-tab="import-export">导出/导入</button>
         </div>
         
-        <div class="add-section">
-            <div class="section-tabs">
-                <button class="section-tab active" data-tab="add-resource">添加资源</button>
-                <button class="section-tab" data-tab="manage-groups">管理分组</button>
-                <button class="section-tab" data-tab="export-import">导出/导入</button>
+        <!-- 资源列表标签页 -->
+        <div class="tab-content active" id="resources">
+            <div class="resource-groups" id="resourceContainer">
+                <!-- 资源组将通过JavaScript动态生成 -->
+                <div class="loading">正在加载资源，请稍候...</div>
             </div>
-            
-            <div id="add-resource" class="section-content active">
+        </div>
+        
+        <!-- 添加资源标签页 -->
+        <div class="tab-content" id="add-resource">
+            <div class="form-section">
                 <h3>添加新资源</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="resourceGroupName">资源分组</label>
-                        <div style="display: flex; gap: 10px;">
-                            <select id="resourceGroupName" style="flex: 1;">
-                                <!-- 分组选项将通过JavaScript动态生成 -->
-                            </select>
-                            <button type="button" class="btn btn-outline" style="padding: 0 15px;" onclick="showCreateGroupForm()">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="resourceName">资源名称</label>
-                        <input type="text" id="resourceName" placeholder="输入资源名称">
-                    </div>
-                    <div class="form-group">
-                        <label for="resourceUrl">资源链接</label>
-                        <input type="url" id="resourceUrl" placeholder="输入资源URL，例如：https://example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="resourceDesc">资源描述（可选）</label>
-                        <input type="text" id="resourceDesc" placeholder="简单描述该资源（可选）">
-                    </div>
+                <div class="form-group">
+                    <label for="newResourceGroup">资源分组</label>
+                    <select id="newResourceGroup">
+                        <!-- 分组选项将通过JavaScript动态生成 -->
+                    </select>
                 </div>
-                <div class="actions-bar">
-                    <button class="btn" onclick="addNewResource()">
-                        <i class="fas fa-save"></i> 添加资源
-                    </button>
+                <div class="form-group">
+                    <label for="newResourceName">资源名称</label>
+                    <input type="text" id="newResourceName" placeholder="输入资源名称">
                 </div>
+                <div class="form-group">
+                    <label for="newResourceUrl">资源链接</label>
+                    <input type="url" id="newResourceUrl" placeholder="输入资源URL">
+                </div>
+                <div class="form-group">
+                    <label for="newResourceDescription">资源描述（可选）</label>
+                    <textarea id="newResourceDescription" placeholder="输入资源描述（可选）"></textarea>
+                </div>
+                <button class="btn" onclick="addNewResource()">
+                    <i class="fas fa-plus"></i> 添加资源
+                </button>
+            </div>
+        </div>
+        
+        <!-- 管理分组标签页 -->
+        <div class="tab-content" id="manage-groups">
+            <div class="form-section">
+                <h3>创建新分组</h3>
+                <div class="form-group">
+                    <label for="newGroupName">分组名称</label>
+                    <input type="text" id="newGroupName" placeholder="输入分组名称">
+                </div>
+                <div class="form-group">
+                    <label for="newGroupIcon">选择图标</label>
+                    <select id="newGroupIcon">
+                        <option value="folder">文件夹 (folder)</option>
+                        <option value="android">Android (android)</option>
+                        <option value="apple-alt">iOS (apple-alt)</option>
+                        <option value="code">代码 (code)</option>
+                        <option value="wrench">工具 (wrench)</option>
+                        <option value="book">书籍 (book)</option>
+                        <option value="link">链接 (link)</option>
+                        <option value="database">数据库 (database)</option>
+                        <option value="cloud">云服务 (cloud)</option>
+                        <option value="terminal">终端 (terminal)</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="createNewGroup()">
+                    <i class="fas fa-folder-plus"></i> 创建分组
+                </button>
             </div>
             
-            <div id="manage-groups" class="section-content">
-                <h3>管理资源分组</h3>
-                <div class="form-group">
-                    <label for="newGroupName">创建新分组</label>
-                    <div style="display: flex; gap: 10px;">
-                        <input type="text" id="newGroupName" placeholder="输入新分组名称">
-                        <button class="btn" onclick="createNewGroup()">
-                            <i class="fas fa-plus"></i> 创建
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>现有分组</label>
-                    <div id="existingGroups" style="margin-top: 10px;">
-                        <!-- 现有分组将通过JavaScript动态生成 -->
-                    </div>
-                </div>
+            <h3>现有分组</h3>
+            <div class="group-list" id="groupList">
+                <!-- 分组列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <!-- 导出/导入标签页 -->
+        <div class="tab-content" id="import-export">
+            <div class="form-section">
+                <h3>导出配置</h3>
+                <p>将当前资源配置导出为JSON文件，用于备份或迁移到其他设备。</p>
+                <button class="btn btn-success" onclick="exportConfig()">
+                    <i class="fas fa-download"></i> 导出配置文件
+                </button>
             </div>
             
-            <div id="export-import" class="section-content">
-                <h3>导出/导入配置</h3>
-                <p style="margin-bottom: 20px; color: #666;">通过导出配置文件，可以在不同设备间同步您的资源数据</p>
-                
-                <div class="form-group">
-                    <button class="btn" onclick="exportConfig()">
-                        <i class="fas fa-download"></i> 导出配置文件
-                    </button>
-                </div>
-                
-                <div class="form-group">
-                    <label for="importFile">导入配置文件</label>
-                    <input type="file" id="importFile" accept=".json" style="padding: 8px;">
-                    <button class="btn btn-outline" style="margin-top: 10px;" onclick="importConfig()">
-                        <i class="fas fa-upload"></i> 导入配置
-                    </button>
-                </div>
-                
-                <div class="form-group">
-                    <button class="btn btn-outline" style="background-color: #fff5f5; color: #e53e3e; border-color: #e53e3e;" onclick="clearAllData()">
-                        <i class="fas fa-trash"></i> 清空所有数据
-                    </button>
-                </div>
+            <div class="form-section">
+                <h3>导入配置</h3>
+                <p>从JSON文件导入资源配置，这将覆盖当前所有资源和分组。</p>
+                <input type="file" id="importFile" accept=".json" style="margin-bottom: 15px;">
+                <button class="btn btn-secondary" onclick="importConfig()">
+                    <i class="fas fa-upload"></i> 导入配置文件
+                </button>
+            </div>
+            
+            <div class="form-section">
+                <h3>清空数据</h3>
+                <p>此操作将删除所有资源和分组，恢复到初始状态。</p>
+                <button class="btn btn-danger" onclick="clearAllData()">
+                    <i class="fas fa-trash"></i> 清空所有数据
+                </button>
             </div>
         </div>
         
@@ -522,130 +522,159 @@
             <p>个人资源站点 &copy; 2023</p>
         </footer>
     </div>
-
-    <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i>
-        <span id="notificationText">操作成功</span>
-    </div>
+    
+    <!-- 通知组件 -->
+    <div class="notification" id="notification"></div>
 
     <script>
-        // 资源数据结构: { groups: [], resources: [] }
-        let data = {
-            groups: [
-                { id: 'android', name: 'Android资源', icon: 'android' },
-                { id: 'ios', name: 'iOS资源', icon: 'apple-alt' },
-                { id: 'tools', name: '工具', icon: 'wrench' },
-                { id: 'other', name: '其他资源', icon: 'folder-open' }
-            ],
-            resources: [
-                { id: generateId(), group: 'android', name: '跳转到吴', url: 'wulz/wulz.html', description: '' },
-                { id: generateId(), group: 'android', name: 'Android资源', url: 'Android/AndroidIndex.html', description: '' },
-                { id: generateId(), group: 'android', name: 'svg2android-drawable', url: 'Android/svg2android-gh-pages/index.html', description: '' },
-                { id: generateId(), group: 'tools', name: 'SvgToVectorDrawableConverter', url: 'http://a-student.github.io/SvgToVectorDrawableConverter.Web/', description: '' },
-                { id: generateId(), group: 'ios', name: 'IOS资源', url: 'IOS/IOSIndex.html', description: '' },
-                { id: generateId(), group: 'other', name: 'RxJava Essentials 中文翻译版', url: 'https://rxjava.yuxingxin.com/', description: '' },
-                { id: generateId(), group: 'other', name: '《Kotlin for android developers》中文版翻译', url: 'https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/', description: '' },
-                { id: generateId(), group: 'tools', name: '跳转到网页测试', url: 'html_test/webview_test.html', description: '' }
-            ]
+        // 数据存储
+        let appData = {
+            groups: [],
+            resources: []
         };
-
-        // 页面加载时初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            loadFromJsonFile();
-            initTabs();
-        });
-
-        // 初始化标签页切换
-        function initTabs() {
-            const tabs = document.querySelectorAll('.section-tab');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // 移除所有活动状态
-                    document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('active'));
-                    
-                    // 添加当前活动状态
-                    this.classList.add('active');
-                    const tabId = this.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initApp);
+        
+        // 初始化应用
+        function initApp() {
+            // 尝试多种方式加载JSON配置
+            loadDataWithFallback();
+            
+            // 设置标签页切换
+            setupTabs();
         }
-
+        
+        // 多种方式加载数据，带有降级方案
+        function loadDataWithFallback() {
+            // 首先尝试从localStorage加载（如果用户之前导入过）
+            const savedData = localStorage.getItem('resourceSiteData');
+            if (savedData) {
+                try {
+                    appData = JSON.parse(savedData);
+                    renderAll();
+                    showNotification('从本地存储加载数据成功');
+                    return;
+                } catch (e) {
+                    console.error('本地存储数据解析失败', e);
+                }
+            }
+            
+            // 然后尝试从JSON文件加载
+            loadFromJsonFile();
+        }
+        
         // 从JSON文件加载数据
         function loadFromJsonFile() {
             fetch('resources.json')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('配置文件不存在，使用默认数据');
+                        throw new Error('无法加载配置文件');
                     }
                     return response.json();
                 })
-                .then(jsonData => {
-                    // 确保数据结构正确
-                    if (jsonData.groups && jsonData.resources) {
-                        data = jsonData;
-                    } else {
-                        // 兼容旧格式的resources.json
-                        data.resources = jsonData;
-                    }
+                .then(data => {
+                    appData = data;
+                    // 同时保存到localStorage作为备份
+                    localStorage.setItem('resourceSiteData', JSON.stringify(appData));
                     renderAll();
+                    showNotification('从配置文件加载数据成功');
                 })
                 .catch(error => {
-                    console.log(error.message);
+                    console.error('加载配置文件失败:', error);
+                    showNotification('无法加载JSON文件，可能是浏览器安全限制。请使用导入功能或本地服务器', 'error');
+                    
+                    // 使用默认数据
+                    useDefaultData();
                     renderAll();
                 });
         }
-
+        
+        // 使用默认数据
+        function useDefaultData() {
+            appData = {
+                "groups": [
+                    {
+                        "id": "android",
+                        "name": "Android资源",
+                        "icon": "android"
+                    },
+                    {
+                        "id": "ios",
+                        "name": "iOS资源",
+                        "icon": "apple-alt"
+                    },
+                    {
+                        "id": "tools",
+                        "name": "工具",
+                        "icon": "wrench"
+                    },
+                    {
+                        "id": "other",
+                        "name": "其他资源",
+                        "icon": "folder-open"
+                    }
+                ],
+                "resources": [
+                    {
+                        "id": "default-1",
+                        "group": "android",
+                        "name": "示例Android资源",
+                        "url": "#",
+                        "description": "这是一个示例资源"
+                    }
+                ]
+            };
+            // 保存默认数据到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+        }
+        
         // 渲染所有内容
         function renderAll() {
             renderResources();
-            renderGroupOptions();
-            renderExistingGroups();
+            renderGroupSelect();
+            renderGroupList();
         }
-
+        
         // 渲染资源列表
         function renderResources() {
             const container = document.getElementById('resourceContainer');
             container.innerHTML = '';
-
+            
+            if (appData.groups.length === 0) {
+                container.innerHTML = '<div class="empty-state">暂无分组，请先创建分组</div>';
+                return;
+            }
+            
             // 按分组整理资源
             const groupedResources = {};
-            data.resources.forEach(resource => {
+            appData.resources.forEach(resource => {
                 if (!groupedResources[resource.group]) {
                     groupedResources[resource.group] = [];
                 }
                 groupedResources[resource.group].push(resource);
             });
-
+            
             // 生成每个资源组的HTML
-            data.groups.forEach(group => {
+            appData.groups.forEach(group => {
                 const groupResources = groupedResources[group.id] || [];
                 
                 const groupDiv = document.createElement('div');
                 groupDiv.className = 'resource-group';
-                groupDiv.setAttribute('data-group-id', group.id);
                 
                 const groupHeader = document.createElement('div');
                 groupHeader.className = 'group-header';
                 
                 const groupTitle = document.createElement('h3');
                 groupTitle.className = 'group-title';
-                groupTitle.innerHTML = `<i class="fas fa-${group.icon || 'folder'}""></i> ${group.name}`;
+                groupTitle.innerHTML = `<i class="fas fa-${group.icon}"></i> ${group.name}`;
+                
+                const groupCount = document.createElement('span');
+                groupCount.className = 'group-count';
+                groupCount.textContent = `${groupResources.length} 个资源`;
+                
                 groupHeader.appendChild(groupTitle);
-                
-                const groupActions = document.createElement('div');
-                groupActions.className = 'group-actions';
-                groupActions.innerHTML = `
-                    <button class="group-action-btn" title="编辑分组" onclick="editGroup('${group.id}')">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="group-action-btn" title="删除分组" onclick="deleteGroup('${group.id}')">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                `;
-                groupHeader.appendChild(groupActions);
-                
+                groupHeader.appendChild(groupCount);
                 groupDiv.appendChild(groupHeader);
                 
                 const resourceList = document.createElement('ul');
@@ -654,40 +683,51 @@
                 if (groupResources.length === 0) {
                     const emptyItem = document.createElement('li');
                     emptyItem.className = 'resource-item';
-                    emptyItem.style.color = '#999';
-                    emptyItem.style.fontStyle = 'italic';
-                    emptyItem.textContent = '该分组暂无资源';
+                    emptyItem.innerHTML = '<span style="color: #6c757d;">该分组暂无资源</span>';
                     resourceList.appendChild(emptyItem);
                 } else {
                     groupResources.forEach(resource => {
                         const listItem = document.createElement('li');
                         listItem.className = 'resource-item';
-                        listItem.setAttribute('data-resource-id', resource.id);
                         
-                        const isExternal = resource.url.startsWith('http://') || resource.url.startsWith('https://');
-                        const linkClass = isExternal ? 'resource-link external' : 'resource-link';
+                        const linkContainer = document.createElement('div');
+                        linkContainer.style.flex = '1';
                         
-                        let linkHtml = `<a href="${resource.url}" class="${linkClass}" target="${isExternal ? '_blank' : '_self'}">
-                            <i class="fas fa-link"></i>
-                            ${resource.name}
-                            ${isExternal ? '<i class="fas fa-external-link-alt"></i>' : ''}
-                        </a>`;
+                        const link = document.createElement('a');
+                        link.className = 'resource-link';
+                        link.href = resource.url;
+                        link.textContent = resource.name;
                         
-                        if (resource.description) {
-                            linkHtml += `<div style="font-size: 0.85rem; color: #666; margin-top: 3px; margin-left: 24px;">${resource.description}</div>`;
+                        // 判断是否为外部链接
+                        if (resource.url.startsWith('http://') || resource.url.startsWith('https://')) {
+                            link.target = '_blank';
+                            link.innerHTML += ' <i class="fas fa-external-link-alt external-icon"></i>';
                         }
                         
-                        listItem.innerHTML = linkHtml + `
-                            <div class="resource-actions">
-                                <button class="resource-action-btn" title="编辑资源" onclick="editResource('${resource.id}')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="resource-action-btn" title="删除资源" onclick="deleteResource('${resource.id}')">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
+                        linkContainer.appendChild(link);
+                        
+                        // 添加描述
+                        if (resource.description) {
+                            const description = document.createElement('div');
+                            description.className = 'resource-description';
+                            description.textContent = resource.description;
+                            linkContainer.appendChild(description);
+                        }
+                        
+                        // 操作按钮
+                        const actions = document.createElement('div');
+                        actions.className = 'resource-actions';
+                        actions.innerHTML = `
+                            <button class="action-btn edit-btn" onclick="editResource('${resource.id}')" title="编辑">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="action-btn delete-btn" onclick="deleteResource('${resource.id}')" title="删除">
+                                <i class="fas fa-trash"></i>
+                            </button>
                         `;
                         
+                        listItem.appendChild(linkContainer);
+                        listItem.appendChild(actions);
                         resourceList.appendChild(listItem);
                     });
                 }
@@ -696,279 +736,257 @@
                 container.appendChild(groupDiv);
             });
         }
-
+        
         // 渲染分组选择下拉框
-        function renderGroupOptions() {
-            const select = document.getElementById('resourceGroupName');
+        function renderGroupSelect() {
+            const select = document.getElementById('newResourceGroup');
             select.innerHTML = '';
             
-            data.groups.forEach(group => {
+            appData.groups.forEach(group => {
                 const option = document.createElement('option');
                 option.value = group.id;
                 option.textContent = group.name;
                 select.appendChild(option);
             });
         }
-
-        // 渲染现有分组列表（用于管理分组标签页）
-        function renderExistingGroups() {
-            const container = document.getElementById('existingGroups');
+        
+        // 渲染分组列表
+        function renderGroupList() {
+            const container = document.getElementById('groupList');
             container.innerHTML = '';
             
-            if (data.groups.length === 0) {
-                container.innerHTML = '<p style="color: #666; font-style: italic;">暂无分组，请创建新分组</p>';
-                return;
-            }
-            
-            data.groups.forEach(group => {
-                const groupCount = data.resources.filter(r => r.group === group.id).length;
+            appData.groups.forEach(group => {
+                // 计算该分组下的资源数量
+                const resourceCount = appData.resources.filter(r => r.group === group.id).length;
                 
-                const groupItem = document.createElement('div');
-                groupItem.style.display = 'flex';
-                groupItem.style.alignItems = 'center';
-                groupItem.style.justifyContent = 'space-between';
-                groupItem.style.padding = '10px 15px';
-                groupItem.style.marginBottom = '8px';
-                groupItem.style.backgroundColor = 'white';
-                groupItem.style.borderRadius = '6px';
-                groupItem.style.border = '1px solid #eee';
-                
-                groupItem.innerHTML = `
-                    <div style="display: flex; align-items: center;">
-                        <i class="fas fa-${group.icon || 'folder'}" style="margin-right: 10px; color: var(--primary-color);"></i>
-                        <span>${group.name}</span>
-                        <span style="margin-left: 10px; color: #999; font-size: 0.85rem;">(${groupCount} 个资源)</span>
+                const groupCard = document.createElement('div');
+                groupCard.className = 'group-card';
+                groupCard.innerHTML = `
+                    <div class="group-info">
+                        <i class="fas fa-${group.icon} group-icon"></i>
+                        <div>
+                            <div>${group.name}</div>
+                            <div style="font-size: 0.8rem; color: #6c757d;">${resourceCount} 个资源</div>
+                        </div>
                     </div>
-                    <div style="display: flex; gap: 5px;">
-                        <button class="resource-action-btn" title="编辑分组" onclick="editGroup('${group.id}')">
+                    <div class="resource-actions">
+                        <button class="action-btn edit-btn" onclick="editGroup('${group.id}')" title="编辑">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button class="resource-action-btn" title="删除分组" onclick="deleteGroup('${group.id}')">
+                        <button class="action-btn delete-btn" onclick="deleteGroup('${group.id}')" title="删除">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
                 `;
-                
-                container.appendChild(groupItem);
+                container.appendChild(groupCard);
             });
         }
-
-        // 显示创建分组表单
-        function showCreateGroupForm() {
-            const groupName = prompt('请输入新分组名称:');
-            if (groupName && groupName.trim() !== '') {
-                createNewGroup(groupName.trim());
-            }
-        }
-
-        // 创建新分组
-        function createNewGroup(presetName) {
-            let groupName = presetName || document.getElementById('newGroupName').value.trim();
+        
+        // 设置标签页切换
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.tab');
             
-            if (!groupName) {
-                showNotification('请输入分组名称', 'error');
-                return;
-            }
-            
-            // 检查分组是否已存在
-            const exists = data.groups.some(g => g.name.toLowerCase() === groupName.toLowerCase());
-            if (exists) {
-                showNotification('该分组已存在', 'error');
-                return;
-            }
-            
-            // 创建新分组
-            const groupId = 'group_' + generateId();
-            data.groups.push({
-                id: groupId,
-                name: groupName,
-                icon: 'folder-open' // 默认图标
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 移除所有活动状态
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // 添加当前活动状态
+                    tab.classList.add('active');
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
             });
-            
-            // 更新界面
-            renderAll();
-            saveToJsonFile();
-            
-            // 清空输入框
-            if (!presetName) {
-                document.getElementById('newGroupName').value = '';
-            }
-            
-            showNotification(`已创建新分组: ${groupName}`);
         }
-
-        // 编辑分组
-        function editGroup(groupId) {
-            const group = data.groups.find(g => g.id === groupId);
-            if (!group) return;
-            
-            const newName = prompt('请输入新的分组名称:', group.name);
-            if (newName === null) return; // 用户取消
-            if (newName.trim() === '') {
-                showNotification('分组名称不能为空', 'error');
-                return;
-            }
-            
-            // 检查新名称是否已存在
-            const exists = data.groups.some(g => 
-                g.id !== groupId && g.name.toLowerCase() === newName.toLowerCase()
-            );
-            if (exists) {
-                showNotification('该分组名称已存在', 'error');
-                return;
-            }
-            
-            // 更新分组名称
-            group.name = newName.trim();
-            
-            // 可以在这里添加选择图标的功能，简化版暂不实现
-            
-            // 更新界面
-            renderAll();
-            saveToJsonFile();
-            showNotification('分组已更新');
-        }
-
-        // 删除分组
-        function deleteGroup(groupId) {
-            const group = data.groups.find(g => g.id === groupId);
-            if (!group) return;
-            
-            // 检查该分组是否有资源
-            const groupResources = data.resources.filter(r => r.group === groupId);
-            if (groupResources.length > 0) {
-                if (!confirm(`确定要删除分组"${group.name}"吗？该分组包含 ${groupResources.length} 个资源，将一并删除。`)) {
-                    return;
-                }
-                
-                // 删除该分组的所有资源
-                data.resources = data.resources.filter(r => r.group !== groupId);
-            } else {
-                if (!confirm(`确定要删除分组"${group.name}"吗？`)) {
-                    return;
-                }
-            }
-            
-            // 删除分组
-            data.groups = data.groups.filter(g => g.id !== groupId);
-            
-            // 更新界面
-            renderAll();
-            saveToJsonFile();
-            showNotification('分组已删除');
-        }
-
+        
         // 添加新资源
         function addNewResource() {
-            const groupId = document.getElementById('resourceGroupName').value;
-            const name = document.getElementById('resourceName').value.trim();
-            const url = document.getElementById('resourceUrl').value.trim();
-            const description = document.getElementById('resourceDesc').value.trim();
-
+            const groupId = document.getElementById('newResourceGroup').value;
+            const name = document.getElementById('newResourceName').value.trim();
+            const url = document.getElementById('newResourceUrl').value.trim();
+            const description = document.getElementById('newResourceDescription').value.trim();
+            
             if (!name || !url) {
                 showNotification('请填写资源名称和链接', 'error');
                 return;
             }
-
+            
+            // 生成唯一ID
+            const id = 'res-' + Date.now();
+            
             // 添加新资源
-            data.resources.push({
-                id: generateId(),
+            appData.resources.push({
+                id,
                 group: groupId,
-                name: name,
-                url: url,
-                description: description
+                name,
+                url,
+                description
             });
             
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+            
             // 重新渲染
-            renderResources();
-            saveToJsonFile();
+            renderAll();
             
             // 清空表单
-            document.getElementById('resourceName').value = '';
-            document.getElementById('resourceUrl').value = '';
-            document.getElementById('resourceDesc').value = '';
+            document.getElementById('newResourceName').value = '';
+            document.getElementById('newResourceUrl').value = '';
+            document.getElementById('newResourceDescription').value = '';
             
             showNotification('资源添加成功');
         }
-
+        
+        // 创建新分组
+        function createNewGroup() {
+            const name = document.getElementById('newGroupName').value.trim();
+            const icon = document.getElementById('newGroupIcon').value;
+            
+            if (!name) {
+                showNotification('请输入分组名称', 'error');
+                return;
+            }
+            
+            // 生成唯一ID（将名称转换为小写并替换空格）
+            let id = name.toLowerCase().replace(/\s+/g, '-');
+            
+            // 确保ID唯一
+            const originalId = id;
+            let counter = 1;
+            while (appData.groups.some(g => g.id === id)) {
+                id = originalId + '-' + counter++;
+            }
+            
+            // 添加新分组
+            appData.groups.push({
+                id,
+                name,
+                icon
+            });
+            
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+            
+            // 重新渲染
+            renderAll();
+            
+            // 清空表单
+            document.getElementById('newGroupName').value = '';
+            
+            showNotification('分组创建成功');
+        }
+        
         // 编辑资源
         function editResource(resourceId) {
-            const resource = data.resources.find(r => r.id === resourceId);
+            const resource = appData.resources.find(r => r.id === resourceId);
             if (!resource) return;
             
-            const newName = prompt('请输入资源名称:', resource.name);
+            const newName = prompt('编辑资源名称:', resource.name);
             if (newName === null) return; // 用户取消
-            if (newName.trim() === '') {
-                showNotification('资源名称不能为空', 'error');
+            
+            const newUrl = prompt('编辑资源链接:', resource.url);
+            if (newUrl === null) return;
+            
+            const newDescription = prompt('编辑资源描述:', resource.description || '');
+            if (newDescription === null) return;
+            
+            if (!newName.trim() || !newUrl.trim()) {
+                showNotification('名称和链接不能为空', 'error');
                 return;
             }
             
-            const newUrl = prompt('请输入资源链接:', resource.url);
-            if (newUrl === null) return; // 用户取消
-            if (newUrl.trim() === '') {
-                showNotification('资源链接不能为空', 'error');
-                return;
-            }
-            
-            // 更新资源信息
+            // 更新资源
             resource.name = newName.trim();
             resource.url = newUrl.trim();
+            resource.description = newDescription.trim();
             
-            // 可以在这里添加编辑描述的功能，简化版暂不实现
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
             
-            // 更新界面
             renderResources();
-            saveToJsonFile();
-            showNotification('资源已更新');
+            showNotification('资源更新成功');
         }
-
+        
         // 删除资源
         function deleteResource(resourceId) {
-            const resource = data.resources.find(r => r.id === resourceId);
-            if (!resource) return;
+            if (!confirm('确定要删除这个资源吗？')) return;
             
-            if (!confirm(`确定要删除资源"${resource.name}"吗？`)) {
+            appData.resources = appData.resources.filter(r => r.id !== resourceId);
+            
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+            
+            renderAll();
+            showNotification('资源已删除');
+        }
+        
+        // 编辑分组
+        function editGroup(groupId) {
+            const group = appData.groups.find(g => g.id === groupId);
+            if (!group) return;
+            
+            const newName = prompt('编辑分组名称:', group.name);
+            if (newName === null || !newName.trim()) return;
+            
+            group.name = newName.trim();
+            
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+            
+            renderAll();
+            showNotification('分组更新成功');
+        }
+        
+        // 删除分组
+        function deleteGroup(groupId) {
+            // 检查该分组下是否有资源
+            const groupResources = appData.resources.filter(r => r.group === groupId);
+            if (groupResources.length > 0) {
+                if (!confirm(`这个分组包含 ${groupResources.length} 个资源，删除分组会同时删除这些资源。确定要删除吗？`)) {
+                    return;
+                }
+            } else if (!confirm('确定要删除这个分组吗？')) {
                 return;
             }
             
-            // 删除资源
-            data.resources = data.resources.filter(r => r.id !== resourceId);
+            // 删除分组
+            appData.groups = appData.groups.filter(g => g.id !== groupId);
             
-            // 更新界面
-            renderResources();
-            saveToJsonFile();
-            showNotification('资源已删除');
+            // 删除该分组下的所有资源
+            appData.resources = appData.resources.filter(r => r.group !== groupId);
+            
+            // 保存到localStorage
+            localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+            
+            renderAll();
+            showNotification('分组已删除');
         }
-
-        // 导出配置文件
+        
+        // 导出配置
         function exportConfig() {
-            const jsonStr = JSON.stringify(data, null, 2);
-            const blob = new Blob([jsonStr], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
+            const dataStr = JSON.stringify(appData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
             
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'resources.json';
-            document.body.appendChild(a);
-            a.click();
+            const exportFileDefaultName = 'resources.json';
             
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }, 0);
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
             
-            showNotification('配置文件已导出');
+            showNotification('配置文件导出成功');
         }
-
-        // 导入配置文件
+        
+        // 导入配置
         function importConfig() {
             const fileInput = document.getElementById('importFile');
             if (!fileInput.files || fileInput.files.length === 0) {
-                showNotification('请先选择要导入的配置文件', 'error');
+                showNotification('请先选择要导入的JSON文件', 'error');
                 return;
             }
             
-            if (!confirm('导入配置文件将覆盖当前所有数据，确定要继续吗？')) {
+            if (!confirm('导入配置会覆盖当前所有数据，确定要继续吗？')) {
                 return;
             }
             
@@ -979,76 +997,51 @@
                 try {
                     const importedData = JSON.parse(e.target.result);
                     
-                    // 验证导入的数据结构
-                    if (!importedData.groups || !importedData.resources) {
-                        // 兼容旧格式
-                        importedData.groups = data.groups;
+                    // 简单验证数据格式
+                    if (Array.isArray(importedData.groups) && Array.isArray(importedData.resources)) {
+                        appData = importedData;
+                        // 保存到localStorage
+                        localStorage.setItem('resourceSiteData', JSON.stringify(appData));
+                        renderAll();
+                        showNotification('配置文件导入成功');
+                        fileInput.value = ''; // 重置文件输入
+                    } else {
+                        throw new Error('无效的配置文件格式');
                     }
-                    
-                    data = importedData;
-                    renderAll();
-                    saveToJsonFile();
-                    fileInput.value = ''; // 清空文件选择
-                    showNotification('配置文件导入成功');
                 } catch (error) {
-                    console.error('导入失败', error);
+                    console.error('导入失败:', error);
                     showNotification('导入失败，文件格式不正确', 'error');
                 }
             };
             
             reader.readAsText(file);
         }
-
+        
         // 清空所有数据
         function clearAllData() {
             if (!confirm('确定要清空所有数据吗？此操作不可恢复！')) {
                 return;
             }
             
-            data = {
-                groups: [],
-                resources: []
-            };
-            
+            useDefaultData();
             renderAll();
-            saveToJsonFile();
-            showNotification('所有数据已清空');
+            showNotification('所有数据已清空，恢复为默认状态');
         }
-
-        // 保存数据到JSON文件（在实际使用中，这需要后端支持，这里仅做前端演示）
-        function saveToJsonFile() {
-            // 注意：在纯前端环境中，无法直接写入本地文件系统
-            // 这个函数仅作为演示，实际应用中需要后端API支持文件写入
-            console.log('数据已更新，需要保存到resources.json:', data);
-            
-            // 前端只能通过导出功能让用户手动保存
-            // 这里可以添加提示，告知用户需要导出配置才能永久保存
-        }
-
+        
         // 显示通知
         function showNotification(message, type = 'success') {
             const notification = document.getElementById('notification');
-            const textElement = document.getElementById('notificationText');
-            
-            textElement.textContent = message;
+            notification.textContent = message;
             notification.className = 'notification';
             if (type === 'error') {
                 notification.classList.add('error');
-                notification.innerHTML = `<i class="fas fa-exclamation-circle"></i><span id="notificationText">${message}</span>`;
-            } else {
-                notification.innerHTML = `<i class="fas fa-check-circle"></i><span id="notificationText">${message}</span>`;
             }
-            
             notification.classList.add('show');
             
+            // 3秒后隐藏通知
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 3000);
-        }
-
-        // 生成唯一ID
-        function generateId() {
-            return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
         }
     </script>
 </body>
