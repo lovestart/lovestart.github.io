@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView功能测试页面</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        danger: '#EF4444',
+                        neutral: '#64748B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .card-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+            .btn-hover {
+                @apply transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-10 text-center">
+            <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800 mb-3">WebView功能测试页面</h1>
+            <p class="text-neutral text-lg">用于测试自定义WebChromeClient的各项功能</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- JavaScript弹框测试 -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-primary">
+                    <i class="fa fa-window-maximize mr-2"></i>JavaScript弹框测试
+                </h2>
+                <div class="space-y-4">
+                    <button id="testAlert" class="w-full bg-primary text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-exclamation-circle mr-2"></i>测试Alert弹窗
+                    </button>
+                    
+                    <button id="testConfirm" class="w-full bg-secondary text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-question-circle mr-2"></i>测试Confirm确认框
+                    </button>
+                    
+                    <button id="testPrompt" class="w-full bg-neutral text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-pencil mr-2"></i>测试Prompt输入框
+                    </button>
+                </div>
+                <div id="resultArea" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[60px]">
+                    <p class="text-gray-600">操作结果将显示在这里...</p>
+                </div>
+            </div>
+
+            <!-- 权限请求测试 -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-purple-600">
+                    <i class="fa fa-key mr-2"></i>权限请求测试
+                </h2>
+                <div class="space-y-4">
+                    <button id="testCamera" class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-video-camera mr-2"></i>请求摄像头权限
+                    </button>
+                    
+                    <button id="testMic" class="w-full bg-purple-500 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-microphone mr-2"></i>请求麦克风权限
+                    </button>
+                    
+                    <button id="testGeoLocation" class="w-full bg-purple-400 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-map-marker mr-2"></i>请求地理位置权限
+                    </button>
+                </div>
+                <div id="permissionStatus" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[60px]">
+                    <p class="text-gray-600">权限状态将显示在这里...</p>
+                </div>
+            </div>
+
+            <!-- 文件上传测试 -->
+            <div class="bg-white rounded-xl p-6 card-shadow md:col-span-2">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-teal-600">
+                    <i class="fa fa-upload mr-2"></i>文件上传测试
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="block text-gray-700">单文件上传:</label>
+                        <input type="file" id="singleFileUpload" class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-gray-700">多文件上传:</label>
+                        <input type="file" id="multiFileUpload" multiple class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                </div>
+                
+                <div class="mt-4 grid md:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="block text-gray-700">图片上传:</label>
+                        <input type="file" id="imageUpload" accept="image/*" class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="block text-gray-700">视频上传:</label>
+                        <input type="file" id="videoUpload" accept="video/*" class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    </div>
+                </div>
+                
+                <div id="fileInfo" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[60px]">
+                    <p class="text-gray-600">选中的文件信息将显示在这里...</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>WebView功能测试页面 &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // 结果显示函数
+        function showResult(elementId, message, isError = false) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<p class="${isError ? 'text-danger' : 'text-gray-800'}">${message}</p>`;
+            
+            // 添加动画效果
+            element.classList.add('animate-pulse');
+            setTimeout(() => {
+                element.classList.remove('animate-pulse');
+            }, 1000);
+        }
+
+        // 测试Alert弹窗
+        document.getElementById('testAlert').addEventListener('click', () => {
+            alert('这是一个测试Alert弹窗！\n用于验证onJsAlert方法是否正常工作。');
+            showResult('resultArea', 'Alert弹窗已关闭');
+        });
+
+        // 测试Confirm确认框
+        document.getElementById('testConfirm').addEventListener('click', () => {
+            const result = confirm('这是一个测试Confirm确认框！\n点击"确定"或"取消"查看效果。');
+            showResult('resultArea', `Confirm结果: ${result ? '确定' : '取消'}`);
+        });
+
+        // 测试Prompt输入框
+        document.getElementById('testPrompt').addEventListener('click', () => {
+            const result = prompt('这是一个测试Prompt输入框！\n请输入一些文本:', '默认文本');
+            if (result !== null) {
+                showResult('resultArea', `您输入的内容是: ${result}`);
+            } else {
+                showResult('resultArea', '您取消了输入');
+            }
+        });
+
+        // 测试摄像头权限
+        document.getElementById('testCamera').addEventListener('click', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                showResult('permissionStatus', '正在请求摄像头权限...');
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        showResult('permissionStatus', '摄像头权限已授予');
+                        // 停止流以释放摄像头
+                        stream.getTracks().forEach(track => track.stop());
+                    })
+                    .catch(error => {
+                        showResult('permissionStatus', `摄像头权限被拒绝: ${error.message}`, true);
+                    });
+            } else {
+                showResult('permissionStatus', '浏览器不支持媒体设备API', true);
+            }
+        });
+
+        // 测试麦克风权限
+        document.getElementById('testMic').addEventListener('click', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                showResult('permissionStatus', '正在请求麦克风权限...');
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        showResult('permissionStatus', '麦克风权限已授予');
+                        // 停止流以释放麦克风
+                        stream.getTracks().forEach(track => track.stop());
+                    })
+                    .catch(error => {
+                        showResult('permissionStatus', `麦克风权限被拒绝: ${error.message}`, true);
+                    });
+            } else {
+                showResult('permissionStatus', '浏览器不支持媒体设备API', true);
+            }
+        });
+
+        // 测试地理位置权限
+        document.getElementById('testGeoLocation').addEventListener('click', () => {
+            if (navigator.geolocation) {
+                showResult('permissionStatus', '正在请求地理位置权限...');
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        showResult('permissionStatus', `地理位置权限已授予\n纬度: ${position.coords.latitude}\n经度: ${position.coords.longitude}`);
+                    },
+                    error => {
+                        showResult('permissionStatus', `地理位置权限被拒绝: ${error.message}`, true);
+                    }
+                );
+            } else {
+                showResult('permissionStatus', '浏览器不支持地理位置API', true);
+            }
+        });
+
+        // 处理文件上传
+        const fileInputs = [
+            'singleFileUpload', 
+            'multiFileUpload', 
+            'imageUpload', 
+            'videoUpload'
+        ];
+
+        fileInputs.forEach(id => {
+            document.getElementById(id).addEventListener('change', function(e) {
+                const files = e.target.files;
+                if (files.length > 0) {
+                    let info = `已选择 ${files.length} 个文件:\n`;
+                    for (let i = 0; i < files.length; i++) {
+                        info += `- ${files[i].name} (${(files[i].size / 1024).toFixed(2)} KB)\n`;
+                    }
+                    showResult('fileInfo', info);
+                } else {
+                    showResult('fileInfo', '未选择任何文件');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
