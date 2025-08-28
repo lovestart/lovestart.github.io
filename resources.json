@@ -1,0 +1,83 @@
+{
+    "groups": [
+        {
+            "id": "android",
+            "name": "Android资源",
+            "icon": "android"
+        },
+        {
+            "id": "ios",
+            "name": "iOS资源",
+            "icon": "apple-alt"
+        },
+        {
+            "id": "tools",
+            "name": "工具",
+            "icon": "wrench"
+        },
+        {
+            "id": "other",
+            "name": "其他资源",
+            "icon": "folder-open"
+        }
+    ],
+    "resources": [
+        {
+            "id": "lq7i54o8j",
+            "group": "android",
+            "name": "跳转到吴",
+            "url": "wulz/wulz.html",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8k",
+            "group": "android",
+            "name": "Android资源",
+            "url": "Android/AndroidIndex.html",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8m",
+            "group": "android",
+            "name": "svg2android-drawable",
+            "url": "Android/svg2android-gh-pages/index.html",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8n",
+            "group": "tools",
+            "name": "SvgToVectorDrawableConverter",
+            "url": "http://a-student.github.io/SvgToVectorDrawableConverter.Web/",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8p",
+            "group": "ios",
+            "name": "IOS资源",
+            "url": "IOS/IOSIndex.html",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8q",
+            "group": "other",
+            "name": "RxJava Essentials 中文翻译版",
+            "url": "https://rxjava.yuxingxin.com/",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8r",
+            "group": "other",
+            "name": "《Kotlin for android developers》中文版翻译",
+            "url": "https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/",
+            "description": ""
+        },
+        {
+            "id": "lq7i54o8s",
+            "group": "tools",
+            "name": "跳转到网页测试",
+            "url": "html_test/webview_test.html",
+            "description": ""
+        }
+    ]
+}
+    

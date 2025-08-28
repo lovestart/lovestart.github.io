@@ -1,22 +1,1056 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8" name="auther" content="wulizhou">
-<meta name = "format-detection" content = "telephone=no">
-	<title>个人站点</title>
-	<style type="text/css">
-		a{font-size: 35px}
-	</style>
+    <meta charset="utf-8">
+    <meta name="author" content="wulizhou">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资源站点</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --accent-color: #4895ef;
+            --success-color: #4cc9f0;
+            --danger-color: #f72585;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+        
+        .intro {
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+            opacity: 0.8;
+        }
+        
+        .resource-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .resource-group {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .resource-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.1);
+        }
+        
+        .group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .group-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .group-title i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .group-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .group-action-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            padding: 0;
+        }
+        
+        .group-action-btn:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        .resource-list {
+            list-style: none;
+        }
+        
+        .resource-item {
+            margin-bottom: 12px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .resource-item:hover {
+            background-color: var(--light-color);
+        }
+        
+        .resource-link {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .resource-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .resource-link i {
+            margin-right: 8px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        .resource-link.external i:last-child {
+            margin-left: 5px;
+            margin-right: 0;
+            font-size: 0.7em;
+            opacity: 0.5;
+        }
+        
+        .resource-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .resource-action-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            padding: 0;
+        }
+        
+        .resource-action-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--danger-color);
+        }
+        
+        .add-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 12px;
+        }
+        
+        .section-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 25px;
+        }
+        
+        .section-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .section-tab.active {
+            color: var(--primary-color);
+        }
+        
+        .section-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .section-content {
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .add-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .actions-bar {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification i {
+            margin-right: 10px;
+            color: var(--success-color);
+            font-size: 1.2em;
+        }
+        
+        .notification.error {
+            border-left-color: var(--danger-color);
+        }
+        
+        .notification.error i {
+            color: var(--danger-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-color);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .resource-groups {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .add-section {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-<a href="wulz/wulz.html">跳转到吴</a><br>
-<a href="Android/AndroidIndex.html">Android资源</a><br>
-<a href="Android/svg2android-gh-pages/index.html">svg2android-drawable</a><br>
-<a href="http://a-student.github.io/SvgToVectorDrawableConverter.Web/">SvgToVectorDrawableConverter</a><br>
-<a href="IOS/IOSIndex.html">IOS资源</a><br>
-<a href="https://rxjava.yuxingxin.com/">RxJava Essentials 中文翻译版</a><br>
-<a href="https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/">《Kotlin for android developers》中文版翻译</a><br>
+    <div class="container">
+        <header>
+            <h1>个人资源站点</h1>
+            <p class="intro">收集和整理各类开发资源与工具，方便日常学习和工作使用</p>
+        </header>
+        
+        <div class="resource-groups" id="resourceContainer">
+            <!-- 资源组将通过JavaScript动态生成 -->
+        </div>
+        
+        <div class="add-section">
+            <div class="section-tabs">
+                <button class="section-tab active" data-tab="add-resource">添加资源</button>
+                <button class="section-tab" data-tab="manage-groups">管理分组</button>
+                <button class="section-tab" data-tab="export-import">导出/导入</button>
+            </div>
+            
+            <div id="add-resource" class="section-content active">
+                <h3>添加新资源</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="resourceGroupName">资源分组</label>
+                        <div style="display: flex; gap: 10px;">
+                            <select id="resourceGroupName" style="flex: 1;">
+                                <!-- 分组选项将通过JavaScript动态生成 -->
+                            </select>
+                            <button type="button" class="btn btn-outline" style="padding: 0 15px;" onclick="showCreateGroupForm()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceName">资源名称</label>
+                        <input type="text" id="resourceName" placeholder="输入资源名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceUrl">资源链接</label>
+                        <input type="url" id="resourceUrl" placeholder="输入资源URL，例如：https://example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceDesc">资源描述（可选）</label>
+                        <input type="text" id="resourceDesc" placeholder="简单描述该资源（可选）">
+                    </div>
+                </div>
+                <div class="actions-bar">
+                    <button class="btn" onclick="addNewResource()">
+                        <i class="fas fa-save"></i> 添加资源
+                    </button>
+                </div>
+            </div>
+            
+            <div id="manage-groups" class="section-content">
+                <h3>管理资源分组</h3>
+                <div class="form-group">
+                    <label for="newGroupName">创建新分组</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="newGroupName" placeholder="输入新分组名称">
+                        <button class="btn" onclick="createNewGroup()">
+                            <i class="fas fa-plus"></i> 创建
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>现有分组</label>
+                    <div id="existingGroups" style="margin-top: 10px;">
+                        <!-- 现有分组将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="export-import" class="section-content">
+                <h3>导出/导入配置</h3>
+                <p style="margin-bottom: 20px; color: #666;">通过导出配置文件，可以在不同设备间同步您的资源数据</p>
+                
+                <div class="form-group">
+                    <button class="btn" onclick="exportConfig()">
+                        <i class="fas fa-download"></i> 导出配置文件
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="importFile">导入配置文件</label>
+                    <input type="file" id="importFile" accept=".json" style="padding: 8px;">
+                    <button class="btn btn-outline" style="margin-top: 10px;" onclick="importConfig()">
+                        <i class="fas fa-upload"></i> 导入配置
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-outline" style="background-color: #fff5f5; color: #e53e3e; border-color: #e53e3e;" onclick="clearAllData()">
+                        <i class="fas fa-trash"></i> 清空所有数据
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>个人资源站点 &copy; 2023</p>
+        </footer>
+    </div>
 
-<a href="html_test/webview_test.html">跳转到网页测试</a><br>
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">操作成功</span>
+    </div>
+
+    <script>
+        // 资源数据结构: { groups: [], resources: [] }
+        let data = {
+            groups: [
+                { id: 'android', name: 'Android资源', icon: 'android' },
+                { id: 'ios', name: 'iOS资源', icon: 'apple-alt' },
+                { id: 'tools', name: '工具', icon: 'wrench' },
+                { id: 'other', name: '其他资源', icon: 'folder-open' }
+            ],
+            resources: [
+                { id: generateId(), group: 'android', name: '跳转到吴', url: 'wulz/wulz.html', description: '' },
+                { id: generateId(), group: 'android', name: 'Android资源', url: 'Android/AndroidIndex.html', description: '' },
+                { id: generateId(), group: 'android', name: 'svg2android-drawable', url: 'Android/svg2android-gh-pages/index.html', description: '' },
+                { id: generateId(), group: 'tools', name: 'SvgToVectorDrawableConverter', url: 'http://a-student.github.io/SvgToVectorDrawableConverter.Web/', description: '' },
+                { id: generateId(), group: 'ios', name: 'IOS资源', url: 'IOS/IOSIndex.html', description: '' },
+                { id: generateId(), group: 'other', name: 'RxJava Essentials 中文翻译版', url: 'https://rxjava.yuxingxin.com/', description: '' },
+                { id: generateId(), group: 'other', name: '《Kotlin for android developers》中文版翻译', url: 'https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/', description: '' },
+                { id: generateId(), group: 'tools', name: '跳转到网页测试', url: 'html_test/webview_test.html', description: '' }
+            ]
+        };
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFromJsonFile();
+            initTabs();
+        });
+
+        // 初始化标签页切换
+        function initTabs() {
+            const tabs = document.querySelectorAll('.section-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有活动状态
+                    document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('active'));
+                    
+                    // 添加当前活动状态
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        // 从JSON文件加载数据
+        function loadFromJsonFile() {
+            fetch('resources.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('配置文件不存在，使用默认数据');
+                    }
+                    return response.json();
+                })
+                .then(jsonData => {
+                    // 确保数据结构正确
+                    if (jsonData.groups && jsonData.resources) {
+                        data = jsonData;
+                    } else {
+                        // 兼容旧格式的resources.json
+                        data.resources = jsonData;
+                    }
+                    renderAll();
+                })
+                .catch(error => {
+                    console.log(error.message);
+                    renderAll();
+                });
+        }
+
+        // 渲染所有内容
+        function renderAll() {
+            renderResources();
+            renderGroupOptions();
+            renderExistingGroups();
+        }
+
+        // 渲染资源列表
+        function renderResources() {
+            const container = document.getElementById('resourceContainer');
+            container.innerHTML = '';
+
+            // 按分组整理资源
+            const groupedResources = {};
+            data.resources.forEach(resource => {
+                if (!groupedResources[resource.group]) {
+                    groupedResources[resource.group] = [];
+                }
+                groupedResources[resource.group].push(resource);
+            });
+
+            // 生成每个资源组的HTML
+            data.groups.forEach(group => {
+                const groupResources = groupedResources[group.id] || [];
+                
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'resource-group';
+                groupDiv.setAttribute('data-group-id', group.id);
+                
+                const groupHeader = document.createElement('div');
+                groupHeader.className = 'group-header';
+                
+                const groupTitle = document.createElement('h3');
+                groupTitle.className = 'group-title';
+                groupTitle.innerHTML = `<i class="fas fa-${group.icon || 'folder'}""></i> ${group.name}`;
+                groupHeader.appendChild(groupTitle);
+                
+                const groupActions = document.createElement('div');
+                groupActions.className = 'group-actions';
+                groupActions.innerHTML = `
+                    <button class="group-action-btn" title="编辑分组" onclick="editGroup('${group.id}')">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="group-action-btn" title="删除分组" onclick="deleteGroup('${group.id}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                groupHeader.appendChild(groupActions);
+                
+                groupDiv.appendChild(groupHeader);
+                
+                const resourceList = document.createElement('ul');
+                resourceList.className = 'resource-list';
+                
+                if (groupResources.length === 0) {
+                    const emptyItem = document.createElement('li');
+                    emptyItem.className = 'resource-item';
+                    emptyItem.style.color = '#999';
+                    emptyItem.style.fontStyle = 'italic';
+                    emptyItem.textContent = '该分组暂无资源';
+                    resourceList.appendChild(emptyItem);
+                } else {
+                    groupResources.forEach(resource => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'resource-item';
+                        listItem.setAttribute('data-resource-id', resource.id);
+                        
+                        const isExternal = resource.url.startsWith('http://') || resource.url.startsWith('https://');
+                        const linkClass = isExternal ? 'resource-link external' : 'resource-link';
+                        
+                        let linkHtml = `<a href="${resource.url}" class="${linkClass}" target="${isExternal ? '_blank' : '_self'}">
+                            <i class="fas fa-link"></i>
+                            ${resource.name}
+                            ${isExternal ? '<i class="fas fa-external-link-alt"></i>' : ''}
+                        </a>`;
+                        
+                        if (resource.description) {
+                            linkHtml += `<div style="font-size: 0.85rem; color: #666; margin-top: 3px; margin-left: 24px;">${resource.description}</div>`;
+                        }
+                        
+                        listItem.innerHTML = linkHtml + `
+                            <div class="resource-actions">
+                                <button class="resource-action-btn" title="编辑资源" onclick="editResource('${resource.id}')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="resource-action-btn" title="删除资源" onclick="deleteResource('${resource.id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        `;
+                        
+                        resourceList.appendChild(listItem);
+                    });
+                }
+                
+                groupDiv.appendChild(resourceList);
+                container.appendChild(groupDiv);
+            });
+        }
+
+        // 渲染分组选择下拉框
+        function renderGroupOptions() {
+            const select = document.getElementById('resourceGroupName');
+            select.innerHTML = '';
+            
+            data.groups.forEach(group => {
+                const option = document.createElement('option');
+                option.value = group.id;
+                option.textContent = group.name;
+                select.appendChild(option);
+            });
+        }
+
+        // 渲染现有分组列表（用于管理分组标签页）
+        function renderExistingGroups() {
+            const container = document.getElementById('existingGroups');
+            container.innerHTML = '';
+            
+            if (data.groups.length === 0) {
+                container.innerHTML = '<p style="color: #666; font-style: italic;">暂无分组，请创建新分组</p>';
+                return;
+            }
+            
+            data.groups.forEach(group => {
+                const groupCount = data.resources.filter(r => r.group === group.id).length;
+                
+                const groupItem = document.createElement('div');
+                groupItem.style.display = 'flex';
+                groupItem.style.alignItems = 'center';
+                groupItem.style.justifyContent = 'space-between';
+                groupItem.style.padding = '10px 15px';
+                groupItem.style.marginBottom = '8px';
+                groupItem.style.backgroundColor = 'white';
+                groupItem.style.borderRadius = '6px';
+                groupItem.style.border = '1px solid #eee';
+                
+                groupItem.innerHTML = `
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-${group.icon || 'folder'}" style="margin-right: 10px; color: var(--primary-color);"></i>
+                        <span>${group.name}</span>
+                        <span style="margin-left: 10px; color: #999; font-size: 0.85rem;">(${groupCount} 个资源)</span>
+                    </div>
+                    <div style="display: flex; gap: 5px;">
+                        <button class="resource-action-btn" title="编辑分组" onclick="editGroup('${group.id}')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="resource-action-btn" title="删除分组" onclick="deleteGroup('${group.id}')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(groupItem);
+            });
+        }
+
+        // 显示创建分组表单
+        function showCreateGroupForm() {
+            const groupName = prompt('请输入新分组名称:');
+            if (groupName && groupName.trim() !== '') {
+                createNewGroup(groupName.trim());
+            }
+        }
+
+        // 创建新分组
+        function createNewGroup(presetName) {
+            let groupName = presetName || document.getElementById('newGroupName').value.trim();
+            
+            if (!groupName) {
+                showNotification('请输入分组名称', 'error');
+                return;
+            }
+            
+            // 检查分组是否已存在
+            const exists = data.groups.some(g => g.name.toLowerCase() === groupName.toLowerCase());
+            if (exists) {
+                showNotification('该分组已存在', 'error');
+                return;
+            }
+            
+            // 创建新分组
+            const groupId = 'group_' + generateId();
+            data.groups.push({
+                id: groupId,
+                name: groupName,
+                icon: 'folder-open' // 默认图标
+            });
+            
+            // 更新界面
+            renderAll();
+            saveToJsonFile();
+            
+            // 清空输入框
+            if (!presetName) {
+                document.getElementById('newGroupName').value = '';
+            }
+            
+            showNotification(`已创建新分组: ${groupName}`);
+        }
+
+        // 编辑分组
+        function editGroup(groupId) {
+            const group = data.groups.find(g => g.id === groupId);
+            if (!group) return;
+            
+            const newName = prompt('请输入新的分组名称:', group.name);
+            if (newName === null) return; // 用户取消
+            if (newName.trim() === '') {
+                showNotification('分组名称不能为空', 'error');
+                return;
+            }
+            
+            // 检查新名称是否已存在
+            const exists = data.groups.some(g => 
+                g.id !== groupId && g.name.toLowerCase() === newName.toLowerCase()
+            );
+            if (exists) {
+                showNotification('该分组名称已存在', 'error');
+                return;
+            }
+            
+            // 更新分组名称
+            group.name = newName.trim();
+            
+            // 可以在这里添加选择图标的功能，简化版暂不实现
+            
+            // 更新界面
+            renderAll();
+            saveToJsonFile();
+            showNotification('分组已更新');
+        }
+
+        // 删除分组
+        function deleteGroup(groupId) {
+            const group = data.groups.find(g => g.id === groupId);
+            if (!group) return;
+            
+            // 检查该分组是否有资源
+            const groupResources = data.resources.filter(r => r.group === groupId);
+            if (groupResources.length > 0) {
+                if (!confirm(`确定要删除分组"${group.name}"吗？该分组包含 ${groupResources.length} 个资源，将一并删除。`)) {
+                    return;
+                }
+                
+                // 删除该分组的所有资源
+                data.resources = data.resources.filter(r => r.group !== groupId);
+            } else {
+                if (!confirm(`确定要删除分组"${group.name}"吗？`)) {
+                    return;
+                }
+            }
+            
+            // 删除分组
+            data.groups = data.groups.filter(g => g.id !== groupId);
+            
+            // 更新界面
+            renderAll();
+            saveToJsonFile();
+            showNotification('分组已删除');
+        }
+
+        // 添加新资源
+        function addNewResource() {
+            const groupId = document.getElementById('resourceGroupName').value;
+            const name = document.getElementById('resourceName').value.trim();
+            const url = document.getElementById('resourceUrl').value.trim();
+            const description = document.getElementById('resourceDesc').value.trim();
+
+            if (!name || !url) {
+                showNotification('请填写资源名称和链接', 'error');
+                return;
+            }
+
+            // 添加新资源
+            data.resources.push({
+                id: generateId(),
+                group: groupId,
+                name: name,
+                url: url,
+                description: description
+            });
+            
+            // 重新渲染
+            renderResources();
+            saveToJsonFile();
+            
+            // 清空表单
+            document.getElementById('resourceName').value = '';
+            document.getElementById('resourceUrl').value = '';
+            document.getElementById('resourceDesc').value = '';
+            
+            showNotification('资源添加成功');
+        }
+
+        // 编辑资源
+        function editResource(resourceId) {
+            const resource = data.resources.find(r => r.id === resourceId);
+            if (!resource) return;
+            
+            const newName = prompt('请输入资源名称:', resource.name);
+            if (newName === null) return; // 用户取消
+            if (newName.trim() === '') {
+                showNotification('资源名称不能为空', 'error');
+                return;
+            }
+            
+            const newUrl = prompt('请输入资源链接:', resource.url);
+            if (newUrl === null) return; // 用户取消
+            if (newUrl.trim() === '') {
+                showNotification('资源链接不能为空', 'error');
+                return;
+            }
+            
+            // 更新资源信息
+            resource.name = newName.trim();
+            resource.url = newUrl.trim();
+            
+            // 可以在这里添加编辑描述的功能，简化版暂不实现
+            
+            // 更新界面
+            renderResources();
+            saveToJsonFile();
+            showNotification('资源已更新');
+        }
+
+        // 删除资源
+        function deleteResource(resourceId) {
+            const resource = data.resources.find(r => r.id === resourceId);
+            if (!resource) return;
+            
+            if (!confirm(`确定要删除资源"${resource.name}"吗？`)) {
+                return;
+            }
+            
+            // 删除资源
+            data.resources = data.resources.filter(r => r.id !== resourceId);
+            
+            // 更新界面
+            renderResources();
+            saveToJsonFile();
+            showNotification('资源已删除');
+        }
+
+        // 导出配置文件
+        function exportConfig() {
+            const jsonStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'resources.json';
+            document.body.appendChild(a);
+            a.click();
+            
+            setTimeout(() => {
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 0);
+            
+            showNotification('配置文件已导出');
+        }
+
+        // 导入配置文件
+        function importConfig() {
+            const fileInput = document.getElementById('importFile');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                showNotification('请先选择要导入的配置文件', 'error');
+                return;
+            }
+            
+            if (!confirm('导入配置文件将覆盖当前所有数据，确定要继续吗？')) {
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    
+                    // 验证导入的数据结构
+                    if (!importedData.groups || !importedData.resources) {
+                        // 兼容旧格式
+                        importedData.groups = data.groups;
+                    }
+                    
+                    data = importedData;
+                    renderAll();
+                    saveToJsonFile();
+                    fileInput.value = ''; // 清空文件选择
+                    showNotification('配置文件导入成功');
+                } catch (error) {
+                    console.error('导入失败', error);
+                    showNotification('导入失败，文件格式不正确', 'error');
+                }
+            };
+            
+            reader.readAsText(file);
+        }
+
+        // 清空所有数据
+        function clearAllData() {
+            if (!confirm('确定要清空所有数据吗？此操作不可恢复！')) {
+                return;
+            }
+            
+            data = {
+                groups: [],
+                resources: []
+            };
+            
+            renderAll();
+            saveToJsonFile();
+            showNotification('所有数据已清空');
+        }
+
+        // 保存数据到JSON文件（在实际使用中，这需要后端支持，这里仅做前端演示）
+        function saveToJsonFile() {
+            // 注意：在纯前端环境中，无法直接写入本地文件系统
+            // 这个函数仅作为演示，实际应用中需要后端API支持文件写入
+            console.log('数据已更新，需要保存到resources.json:', data);
+            
+            // 前端只能通过导出功能让用户手动保存
+            // 这里可以添加提示，告知用户需要导出配置才能永久保存
+        }
+
+        // 显示通知
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const textElement = document.getElementById('notificationText');
+            
+            textElement.textContent = message;
+            notification.className = 'notification';
+            if (type === 'error') {
+                notification.classList.add('error');
+                notification.innerHTML = `<i class="fas fa-exclamation-circle"></i><span id="notificationText">${message}</span>`;
+            } else {
+                notification.innerHTML = `<i class="fas fa-check-circle"></i><span id="notificationText">${message}</span>`;
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // 生成唯一ID
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+        }
+    </script>
 </body>
 </html>
+    
