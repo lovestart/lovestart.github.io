@@ -15,6 +15,7 @@
                         secondary: '#10B981',
                         danger: '#EF4444',
                         neutral: '#64748B',
+                        info: '#06B6D4'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -85,6 +86,40 @@
                 </div>
                 <div id="permissionStatus" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[60px]">
                     <p class="text-gray-600">权限状态将显示在这里...</p>
+                </div>
+            </div>
+
+            <!-- 新窗口测试 -->
+            <div class="bg-white rounded-xl p-6 card-shadow md:col-span-2">
+                <h2 class="text-xl font-semibold mb-4 flex items-center text-info">
+                    <i class="fa fa-external-link mr-2"></i>新窗口测试
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <button id="openBlankWindow" class="w-full bg-info text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-window-restore mr-2"></i>_blank新窗口
+                    </button>
+                    
+                    <button id="openNewWindowJs" class="w-full bg-info/90 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-code mr-2"></i>JS打开新窗口
+                    </button>
+                    
+                    <button id="openResizedWindow" class="w-full bg-info/80 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-arrows-alt mr-2"></i>指定大小窗口
+                    </button>
+                </div>
+                
+                <div class="mt-4 grid md:grid-cols-2 gap-4">
+                    <a href="https://example.com" target="_blank" class="w-full bg-info/70 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-link mr-2"></i>链接方式(_blank)
+                    </a>
+                    
+                    <button id="openSelfWindow" class="w-full bg-info/60 text-white py-3 px-6 rounded-lg btn-hover flex items-center justify-center">
+                        <i class="fa fa-refresh mr-2"></i>当前窗口跳转
+                    </button>
+                </div>
+                
+                <div id="windowStatus" class="mt-6 p-4 bg-gray-50 rounded-lg min-h-[60px]">
+                    <p class="text-gray-600">窗口操作结果将显示在这里...</p>
                 </div>
             </div>
 
@@ -237,6 +272,49 @@
                     showResult('fileInfo', '未选择任何文件');
                 }
             });
+        });
+
+        // 新窗口测试功能
+        // 1. 使用a标签_blank方式打开新窗口
+        // 2. 使用window.open打开新窗口
+        document.getElementById('openBlankWindow').addEventListener('click', () => {
+            const newWindow = window.open('https://example.com', '_blank');
+            if (newWindow) {
+                showResult('windowStatus', '已尝试通过_blank打开新窗口');
+            } else {
+                showResult('windowStatus', '新窗口被浏览器阻止，请检查弹出窗口设置', true);
+            }
+        });
+
+        // 3. 使用JavaScript打开新窗口
+        document.getElementById('openNewWindowJs').addEventListener('click', () => {
+            const newWindow = window.open('https://developer.mozilla.org', '_blank');
+            if (newWindow) {
+                showResult('windowStatus', '已尝试通过JavaScript打开新窗口');
+            } else {
+                showResult('windowStatus', '新窗口被浏览器阻止，请检查弹出窗口设置', true);
+            }
+        });
+
+        // 4. 打开指定大小的新窗口
+        document.getElementById('openResizedWindow').addEventListener('click', () => {
+            // 参数: URL, 窗口名, 宽度=600, 高度=400, 其他参数
+            const newWindow = window.open(
+                'https://w3schools.com', 
+                'resizedWindow', 
+                'width=600,height=400,left=100,top=100,scrollbars=yes'
+            );
+            if (newWindow) {
+                showResult('windowStatus', '已尝试打开指定大小的新窗口 (600x400)');
+            } else {
+                showResult('windowStatus', '新窗口被浏览器阻止，请检查弹出窗口设置', true);
+            }
+        });
+
+        // 5. 在当前窗口打开链接
+        document.getElementById('openSelfWindow').addEventListener('click', () => {
+            window.open('https://github.com', '_self');
+            showResult('windowStatus', '已尝试在当前窗口打开链接');
         });
     </script>
 </body>
