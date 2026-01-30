@@ -1,0 +1,5 @@
+{
+  "name": "ProGuard/R8 Mapping Viewer",
+  "description": "A developer tool to visualize, parse, and search Android ProGuard/R8 obfuscation mapping files to de-obfuscate crash logs or analyze build outputs.",
+  "requestFramePermissions": []
+}

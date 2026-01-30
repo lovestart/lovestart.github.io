@@ -89,6 +89,13 @@
       "name": "阮一峰的网络日志",
       "url": "https://www.ruanyifeng.com/blog/",
       "description": ""
+    },
+    {
+      "id": "res-1769769059301",
+      "group": "android",
+      "name": "MappingAnalyze",
+      "url": "proguard_r8-mapping-viewer/index.html",
+      "description": "android mapping 资源解析"
     }
   ]
 }
