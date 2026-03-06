@@ -96,6 +96,13 @@
       "name": "MappingAnalyze",
       "url": "proguard_r8-mapping-viewer/index.html",
       "description": "android mapping 资源解析"
+    },
+    {
+      "id": "res-1772766500575",
+      "group": "tools",
+      "name": "H265解密",
+      "url": "decode.html",
+      "description": ""
     }
   ]
 }

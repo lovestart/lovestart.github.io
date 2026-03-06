@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOR Base64 解密工具</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            resize: vertical;
+        }
+        textarea {
+            min-height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #007bff;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .error {
+            border-left-color: #dc3545;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>XOR Base64 解密工具</h1>
+        
+        <div class="input-group">
+            <label for="key">解密密钥</label>
+            <input type="text" id="key" placeholder="例如：kTxXTEyl" value="kTxXTEyl">
+        </div>
+        
+        <div class="input-group">
+            <label for="ciphertext">待解密的 Base64 密文</label>
+            <textarea id="ciphertext" placeholder="请输入需要解密的Base64字符串"></textarea>
+        </div>
+        
+        <button id="decryptBtn">执行解密</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // SHA-256 哈希函数（对应Java的MessageDigest.getInstance("SHA-256")）
+        async function sha256(str) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            // 将ArrayBuffer转为Uint8Array，再转为普通数组
+            return Array.from(new Uint8Array(hashBuffer));
+        }
+
+        // Base64解码（忽略padding，对应Java的Base64.decode(str, 2)）
+        function base64Decode(str) {
+            // 补全Base64 padding（=），确保解码正确
+            const padding = str.length % 4;
+            if (padding) {
+                str += '='.repeat(4 - padding);
+            }
+            try {
+                // 解码为二进制字符串，再转为字节数组
+                const binaryStr = atob(str);
+                const bytes = new Uint8Array(binaryStr.length);
+                for (let i = 0; i < binaryStr.length; i++) {
+                    bytes[i] = binaryStr.charCodeAt(i);
+                }
+                return bytes;
+            } catch (e) {
+                throw new Error('Base64解码失败，请检查密文格式');
+            }
+        }
+
+        // 异或解密核心逻辑（对应Java的逐字节异或）
+        async function decrypt(keyStr, ciphertext) {
+            // 1. 对密钥进行SHA-256哈希
+            const keyBytes = await sha256(keyStr);
+            // 2. Base64解密密文
+            const cipherBytes = base64Decode(ciphertext);
+            // 3. 逐字节异或运算
+            const resultBytes = new Uint8Array(cipherBytes.length);
+            for (let i = 0; i < cipherBytes.length; i++) {
+                // & 255 确保是无符号字节，和Java逻辑一致
+                const cipherByte = cipherBytes[i] & 255;
+                const keyByte = keyBytes[i % keyBytes.length] & 255;
+                resultBytes[i] = cipherByte ^ keyByte;
+            }
+            // 4. 将异或后的字节转为UTF-8字符串
+            const decoder = new TextDecoder('utf-8');
+            return decoder.decode(resultBytes);
+        }
+
+        // 页面交互逻辑
+        document.getElementById('decryptBtn').addEventListener('click', async () => {
+            const keyInput = document.getElementById('key');
+            const cipherInput = document.getElementById('ciphertext');
+            const resultDiv = document.getElementById('result');
+            
+            // 清空结果区域
+            resultDiv.textContent = '';
+            resultDiv.classList.remove('error');
+            
+            // 获取输入值并去除首尾空格
+            const key = keyInput.value.trim();
+            const ciphertext = cipherInput.value.trim();
+            
+            // 输入验证
+            if (!key) {
+                resultDiv.textContent = '错误：请输入解密密钥';
+                resultDiv.classList.add('error');
+                return;
+            }
+            if (!ciphertext) {
+                resultDiv.textContent = '错误：请输入待解密的密文';
+                resultDiv.classList.add('error');
+                return;
+            }
+            
+            try {
+                // 执行解密
+                const plaintext = await decrypt(key, ciphertext);
+                resultDiv.textContent = `解密成功：\n${plaintext}`;
+            } catch (e) {
+                // 错误处理
+                resultDiv.textContent = `解密失败：${e.message}`;
+                resultDiv.classList.add('error');
+            }
+        });
+    </script>
+</body>
+</html>
